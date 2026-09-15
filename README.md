@@ -43,6 +43,12 @@ error and can retry. With marketing consent the address is also added to the Res
 Vercel project `velok-web` builds `main` on every push and serves `velok.ai` and `www.velok.ai`.
 Pull requests get a preview URL in the PR checks. Environment variables live in the Vercel project settings.
 
+## Brand
+
+The charte de marque (PDF, September 2026) is the reference for colours, type, elements and tone:
+https://drive.google.com/file/d/1sjeBJmxqat1A9_ZPTNnRHwZardulKO_E/view. Brand rules and positioning
+live in `github.com/Velok-ai/shared`, folder `06-brand`.
+
 ## Adding a page
 
 1. Create `app/<route>/page.tsx`, wrap it in `SiteShell` like the others, export `metadata`.
