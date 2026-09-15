@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Human handoff</title>
+  <desc id="desc">Two work trays connected by a deliberate transfer point.</desc>
+  
+  <defs>
+    <linearGradient id="porcelain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9D3C8"/>
+    </linearGradient>
+    <linearGradient id="graphite" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2B373C"/><stop offset="1" stop-color="#172126"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4B74EA"/><stop offset="1" stop-color="#2447AD"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#43837D"/><stop offset="1" stop-color="#205652"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="18" dy="24" stdDeviation="18" flood-color="#172126" flood-opacity="0.20"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="8" dy="12" stdDeviation="10" flood-color="#172126" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+      <path d="M152 426 H426 V710 H152 Z" fill="url(#porcelain)" stroke="#172126" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M598 426 H872 V710 H598 Z" fill="url(#porcelain)" stroke="#172126" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M426 568 H598" fill="none" stroke="#2F5DE5" stroke-width="72"/>
+      <circle cx="512" cy="568" r="70" fill="#F4F1EA" stroke="#172126" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M482 568 L506 592 L552 538" fill="none" stroke="#2A6F6A" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M202 498 H360 M648 498 H806" fill="none" stroke="#172126" stroke-width="8" stroke-linejoin="round" stroke-linecap="round" opacity="0.28"/>
+    </g>
+</svg>

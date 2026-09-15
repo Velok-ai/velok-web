@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Bespoke module</title>
+  <desc id="desc">A fitted custom module shaped for a specific system rail.</desc>
+  
+  <defs>
+    <linearGradient id="porcelain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9D3C8"/>
+    </linearGradient>
+    <linearGradient id="graphite" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2B373C"/><stop offset="1" stop-color="#172126"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4B74EA"/><stop offset="1" stop-color="#2447AD"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#43837D"/><stop offset="1" stop-color="#205652"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="18" dy="24" stdDeviation="18" flood-color="#172126" flood-opacity="0.20"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="8" dy="12" stdDeviation="10" flood-color="#172126" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+      <path d="M188 350 H650 Q704 350 704 404 V458 H832 V620 H704 V674 Q704 728 650 728 H188 Z" fill="url(#blue)" stroke="#172126" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M258 438 H580 V640 H258 Z" fill="#F4F1EA" stroke="#172126" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M320 506 H518 M320 568 H552" fill="none" stroke="#172126" stroke-width="8" stroke-linejoin="round" stroke-linecap="round" opacity="0.34"/>
+      <rect x="754" y="492" width="78" height="94" rx="24" fill="#172126"/>
+    </g>
+</svg>
