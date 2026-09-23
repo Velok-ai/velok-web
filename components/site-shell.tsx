@@ -35,7 +35,7 @@ export function SiteHeader() {
     <>
       <div className="trust-bar">
         <span>Partenaire opérations &amp; IA · France</span>
-        <span>Audit fixe · 1&nbsp;500&nbsp;€</span>
+        <span>Audit avant toute automatisation</span>
         <span>Vos comptes. Votre code. Vos données.</span>
       </div>
       <header className="site-header">
