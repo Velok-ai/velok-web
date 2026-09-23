@@ -40,7 +40,7 @@ export default function Home() {
         </section>
 
         <section className="proof-strip" aria-label="Repères Velok">
-          <div><strong>1&nbsp;500&nbsp;€</strong><span>Audit initial</span></div>
+          <div><strong>Audit</strong><span>Avant d’automatiser</span></div>
           <div><strong>1 flux</strong><span>Pour commencer</span></div>
           <div><strong>Humain</strong><span>Aux décisions sensibles</span></div>
           <div><strong>Client</strong><span>Propriétaire de la stack</span></div>
@@ -54,7 +54,7 @@ export default function Home() {
           <div className="entry-grid">
             <Link className="entry-card dark-entry" href="/audit">
               <VisualElement name="02-audit-lens" />
-              <span>01 · 1&nbsp;500&nbsp;€</span><h3>Audit de l’inbox</h3>
+              <span>01 · Diagnostic</span><h3>Audit de l’inbox</h3>
               <p>Cartographier les demandes, décisions, relances et exceptions avant d’automatiser.</p><strong>Voir l’audit →</strong>
             </Link>
             <Link className="entry-card blue-entry" href="/atelier-agents">

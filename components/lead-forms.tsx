@@ -190,7 +190,7 @@ export function PrequalificationForm() {
 
       <section hidden={step !== 0} className="form-step">
         <h2>Par quoi souhaitez-vous commencer ?</h2>
-        <label>Point de départ<select id="offer-interest" name="offerInterest" required value={offerInterest} onChange={(event) => setOfferInterest(event.currentTarget.value)}><option value="" disabled>Choisir</option><option value="audit">Audit de l’inbox · 1 500 €</option><option value="workshop">Atelier agents</option><option value="agents">Agents sécurisés</option><option value="data_spine">Data spine</option><option value="unsure">Je ne sais pas encore</option></select></label>
+        <label>Point de départ<select id="offer-interest" name="offerInterest" required value={offerInterest} onChange={(event) => setOfferInterest(event.currentTarget.value)}><option value="" disabled>Choisir</option><option value="audit">Audit de l’inbox</option><option value="workshop">Atelier agents</option><option value="agents">Agents sécurisés</option><option value="data_spine">Data spine</option><option value="unsure">Je ne sais pas encore</option></select></label>
         <label>Priorité opérationnelle<textarea name="priorities" rows={4} maxLength={1500} placeholder="Ex. réduire le tri manuel et les relances" required /></label>
         <p className="field-note">Ne transmettez aucune donnée client ou confidentielle.</p>
       </section>
@@ -214,7 +214,7 @@ export function PrequalificationForm() {
         <div className="field-grid"><label>Email professionnel<input name="email" type="email" autoComplete="email" required /></label><label>Téléphone<input name="phone" type="tel" autoComplete="tel" /></label></div>
         <div className="field-grid"><label>Entreprise<input name="company" autoComplete="organization" required /></label><label>Fonction<input name="role" autoComplete="organization-title" required /></label></div>
         <div className="field-grid"><label>Pays<input name="country" defaultValue="France" required /></label><label>Calendrier<select name="timeline" required defaultValue=""><option value="" disabled>Choisir</option><option>Maintenant</option><option>Dans 1–3 mois</option><option>Dans 3–6 mois</option><option>Exploration</option></select></label></div>
-        <div className="field-grid"><label>Rôle dans la décision<select name="decisionRole" required defaultValue=""><option value="" disabled>Choisir</option><option>Décideur</option><option>Co-décideur</option><option>Porteur du projet</option><option>Exploration</option></select></label><label>Budget de départ<select name="budgetReadiness" required defaultValue=""><option value="" disabled>Choisir</option><option>1 500 € validable</option><option>Budget à cadrer</option><option>Pas encore défini</option></select></label></div>
+        <div className="field-grid"><label>Rôle dans la décision<select name="decisionRole" required defaultValue=""><option value="" disabled>Choisir</option><option>Décideur</option><option>Co-décideur</option><option>Porteur du projet</option><option>Exploration</option></select></label><label>Budget de départ<select name="budgetReadiness" required defaultValue=""><option value="" disabled>Choisir</option><option>Budget disponible</option><option>Budget à cadrer</option><option>Pas encore défini</option></select></label></div>
         <Consent marketing />
       </section>
 
