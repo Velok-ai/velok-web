@@ -3,15 +3,17 @@ import { PageFrame, PageIntro } from '@/components/site-shell';
 import { PrequalificationForm } from '@/components/lead-forms';
 
 export const metadata: Metadata = {
-  title: 'Qualifier votre projet IA | Velok',
-  description: 'Cinq minutes pour choisir le bon point de départ avec Velok.',
+  title: 'Trouver le premier usage utile pour votre équipe | Velok',
+  description: 'Parlez de votre travail à David pour choisir une formation, un atelier ou un accompagnement AI Sherpa.',
+  alternates: { canonical: '/commencer' },
 };
 
-export default function StartPage() {
+export default function StartPage({ searchParams }: { searchParams: { offre?: string | string[] } }) {
+  const initialOffer = typeof searchParams.offre === 'string' ? searchParams.offre : '';
   return (
     <PageFrame>
-      <PageIntro kicker="Pré-qualification · 5 min" title="Un projet précis. Un premier pas mesuré." lede="Votre contexte permet à David de recommander l’audit, l’atelier ou un cadrage technique." />
-      <section className="form-page"><PrequalificationForm /></section>
+      <PageIntro kicker="Un premier échange" title="Votre équipe. Votre travail. Le premier pas." lede="Décrivez une tâche ou une question. David vous aide à choisir une formation, un atelier ou un accompagnement. Le diagnostic d’inbox reste une option si votre besoin le justifie." />
+      <section className="form-page"><PrequalificationForm initialOffer={initialOffer} /></section>
     </PageFrame>
   );
 }

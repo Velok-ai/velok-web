@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { PageFrame, PageIntro, VisualElement } from '@/components/site-shell';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/securite' },
   title: 'Sécurité, IA et données | Velok',
   description: 'Des outils reconnus, un cas d’usage cadré et des contrôles vérifiables.',
 };
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function SecurityPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Sécurité & données" title="La conformité ne vient pas avec le logiciel." lede="OpenAI et Anthropic proposent des offres professionnelles en Europe. La conformité dépend encore du cas d’usage, des données, des accès et de vos obligations." />
+      <PageIntro kicker="Sécurité & données" title="Un usage utile. Un cadre clair." lede="Les accès, les données et les validations se conviennent pour chaque mise en œuvre. Ce cadre accompagne l’usage choisi par votre équipe." />
       <section className="content-band dark concise-band">
         <div className="content-grid">
           <article className="content-card element-card"><VisualElement name="16-control-dial" /><h2>Choisir</h2><p>Outil, offre, région et paramètres adaptés.</p></article>
@@ -20,7 +21,8 @@ export default function SecurityPage() {
         </div>
       </section>
       <section className="audit-disclosure">
-        <h2>Pour l’audit inbox</h2><p>Le périmètre, la copie temporaire, les synthèses conservées et les durées sont documentés avant tout accès. Velok ne remplace ni votre DPO ni votre conseil juridique.</p>
+        <h2>Avant tout accès aux données</h2><p>Le diagnostic s’appuie actuellement sur des prestataires américains. Les prestataires, les régions de traitement et les modalités de conservation doivent être précisés avant la mission. Le choix d’un outil ne constitue pas à lui seul une garantie de conformité.</p>
+        <h2>Pour l’audit de l’inbox</h2><p>Le périmètre, les données capturées, les preuves conservées et les modalités d’effacement doivent être documentés avant tout accès. Velok ne remplace ni votre DPO ni votre conseil juridique.</p>
       </section>
       <section className="page-cta"><h2>Tester vos garde-fous.</h2><Link className="button button-cta" href="/diagnostic">Diagnostic · 3 min <span aria-hidden="true">→</span></Link></section>
     </PageFrame>

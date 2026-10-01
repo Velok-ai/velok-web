@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f6f8"/>
+  <path d="M78 64v23l29 30 29-30V64m-58 0h14v16l15 15 15-15V64h14" fill="none" stroke="#315ee8" stroke-width="4"/>
+  <circle cx="107" cy="97" r="4" fill="#df5a42"/>
+  <text x="161" y="105" font-family="Arial,sans-serif" font-size="48" font-weight="700" fill="#101b2b">Velok</text>
+  <text x="78" y="253" font-family="Arial,sans-serif" font-size="82" font-weight="700" fill="#101b2b">L’IA utile.</text>
+  <text x="78" y="350" font-family="Georgia,serif" font-size="82" font-style="italic" fill="#315ee8">Sans complexité.</text>
+  <text x="80" y="457" font-family="Arial,sans-serif" font-size="30" fill="#536172">Formation pratique · Ateliers équipes · AI Sherpa</text>
+  <text x="80" y="551" font-family="Arial,sans-serif" font-size="25" fill="#536172">Votre travail réel. Votre équipe. Un premier usage.</text>
+</svg>

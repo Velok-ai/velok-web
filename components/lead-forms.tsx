@@ -27,6 +27,9 @@ function useLeadSubmit() {
           utmSource: params.get('utm_source'),
           utmMedium: params.get('utm_medium'),
           utmCampaign: params.get('utm_campaign'),
+          utmContent: params.get('utm_content'),
+          utmTerm: params.get('utm_term'),
+          landingPath: params.get('landing'),
         }),
       });
       if (!response.ok) throw new Error('submit');
@@ -149,12 +152,13 @@ export function SafetyDiagnostic() {
   );
 }
 
-const steps = ['Point de départ', 'Contexte', 'Sécurité', 'Décision'];
+const steps = ['Votre besoin', 'Votre équipe', 'Échange avec David'];
+const offerValues = new Set(['workshop', 'sherpa', 'awareness', 'implementation', 'audit', 'partner', 'unsure']);
 
-export function PrequalificationForm() {
+export function PrequalificationForm({ initialOffer = '' }: { initialOffer?: string }) {
   const { state, submit } = useLeadSubmit();
   const [step, setStep] = useState(0);
-  const [offerInterest, setOfferInterest] = useState('');
+  const [offerInterest, setOfferInterest] = useState(offerValues.has(initialOffer) ? initialOffer : '');
 
   async function onSubmit(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -173,14 +177,14 @@ export function PrequalificationForm() {
       formKind: 'prequalification',
       firstName: data.get('firstName'), lastName: data.get('lastName'), email: data.get('email'), phone: data.get('phone'),
       company: data.get('company'), role: data.get('role'), sector: data.get('sector'), country: data.get('country'), teamSize: data.get('teamSize'),
-      currentAiUse: data.get('currentAiUse'), tools: data.get('tools'), monthlyEmailVolume: data.get('monthlyEmailVolume'), offerInterest: data.get('offerInterest'),
-      priorities: data.get('priorities'), dataSensitivity: data.get('dataSensitivity'), securityOwner: data.get('securityOwner'), identityControls: data.get('identityControls'),
+      currentAiUse: data.get('currentAiUse'), tools: data.get('tools'), offerInterest: data.get('offerInterest'),
+      priorities: data.get('priorities'),
       timeline: data.get('timeline'), decisionRole: data.get('decisionRole'), budgetReadiness: data.get('budgetReadiness'),
       marketingConsent: data.get('marketingConsent') === 'on', privacyAccepted: data.get('privacyAccepted') === 'on', website: data.get('website'),
     });
   }
 
-  if (state === 'sent') return <div className="result-panel large-result"><span>Demande reçue</span><h2>David examine votre contexte.</h2><p>Vous recevrez une réponse avec le point de départ recommandé.</p></div>;
+  if (state === 'sent') return <div className="result-panel large-result"><span>Demande reçue</span><h2>David examine votre contexte.</h2><p>Vous recevrez une réponse pour choisir le premier usage et le format adapté à votre équipe.</p></div>;
 
   return (
     <form className="qualification-form" onSubmit={onSubmit}>
@@ -190,31 +194,25 @@ export function PrequalificationForm() {
 
       <section hidden={step !== 0} className="form-step">
         <h2>Par quoi souhaitez-vous commencer ?</h2>
-        <label>Point de départ<select id="offer-interest" name="offerInterest" required value={offerInterest} onChange={(event) => setOfferInterest(event.currentTarget.value)}><option value="" disabled>Choisir</option><option value="audit">Audit de l’inbox</option><option value="workshop">Atelier agents</option><option value="agents">Agents sécurisés</option><option value="data_spine">Data spine</option><option value="unsure">Je ne sais pas encore</option></select></label>
-        <label>Priorité opérationnelle<textarea name="priorities" rows={4} maxLength={1500} placeholder="Ex. réduire le tri manuel et les relances" required /></label>
+        <label>Point de départ<select id="offer-interest" name="offerInterest" required value={offerInterest} onChange={(event) => setOfferInterest(event.currentTarget.value)}><option value="" disabled>Choisir</option><option value="workshop">Formation pratique / atelier équipe</option><option value="sherpa">Accompagnement AI Sherpa</option><option value="awareness">Sensibilisation / conférence</option><option value="implementation">Un usage à mettre en place</option><option value="audit">Diagnostic complémentaire de l’inbox</option><option value="partner">Partenariat agence</option><option value="unsure">Je ne sais pas encore</option></select></label>
+        <label>Quelle tâche ou question vous amène ?<textarea name="priorities" rows={4} maxLength={1500} placeholder="Ex. préparer nos propositions, retrouver une information ou aider l’équipe à utiliser les outils déjà achetés" required /></label>
         <p className="field-note">Ne transmettez aucune donnée client ou confidentielle.</p>
       </section>
 
       <section hidden={step !== 1} className="form-step">
         <h2>Votre contexte</h2>
-        <div className="field-grid"><label>Secteur<select name="sector" required defaultValue=""><option value="" disabled>Choisir</option><option>Assurance</option><option>Expertise comptable</option><option>Services financiers</option><option>Santé</option><option>Juridique</option><option>Autre secteur réglementé</option></select></label><label>Taille d’équipe<select name="teamSize" required defaultValue=""><option value="" disabled>Choisir</option><option>1–10</option><option>11–50</option><option>51–250</option><option>251+</option></select></label></div>
-        <div className="field-grid"><label>Usage actuel de l’IA<select name="currentAiUse" required defaultValue=""><option value="" disabled>Choisir</option><option>Aucun</option><option>Tests individuels</option><option>Outils validés</option><option>Agents en production</option></select></label><label>Emails opérationnels / mois<select name="monthlyEmailVolume" required defaultValue=""><option value="" disabled>Choisir</option><option>Moins de 5 000</option><option>5 000–10 000</option><option>10 000–15 000</option><option>Plus de 15 000</option></select></label></div>
+        <div className="field-grid"><label>Secteur<select name="sector" required defaultValue=""><option value="" disabled>Choisir</option><option>Services professionnels / conseil</option><option>Agence</option><option>Assurance</option><option>Expertise comptable</option><option>Services financiers</option><option>Santé</option><option>Juridique</option><option>Autre</option></select></label><label>Taille d’équipe<select name="teamSize" required defaultValue=""><option value="" disabled>Choisir</option><option>1–10</option><option>11–50</option><option>51–250</option><option>251+</option></select></label></div>
+        <div className="field-grid"><label>Usage actuel de l’IA<select name="currentAiUse" required defaultValue=""><option value="" disabled>Choisir</option><option>Aucun</option><option>Tests individuels</option><option>Outils validés</option><option>Agents en production</option></select></label></div>
         <label>Outils principaux<input name="tools" placeholder="Microsoft 365, Salesforce, métier…" /></label>
       </section>
 
       <section hidden={step !== 2} className="form-step">
-        <h2>Vos garde-fous</h2>
-        <div className="field-grid"><label>Sensibilité des données<select name="dataSensitivity" required defaultValue=""><option value="" disabled>Choisir</option><option>Faible</option><option>Personnelles</option><option>Financières</option><option>Santé / très sensibles</option><option>À déterminer</option></select></label><label>Responsable sécurité / DPO<select name="securityOwner" required defaultValue=""><option value="" disabled>Choisir</option><option>Identifié</option><option>Externe</option><option>Non identifié</option></select></label></div>
-        <label>Gestion des identités et accès<select name="identityControls" required defaultValue=""><option value="" disabled>Choisir</option><option>SSO et rôles documentés</option><option>Partiellement en place</option><option>À construire</option><option>Je ne sais pas</option></select></label>
-      </section>
-
-      <section hidden={step !== 3} className="form-step">
-        <h2>Qui porte la décision ?</h2>
+        <h2>À qui David peut-il répondre ?</h2>
         <div className="field-grid"><label>Prénom<input name="firstName" required /></label><label>Nom<input name="lastName" required /></label></div>
         <div className="field-grid"><label>Email professionnel<input name="email" type="email" autoComplete="email" required /></label><label>Téléphone<input name="phone" type="tel" autoComplete="tel" /></label></div>
-        <div className="field-grid"><label>Entreprise<input name="company" autoComplete="organization" required /></label><label>Fonction<input name="role" autoComplete="organization-title" required /></label></div>
+        <div className="field-grid"><label>Entreprise<input name="company" autoComplete="organization" required /></label><label>Fonction<input name="role" autoComplete="organization-title" /></label></div>
         <div className="field-grid"><label>Pays<input name="country" defaultValue="France" required /></label><label>Calendrier<select name="timeline" required defaultValue=""><option value="" disabled>Choisir</option><option>Maintenant</option><option>Dans 1–3 mois</option><option>Dans 3–6 mois</option><option>Exploration</option></select></label></div>
-        <div className="field-grid"><label>Rôle dans la décision<select name="decisionRole" required defaultValue=""><option value="" disabled>Choisir</option><option>Décideur</option><option>Co-décideur</option><option>Porteur du projet</option><option>Exploration</option></select></label><label>Budget de départ<select name="budgetReadiness" required defaultValue=""><option value="" disabled>Choisir</option><option>Budget disponible</option><option>Budget à cadrer</option><option>Pas encore défini</option></select></label></div>
+        <div className="field-grid"><label>Rôle dans la décision<select name="decisionRole" defaultValue=""><option value="" disabled>Choisir</option><option>Décideur</option><option>Co-décideur</option><option>Porteur du projet</option><option>Exploration</option></select></label><label>Budget à cadrer<select name="budgetReadiness" defaultValue=""><option value="" disabled>Choisir</option><option>Budget disponible</option><option>Budget à cadrer</option><option>Pas encore défini</option></select></label></div>
         <Consent marketing />
       </section>
 
