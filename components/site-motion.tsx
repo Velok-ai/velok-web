@@ -18,11 +18,9 @@ export function SiteMotion() {
       }, { threshold: .08, rootMargin: '0px 0px -24px 0px' });
       elements.forEach(el => { if (el.getBoundingClientRect().top > window.innerHeight) { el.dataset.enter = 'pending'; observer?.observe(el); } });
     }
-    function closeMenu(event: MouseEvent) { const target = event.target; if (target instanceof Element && target.closest('a')) target.closest('.mobile-menu')?.removeAttribute('open'); }
     setup();
     media.addEventListener('change', setup);
-    document.addEventListener('click', closeMenu);
-    return () => { clear(); media.removeEventListener('change', setup); document.removeEventListener('click', closeMenu); };
+    return () => { clear(); media.removeEventListener('change', setup); };
   }, [pathname]);
   return null;
 }
