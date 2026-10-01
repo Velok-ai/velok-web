@@ -1,25 +1,27 @@
+import { LeadLink } from '@/components/lead-link';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageFrame, PageIntro, VisualElement } from '@/components/site-shell';
 
 export const metadata: Metadata = {
-  title: 'Atelier agents IA | Velok',
-  description: 'Comprendre, tester et encadrer un premier agent IA avec votre équipe.',
+  title: 'Formation IA pratique et ateliers équipes | Velok',
+  description: 'Comprendre l’IA, pratiquer sur une tâche de votre métier et repartir avec un premier usage à essayer en équipe.',
+  alternates: { canonical: '/atelier-agents' },
 };
 
 export default function WorkshopPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Point d’entrée · Atelier" title="Apprendre avant de déléguer." lede="Votre équipe construit un premier agent borné et apprend à vérifier ses actions." />
-      <section className="content-band dark concise-band">
-        <div className="content-grid">
-          <article className="content-card element-card"><VisualElement name="16-control-dial" /><h2>Comprendre</h2><p>Capacités, limites, données et responsabilités.</p></article>
-          <article className="content-card element-card"><VisualElement name="01-approval-gate" /><h2>Encadrer</h2><p>Rôle, accès, tests et validation humaine.</p></article>
-          <article className="content-card element-card"><VisualElement name="11-human-handoff" /><h2>Pratiquer</h2><p>Un agent simple sur un cas réel, sans donnée sensible.</p></article>
-          <article className="content-card element-card"><VisualElement name="12-document-pack" /><h2>Repartir</h2><p>Règles d’équipe et prochaine expérimentation.</p></article>
-        </div>
-      </section>
-      <section className="page-cta"><h2>Former l’équipe.</h2><Link className="button button-cta" href="/commencer">Qualifier l’atelier <span aria-hidden="true">→</span></Link></section>
+      <PageIntro kicker="Formation IA · Ateliers équipes" title="Apprendre sur votre travail. Repartir avec un usage." lede="Une formation pratique commence par ce que vos équipes font déjà. Nous adaptons les exercices à leur métier et à leurs outils, sans audit d’inbox préalable." />
+      <section className="content-band alt concise-band"><div className="content-grid">
+        <article className="content-card element-card"><VisualElement name="07-market-module" /><h2>Comprendre</h2><p>Ce que les outils peuvent faire, ce qu’il faut vérifier et où ils peuvent aider dans votre quotidien.</p></article>
+        <article className="content-card element-card"><VisualElement name="11-human-handoff" /><h2>Essayer</h2><p>Une tâche concrète sur un exemple adapté à l’atelier : préparer, chercher, synthétiser ou passer le relais.</p></article>
+        <article className="content-card element-card"><VisualElement name="12-document-pack" /><h2>Réutiliser</h2><p>Une méthode de travail et un exercice que l’équipe peut reprendre après la séance.</p></article>
+        <article className="content-card element-card"><VisualElement name="19-priority-marker" /><h2>Choisir la suite</h2><p>Un premier usage, une personne responsable et un critère d’observation. Une intégration seulement si elle apporte quelque chose.</p></article>
+      </div></section>
+      <section className="audit-disclosure"><h2>Le bon format pour votre équipe.</h2><p>Une sensibilisation pour comprendre ce qui change. Une formation pratique pour apprendre les outils. Un atelier pour essayer un usage métier ensemble. Nous convenons du format, des participants et du résultat attendu avant la séance.</p></section>
+      <section className="content-band alt"><h2>Une formation ne doit pas rester une présentation.</h2><p>Le premier objectif est une pratique que l’équipe peut refaire. L’accompagnement AI Sherpa aide ensuite à l’adopter. Un projet d’implémentation reste une décision distincte, à prendre lorsque le besoin est démontré.</p><Link className="text-link" href="/ai-sherpa">Découvrir l’accompagnement AI Sherpa →</Link></section>
+      <section className="page-cta"><h2>Quel travail votre équipe veut-elle améliorer ?</h2><LeadLink className="button button-cta" href="/commencer?offre=workshop">Préparer un atelier avec David <span aria-hidden="true">→</span></LeadLink></section>
     </PageFrame>
   );
 }

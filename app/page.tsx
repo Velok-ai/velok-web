@@ -1,20 +1,19 @@
+import { LeadLink } from '@/components/lead-link';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SiteFooter, SiteHeader, VisualElement } from '@/components/site-shell';
-import { NurtureForm } from '@/components/lead-forms';
 
-const capabilities = [
-  ['07-market-module', 'Outiller', 'OpenAI d’abord; Anthropic si nécessaire.'],
-  ['16-control-dial', 'Former', 'Règles, vérification, escalade.'],
-  ['01-approval-gate', 'Automatiser', 'Rôles bornés, validation humaine.'],
-  ['06-client-core', 'Structurer', 'Sources, connecteurs, traces.'],
+const examples = [
+  ['Préparer une proposition', 'Retrouver les bons précédents, préparer un premier brouillon et le faire relire par la personne qui connaît le client.'],
+  ['Passer le relais', 'Transformer un échange en synthèse, actions et points à confirmer pour la prochaine personne.'],
+  ['Suivre un dossier', 'Repérer les pièces manquantes et préparer les relances, sans multiplier les tableaux à tenir.'],
 ];
 
-const method = [
-  ['02-audit-lens', '01', 'Observer', 'Un flux réel et ses exceptions.'],
-  ['13-process-map', '02', 'Cadrer', 'Usage, risque, responsable, mesure.'],
-  ['09-connector-rail', '03', 'Déployer', 'Le plus petit système utile.'],
-  ['15-ownership-token', '04', 'Transmettre', 'Code, comptes et documentation.'],
+const capabilities = [
+  ['07-market-module', 'Choisir l’outil', 'Un outil existant lorsqu’il répond au besoin.'],
+  ['09-connector-rail', 'Relier les étapes', 'Une intégration quand le travail se perd entre deux outils.'],
+  ['11-human-handoff', 'Déléguer progressivement', 'Un agent seulement si la tâche le justifie.'],
+  ['08-bespoke-module', 'Construire au besoin', 'Du sur mesure pour un besoin qui résiste aux solutions existantes.'],
 ];
 
 export default function Home() {
@@ -22,100 +21,116 @@ export default function Home() {
     <>
       <SiteHeader />
       <main>
-        <section className="funnel-hero">
+        <section className="funnel-hero team-hero">
           <div className="funnel-copy">
-            <p className="eyebrow"><span /> IA opérationnelle · professionnels en France</p>
-            <h1>L’IA utile.<br /><em>Sous contrôle.</em></h1>
-            <p>Velok choisit, sécurise et intègre l’IA dans votre travail réel — sans nouvelle boîte noire.</p>
+            <p className="eyebrow"><span /> IA, humain &amp; équipes</p>
+            <h1>L’IA utile.<br /><em>Sans complexité.</em></h1>
+            <p>Nous formons vos équipes sur leur travail réel, puis mettons en place avec elles le premier usage qui mérite d’être répété.</p>
             <div className="hero-actions">
-              <Link className="button button-primary" href="/commencer">Parler du projet <span aria-hidden="true">→</span></Link>
-              <Link className="text-link" href="/diagnostic">Diagnostic sécurité · 3 min</Link>
+              <LeadLink className="button button-primary" href="/commencer">Trouver le premier usage utile <span aria-hidden="true">→</span></LeadLink>
+              <Link className="text-link" href="/atelier-agents">Découvrir les ateliers</Link>
             </div>
-            <div className="trust-rail" aria-label="Principes Velok"><span>Contrôle humain</span><span>Comptes client</span><span>Sortie documentée</span></div>
+            <div className="trust-rail" aria-label="Le point de départ"><span>Votre travail réel</span><span>Votre équipe</span><span>Un premier usage</span></div>
           </div>
-          <figure className="funnel-visual">
-            <Image src="/brand/velok-hero-system.png" alt="Un flux contrôlé rejoint un système opérationnel." fill priority sizes="(max-width: 900px) 100vw, 52vw" />
-            <figcaption><b>Architecture Velok</b><span>Entrées → contrôles → actions → trace</span></figcaption>
+          <figure className="funnel-visual team-visual">
+            <Image src="/brand/velok-team-workshop.svg" alt="Une équipe et son accompagnant travaillent ensemble autour d’un exemple concret et d’un ordinateur." fill priority sizes="(max-width: 1040px) 100vw, 50vw" />
+            <figcaption><b>La puissance de l’IA au service de vos équipes.</b><span>Comprendre ensemble. Essayer sur le travail réel.</span></figcaption>
           </figure>
-        </section>
-
-        <section className="proof-strip" aria-label="Repères Velok">
-          <div><strong>Audit</strong><span>Avant d’automatiser</span></div>
-          <div><strong>1 flux</strong><span>Pour commencer</span></div>
-          <div><strong>Humain</strong><span>Aux décisions sensibles</span></div>
-          <div><strong>Client</strong><span>Propriétaire de la stack</span></div>
         </section>
 
         <section className="entry-section" id="offres">
           <div className="short-heading">
-            <p className="section-kicker">Deux points d’entrée</p>
-            <h2>Voir le travail.<br /><em>Ou apprendre à agir.</em></h2>
+            <p className="section-kicker">Par où commencer</p>
+            <h2>Apprendre ensemble.<br /><em>Passer à l’usage.</em></h2>
           </div>
           <div className="entry-grid">
-            <Link className="entry-card dark-entry" href="/audit">
-              <VisualElement name="02-audit-lens" />
-              <span>01 · Diagnostic</span><h3>Audit de l’inbox</h3>
-              <p>Cartographier les demandes, décisions, relances et exceptions avant d’automatiser.</p><strong>Voir l’audit →</strong>
-            </Link>
             <Link className="entry-card blue-entry" href="/atelier-agents">
               <VisualElement name="11-human-handoff" />
-              <span>02 · Formation</span><h3>Atelier agents</h3>
-              <p>Comprendre les usages, tester un agent borné et définir les règles de l’équipe.</p><strong>Voir l’atelier →</strong>
+              <span>01 · Formation &amp; ateliers</span><h3>Pratiquer sur votre métier.</h3>
+              <p>Comprendre les outils, essayer un cas concret et choisir ce que l’équipe peut réutiliser.</p><strong>Préparer un atelier →</strong>
+            </Link>
+            <Link className="entry-card dark-entry" href="/ai-sherpa">
+              <VisualElement name="13-process-map" />
+              <span>02 · Accompagnement AI Sherpa</span><h3>Un guide pour avancer.</h3>
+              <p>Choisir les bons usages, aider les personnes à les adopter et cadrer les prochaines améliorations.</p><strong>Découvrir AI Sherpa →</strong>
             </Link>
           </div>
+          <p className="section-note">Une sensibilisation peut préparer le terrain. Un atelier ou un accompagnement peut commencer sans connecter une boîte email.</p>
         </section>
 
-        <section className="method-section-v2" id="methode">
+        <section className="method-section-v2">
           <div className="short-heading">
-            <p className="section-kicker">La méthode</p>
-            <h2>Du premier flux<br /><em>au système maîtrisé.</em></h2>
+            <p className="section-kicker">Les frictions du quotidien</p>
+            <h2>Le problème est souvent<br /><em>entre deux étapes.</em></h2>
           </div>
-          <div className="method-grid">
-            {method.map(([asset, index, title, body]) => (
-              <article key={title}><span>{index}</span><VisualElement name={asset} /><h3>{title}</h3><p>{body}</p></article>
-            ))}
+          <div className="use-case-grid">
+            <article><span>01 · Chercher</span><h3>L’information existe. Il faut la retrouver.</h3><p>Une proposition passée, une pièce de dossier, une décision prise dans un échange.</p></article>
+            <article><span>02 · Refaire</span><h3>Le travail se répète. Chacun repart de zéro.</h3><p>Une synthèse, un compte rendu, une relance ou un premier brouillon à préparer.</p></article>
+            <article><span>03 · Transmettre</span><h3>Le relais prend du temps. Le contexte se perd.</h3><p>Une personne attend ce que la précédente doit expliquer, valider ou envoyer.</p></article>
           </div>
+          <p className="section-note">Voir le travail avant de choisir l’outil. Nous partons d’un exemple concret avec les personnes qui le font.</p>
+          <Link className="text-link" href="/methode">Voir la méthode →</Link>
+        </section>
+
+        <section className="entry-section" id="usages">
+          <div className="short-heading">
+            <p className="section-kicker">Exemples à explorer</p>
+            <h2>Votre métier.<br /><em>Un usage à essayer.</em></h2>
+          </div>
+          <div className="use-case-grid">
+            {examples.map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}
+          </div>
+          <p className="section-note">Ces exemples servent à choisir un premier essai. Le résultat se mesure sur votre travail, avec votre équipe.</p>
         </section>
 
         <section className="capability-section" id="solutions">
           <div className="short-heading light-heading">
-            <p className="section-kicker">Ce que nous mettons en place</p>
-            <h2>Outils, agents,<br /><em>données.</em></h2>
+            <p className="section-kicker">Quand le besoin est clair</p>
+            <h2>Mettre en place<br /><em>ce qui aide vraiment.</em></h2>
           </div>
           <div className="capability-grid">
-            {capabilities.map(([asset, title, body]) => (
-              <article key={title}><VisualElement name={asset} /><h3>{title}</h3><p>{body}</p></article>
-            ))}
+            {capabilities.map(([asset, title, body]) => <article key={title}><VisualElement name={asset} /><h3>{title}</h3><p>{body}</p></article>)}
           </div>
-          <p className="compliance-note">La conformité dépend toujours de l’usage, des données et des contrôles.</p>
+          <p className="compliance-note">L’implémentation fait l’objet d’un périmètre distinct : résultat attendu, responsable, outils et critères de réussite.</p>
+        </section>
+
+        <section className="method-section-v2" id="adoption">
+          <div className="short-heading">
+            <p className="section-kicker">L’adoption</p>
+            <h2>Une solution est utile<br /><em>si l’équipe l’utilise.</em></h2>
+          </div>
+          <div className="use-case-grid">
+            <article><h3>Un usage, un responsable.</h3><p>Nous choisissons avec vous qui porte le premier essai et ce que l’équipe doit pouvoir faire seule.</p></article>
+            <article><h3>Une comparaison concrète.</h3><p>Temps passé, qualité du livrable, reprises nécessaires : nous convenons de ce qui sera observé.</p></article>
+            <article><h3>Une suite qui se décide.</h3><p>Répéter, ajuster ou arrêter. Puis étendre ce qui fonctionne, au rythme de l’équipe.</p></article>
+          </div>
+          <div className="secondary-offer"><div><p className="section-kicker">Un diagnostic complémentaire</p><h3>Quand les échanges cachent le travail.</h3><p>L’audit de l’inbox peut éclairer les demandes, relais et relances. Son périmètre se convient séparément, lorsqu’il sert le besoin.</p></div><Link className="text-link" href="/audit">Voir l’audit de l’inbox →</Link></div>
         </section>
 
         <section className="sector-section-v2" id="secteurs">
-          <div><p className="section-kicker">Secteurs</p><h2>Conçu pour les opérations où la preuve compte.</h2></div>
+          <div><p className="section-kicker">Équipes &amp; partenaires</p><h2>Partir de ce que vos équipes font déjà.</h2></div>
           <div className="sector-links">
-            <Link href="/secteurs/assurance"><span>Assurance</span><strong>Dossiers, pièces, relances, contrôle →</strong></Link>
-            <Link href="/secteurs/expertise-comptable"><span>Expertise comptable</span><strong>Collecte, préparation, exceptions, trace →</strong></Link>
-            <Link href="/secteurs/services-financiers"><span>Services financiers</span><strong>Contrôles, analyse, validation, preuve →</strong></Link>
-            <Link href="/secteurs/juridique"><span>Professions juridiques</span><strong>Dossiers, recherche, revue, confidentialité →</strong></Link>
+            <Link href="/secteurs/services-professionnels"><span>Services professionnels</span><strong>Propositions, synthèses, suivi de dossiers →</strong></Link>
+            <Link href="/secteurs/expertise-comptable"><span>Expertise comptable</span><strong>Collecte de pièces, préparation, relances →</strong></Link>
+            <Link href="/partenaires/agences"><span>Agences partenaires</span><strong>Accompagner vos équipes et vos clients →</strong></Link>
           </div>
+        </section>
+
+        <section className="audit-disclosure proof-disclosure">
+          <p className="section-kicker">Un cadre de mise en œuvre</p>
+          <h2>Apprendre à déléguer sans perdre la main.</h2>
+          <p>Accès adaptés, validation humaine des actions sensibles et documentation : nous convenons du cadre avant toute intégration.</p>
+          <Link href="/securite">Voir les principes de mise en œuvre →</Link>
         </section>
 
         <section className="operator-section">
           <VisualElement name="11-human-handoff" />
-          <div><p className="section-kicker">Votre interlocuteur en France</p><h2>David pilote votre mise en œuvre.</h2></div>
-          <p>Un échange direct pour réunir les bonnes personnes et décider du premier pas.</p>
+          <div><p className="section-kicker">Votre interlocuteur en France</p><h2>Un premier échange avec David.</h2></div>
+          <p>Parlez-lui d’une tâche qui revient, d’un outil déjà acheté ou d’une équipe qui veut essayer. Ensemble, choisissez le bon premier pas.</p>
           <a className="text-link" href="mailto:david@velok.ai">david@velok.ai ↗</a>
         </section>
 
-        <section className="nurture-section">
-          <div>
-            <p className="section-kicker">Parcours en 5 emails</p>
-            <h2>Comprendre avant<br /><em>de déployer.</em></h2>
-            <p>Usages, données, agents, contrôle humain et premier projet.</p>
-          </div>
-          <NurtureForm />
-        </section>
-
+        <section className="page-cta"><h2>Quel premier usage serait utile à votre équipe ?</h2><LeadLink className="button button-cta" href="/commencer">En parler avec David <span aria-hidden="true">→</span></LeadLink></section>
       </main>
       <SiteFooter />
     </>

@@ -1,3 +1,4 @@
+import { LeadLink } from '@/components/lead-link';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -26,17 +27,17 @@ export function VisualElement({ name }: { name: string }) {
 const links = [
   { href: '/#offres', label: 'Offres' },
   { href: '/methode', label: 'Méthode' },
-  { href: '/#secteurs', label: 'Secteurs' },
-  { href: '/securite', label: 'Sécurité' },
+  { href: '/#usages', label: 'Usages' },
+  { href: '/partenaires/agences', label: 'Partenaires' },
 ];
 
 export function SiteHeader() {
   return (
     <>
       <div className="trust-bar">
-        <span>Partenaire opérations &amp; IA · France</span>
-        <span>Audit avant toute automatisation</span>
-        <span>Vos comptes. Votre code. Vos données.</span>
+        <span>IA, humain &amp; équipes · France</span>
+        <span>Formation · Ateliers · AI Sherpa</span>
+        <span>La puissance de l’IA au service de vos équipes.</span>
       </div>
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Velok — accueil">
@@ -48,16 +49,15 @@ export function SiteHeader() {
           {links.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
         </nav>
 
-        <Link className="button button-small header-cta" href="/commencer">
-          Parler du projet <span aria-hidden="true">→</span>
-        </Link>
+        <LeadLink className="button button-small header-cta" href="/commencer">
+          Échanger avec David <span aria-hidden="true">→</span>
+        </LeadLink>
 
         <details className="mobile-menu">
           <summary aria-label="Ouvrir le menu"><span>Menu</span><b aria-hidden="true">☰</b></summary>
           <nav aria-label="Navigation mobile">
             {links.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
-            <Link href="/diagnostic">Diagnostic sécurité</Link>
-            <Link href="/commencer">Parler du projet</Link>
+            <LeadLink href="/commencer">Échanger avec David</LeadLink>
           </nav>
         </details>
       </header>
@@ -73,12 +73,12 @@ export function SiteFooter() {
           <VelokMark />
           <span>Velok</span>
         </Link>
-        <p>L’IA dans vos opérations.<br />Vous gardez la main.</p>
+        <p>L’IA utile.<br />Sans complexité.</p>
       </div>
       <nav aria-label="Navigation de pied de page">
-        <div><strong>Commencer</strong><Link href="/audit">Audit de l’inbox</Link><Link href="/atelier-agents">Atelier agents</Link><Link href="/diagnostic">Diagnostic sécurité</Link></div>
-        <div><strong>Secteurs</strong><Link href="/secteurs/assurance">Assurance</Link><Link href="/secteurs/expertise-comptable">Expertise comptable</Link><Link href="/secteurs/industries-reglementees">Industries réglementées</Link></div>
-        <div><strong>Entreprise</strong><a href="mailto:david@velok.ai">Contacter David</a><Link href="/confidentialite">Confidentialité</Link><Link href="/mentions-legales">Mentions légales</Link></div>
+        <div><strong>Commencer</strong><Link href="/atelier-agents">Formation &amp; ateliers</Link><Link href="/ai-sherpa">Accompagnement AI Sherpa</Link><Link href="/audit">Audit de l’inbox</Link></div>
+        <div><strong>Équipes &amp; partenaires</strong><Link href="/secteurs/services-professionnels">Services professionnels</Link><Link href="/secteurs/expertise-comptable">Expertise comptable</Link><Link href="/partenaires/agences">Agences partenaires</Link></div>
+        <div><strong>Entreprise</strong><a href="mailto:david@velok.ai">Contacter David</a><Link href="/securite">Sécurité &amp; données</Link><Link href="/confidentialite">Confidentialité</Link><Link href="/mentions-legales">Mentions légales</Link></div>
       </nav>
       <div className="footer-meta">
         <span>France · Europe</span>
@@ -113,7 +113,7 @@ export function PageIntro({
       <p className="eyebrow"><span /> {kicker}</p>
       <h1>{title}</h1>
       <p>{lede}</p>
-      <div className="page-trust"><span>France</span><span>Cadre documenté</span><span>Stack détenue par le client</span></div>
+      <div className="page-trust"><span>Votre équipe</span><span>Votre travail réel</span><span>Un premier usage</span></div>
     </section>
   );
 }
@@ -135,7 +135,7 @@ export function SectorPage({
     <PageFrame>
       <PageIntro kicker={`Secteur · ${kicker}`} title={title} lede={lede} />
       <section className="content-band alt">
-        <h2>Les flux à regarder en premier</h2>
+        <h2>Les usages à explorer ensemble</h2>
         <div className="content-grid">
           {flows.map(([heading, body]) => (
             <article className="content-card" key={heading}>
@@ -150,8 +150,8 @@ export function SectorPage({
         <p>{principle}</p>
       </section>
       <section className="page-cta">
-        <h2>Partir d’une opération réelle.</h2>
-        <Link className="button button-cta" href="/commencer">Qualifier le projet <span aria-hidden="true">→</span></Link>
+        <h2>Choisir un premier usage avec votre équipe.</h2>
+        <LeadLink className="button button-cta" href="/commencer">Échanger avec David <span aria-hidden="true">→</span></LeadLink>
       </section>
     </PageFrame>
   );
