@@ -12,7 +12,7 @@ export default function StartPage({ searchParams }: { searchParams: { offre?: st
   const initialOffer = typeof searchParams.offre === 'string' ? searchParams.offre : '';
   return (
     <PageFrame>
-      <PageIntro kicker="Un premier échange" title="Votre équipe. Votre travail. Le premier pas." lede="Décrivez une tâche ou une question. David vous aide à choisir une formation, un atelier ou un accompagnement. Le diagnostic d’inbox reste une option si votre besoin le justifie." />
+      <PageIntro kicker="Un premier échange" title="Votre équipe. Votre travail. Le premier pas." lede="Décrivez une tâche ou une question. David vous aide à choisir une formation, un atelier ou un accompagnement. Le diagnostic d’inbox reste une option si votre besoin le justifie." visual="practice-together" compact />
       <section className="form-page"><PrequalificationForm initialOffer={initialOffer} /></section>
     </PageFrame>
   );

@@ -1,4 +1,6 @@
 import { LeadLink } from '@/components/lead-link';
+import { GalleryArt } from '@/components/gallery-art';
+import { PaintedObject, VisualJourney } from '@/components/painted-object';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SiteFooter, SiteHeader, VisualElement } from '@/components/site-shell';
@@ -20,9 +22,9 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main>
-        <section className="funnel-hero team-hero">
-          <div className="funnel-copy">
+      <main className="museum-home" id="main-content">
+        <section className="gallery-hero">
+          <div className="gallery-hero-copy">
             <p className="eyebrow"><span /> IA, humain &amp; équipes</p>
             <h1>L’IA utile.<br /><em>Sans complexité.</em></h1>
             <p>Nous formons vos équipes sur leur travail réel, puis mettons en place avec elles le premier usage qui mérite d’être répété.</p>
@@ -32,11 +34,10 @@ export default function Home() {
             </div>
             <div className="trust-rail" aria-label="Le point de départ"><span>Votre travail réel</span><span>Votre équipe</span><span>Un premier usage</span></div>
           </div>
-          <figure className="funnel-visual team-visual">
-            <Image src="/brand/velok-team-workshop.svg" alt="Une équipe et son accompagnant travaillent ensemble autour d’un exemple concret et d’un ordinateur." fill priority sizes="(max-width: 1040px) 100vw, 50vw" />
-            <figcaption><b>La puissance de l’IA au service de vos équipes.</b><span>Comprendre ensemble. Essayer sur le travail réel.</span></figcaption>
-          </figure>
+          <GalleryArt className="gallery-hero-art" src="/brand/paintings/sherpa-working-session.webp" alt="Illustration peinte de deux collègues qui examinent un document et pratiquent sur un ordinateur, dans leur bureau." number="01" title="Partir de votre travail." note="Choisir un usage. L’essayer ensemble." detail="ai-assisted-work" sizes="(max-width: 760px) 100vw, 54vw" priority />
         </section>
+
+        <VisualJourney />
 
         <section className="entry-section" id="offres">
           <div className="short-heading">
@@ -45,17 +46,22 @@ export default function Home() {
           </div>
           <div className="entry-grid">
             <Link className="entry-card blue-entry" href="/atelier-agents">
-              <VisualElement name="11-human-handoff" />
+              <div className="offer-painting"><Image src="/brand/paintings/team-workshop.webp" alt="" fill sizes="(max-width: 760px) 100vw, 46vw" /></div>
               <span>01 · Formation &amp; ateliers</span><h3>Pratiquer sur votre métier.</h3>
               <p>Comprendre les outils, essayer un cas concret et choisir ce que l’équipe peut réutiliser.</p><strong>Préparer un atelier →</strong>
             </Link>
             <Link className="entry-card dark-entry" href="/ai-sherpa">
-              <VisualElement name="13-process-map" />
+              <PaintedObject name="practice-together" decorative />
               <span>02 · Accompagnement AI Sherpa</span><h3>Un guide pour avancer.</h3>
               <p>Choisir les bons usages, aider les personnes à les adopter et cadrer les prochaines améliorations.</p><strong>Découvrir AI Sherpa →</strong>
             </Link>
           </div>
           <p className="section-note">Une sensibilisation peut préparer le terrain. Un atelier ou un accompagnement peut commencer sans connecter une boîte email.</p>
+        </section>
+
+        <section className="gallery-room" aria-labelledby="gallery-workshop-heading">
+          <div className="gallery-room-heading"><p className="section-kicker">Une équipe. Un exemple concret.</p><h2 id="gallery-workshop-heading">La pratique commence<br /><em>autour de votre travail.</em></h2><p>Comprendre les outils, essayer ensemble, puis choisir ce que l’équipe peut reprendre.</p></div>
+          <GalleryArt className="gallery-mural" src="/brand/paintings/team-workshop.webp" alt="Illustration peinte d’un atelier : cinq personnes travaillent autour d’une table, avec des documents et des ordinateurs." number="02" title="Apprendre ensemble." note="La formation et les ateliers, sur des situations de votre métier." />
         </section>
 
         <section className="method-section-v2">

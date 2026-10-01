@@ -1,3 +1,4 @@
+import { VisualJourney } from '@/components/painted-object';
 import { LeadLink } from '@/components/lead-link';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -22,6 +23,7 @@ export default function MethodPage() {
   return (
     <PageFrame>
       <PageIntro kicker="Méthode Velok" title="Voir le travail avant de choisir l’outil." lede="Comprendre → Apprendre → Identifier → Mettre en place → Adopter → Étendre. Le point de départ dépend de ce que votre équipe sait déjà faire." />
+      <VisualJourney />
       <section className="content-band alt learning-detail-grid">
         {steps.map(([asset, number, heading, body]) => <article className="content-card element-card" key={number}><VisualElement name={asset} /><span className="step-label">{number}</span><h2>{heading}</h2><p>{body}</p></article>)}
       </section>

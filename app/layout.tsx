@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import '@fontsource-variable/manrope';
 import '@fontsource-variable/source-serif-4';
 import './globals.css';
+import './museum.css';
+import './cohesion.css';
+import { SiteMotion } from '@/components/site-motion';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://velok.ai'),
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>{children}<SiteMotion /></body>
     </html>
   );
 }
