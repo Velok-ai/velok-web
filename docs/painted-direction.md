@@ -12,7 +12,7 @@ The visual sequence is intended for French professional-services leaders and tea
 
 ## Assets
 
-Web images are versioned with the website in `public/brand/paintings/` and `public/brand/cutouts/`. All seven delivery files are WebP, totaling about 1.1 MB. Source PNGs and generation prompts are working archives, not runtime dependencies or hotlinked Drive files.
+Web images are versioned with the website in `public/brand/paintings/` and `public/brand/cutouts/`. All eight delivery files are WebP, totaling about 1.4 MB. Source PNGs and generation prompts are working archives, not runtime dependencies or hotlinked Drive files.
 
 ## Motion and accessibility
 

@@ -34,7 +34,7 @@ export default function Home() {
             </div>
             <div className="trust-rail" aria-label="Le point de départ"><span>Votre travail réel</span><span>Votre équipe</span><span>Un premier usage</span></div>
           </div>
-          <GalleryArt className="gallery-hero-art" src="/brand/paintings/sherpa-working-session.webp" alt="Illustration peinte de deux collègues qui examinent un document et pratiquent sur un ordinateur, dans leur bureau." number="01" title="Partir de votre travail." note="Choisir un usage. L’essayer ensemble." detail="ai-assisted-work" sizes="(max-width: 760px) 100vw, 54vw" priority />
+          <GalleryArt className="gallery-hero-art" src="/brand/paintings/guided-ai-practice.webp" alt="Illustration peinte de deux collègues : une personne compare un document au brouillon d’un assistant IA, pendant qu’un guide lui montre un point à vérifier." number="01" title="Partir de votre travail." note="Choisir un usage. L’essayer ensemble." sizes="(max-width: 760px) 100vw, 54vw" priority />
         </section>
 
         <VisualJourney />
