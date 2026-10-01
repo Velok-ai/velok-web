@@ -138,3 +138,26 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   [data-enter] { opacity: 1 !important; transform: none !important; }
 }
+
+/* One visual per role, two offers, one next step. */
+.focused-home .gallery-hero { min-height: 0; }
+.focused-home #offres { scroll-margin-top: 92px; }
+.focused-home .entry-section { padding-top: 76px; padding-bottom: 72px; }
+.focused-home .entry-grid { gap: 40px; }
+.focused-home .entry-card h3 { font-size: clamp(32px, 3vw, 46px); }
+.focused-home .visual-journey { padding-top: 64px; padding-bottom: 72px; border-top: 1px solid var(--line); }
+.focused-home .journey-heading h2 { font-size: clamp(36px, 3.8vw, 54px); }
+.focused-home .journey-stage > .painted-object { max-width: 260px; margin: 0 auto; }
+.home-conversation { display: grid; grid-template-columns: 1fr auto; gap: 42px; align-items: center; text-align: left; }
+.home-conversation h2 { max-width: 700px; margin: 16px 0 24px; }
+.home-conversation p:last-child { max-width: 640px; color: #435159; font-size: .95rem; line-height: 1.7; }
+@media (max-width: 760px) {
+  .focused-home .gallery-hero { padding-bottom: 44px; }
+  .focused-home .gallery-hero-copy > .hero-actions { margin-bottom: 0; }
+  .focused-home .entry-section { padding-top: 52px; padding-bottom: 52px; }
+  .focused-home .visual-journey { padding-top: 52px; padding-bottom: 52px; }
+  .focused-home .visual-journey ol { gap: 26px; }
+  .focused-home .journey-stage > .painted-object { max-width: 180px; }
+  .focused-home .journey-stage:not(:last-child)::after { bottom: -24px; }
+  .home-conversation { grid-template-columns: 1fr; gap: 24px; }
+}

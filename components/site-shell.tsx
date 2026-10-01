@@ -16,15 +16,6 @@ export function VelokMark() {
   );
 }
 
-export function VisualElement({ name }: { name: string }) {
-  const asset: PaintedObjectName = /market|bespoke/.test(name) ? 'ai-assisted-work' : /human|ownership|client/.test(name) ? 'practice-together' : /process|connector|cycle|baseline/.test(name) ? 'reuse-a-practice' : /audit|control|approval|trace|exception|rules/.test(name) ? 'review-a-document' : 'bring-real-work';
-  return (
-    <span className="visual-element" aria-hidden="true">
-      <PaintedObject name={asset} decorative />
-    </span>
-  );
-}
-
 const links = [
   { href: '/atelier-agents', label: 'Ateliers' },
   { href: '/ai-sherpa', label: 'AI Sherpa' },
@@ -120,7 +111,6 @@ export function PageIntro({
       <p className="eyebrow"><span /> {kicker}</p>
       <h1>{title}</h1>
       <p>{lede}</p>
-      <div className="page-trust"><span>Votre équipe</span><span>Votre travail réel</span><span>Un premier usage</span></div>
       </div>
       {visual && <PaintedObject name={visual} className="intro-cutout" priority />}
     </section>
@@ -142,7 +132,7 @@ export function SectorPage({
 }) {
   return (
     <PageFrame>
-      <PageIntro kicker={`Secteur · ${kicker}`} title={title} lede={lede} visual="bring-real-work" />
+      <PageIntro kicker={`Secteur · ${kicker}`} title={title} lede={lede} />
       <section className="content-band alt">
         <h2>Les usages à explorer ensemble</h2>
         <div className="content-grid">

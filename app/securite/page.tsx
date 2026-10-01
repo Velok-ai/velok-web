@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PageFrame, PageIntro, VisualElement } from '@/components/site-shell';
+import { PageFrame, PageIntro } from '@/components/site-shell';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/securite' },
@@ -14,10 +14,10 @@ export default function SecurityPage() {
       <PageIntro kicker="Sécurité & données" title="Un usage utile. Un cadre clair." lede="Les accès, les données et les validations se conviennent pour chaque mise en œuvre. Ce cadre accompagne l’usage choisi par votre équipe." visual="review-a-document" />
       <section className="content-band dark concise-band">
         <div className="content-grid">
-          <article className="content-card element-card"><VisualElement name="16-control-dial" /><h2>Choisir</h2><p>Outil, offre, région et paramètres adaptés.</p></article>
-          <article className="content-card element-card"><VisualElement name="01-approval-gate" /><h2>Borner</h2><p>Permissions minimales et validation humaine.</p></article>
-          <article className="content-card element-card"><VisualElement name="17-trace-ledger" /><h2>Tracer</h2><p>Sources, actions, décisions et incidents.</p></article>
-          <article className="content-card element-card"><VisualElement name="15-ownership-token" /><h2>Transmettre</h2><p>Comptes, code et documentation au client.</p></article>
+          <article className="content-card element-card"><h2>Choisir</h2><p>Outil, offre, région et paramètres adaptés.</p></article>
+          <article className="content-card element-card"><h2>Borner</h2><p>Permissions minimales et validation humaine.</p></article>
+          <article className="content-card element-card"><h2>Tracer</h2><p>Sources, actions, décisions et incidents.</p></article>
+          <article className="content-card element-card"><h2>Transmettre</h2><p>Comptes, code et documentation au client.</p></article>
         </div>
       </section>
       <section className="audit-disclosure">

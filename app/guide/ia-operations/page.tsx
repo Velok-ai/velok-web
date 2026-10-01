@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PageFrame, PageIntro, VisualElement } from '@/components/site-shell';
+import { PageFrame, PageIntro } from '@/components/site-shell';
 
 export const metadata: Metadata = {
   title: 'Comprendre l’IA dans les opérations | Velok',
@@ -10,18 +10,18 @@ export const metadata: Metadata = {
 export default function OperationsGuidePage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Guide · Sans formulaire" title="L’IA dans les opérations, sans boîte noire." lede="Six repères pour passer d’un test individuel à un système utile, contrôlé et transmissible." visual="reuse-a-practice" />
+      <PageIntro kicker="Guide · Sans formulaire" title="L’IA dans les opérations, sans boîte noire." lede="Six repères pour passer d’un test individuel à un système utile, contrôlé et transmissible." />
       <section className="content-band alt guide-grid">
         {[
-          ['03-intake-tray', 'Partir du travail', 'Choisissez un flux répétitif, observable et déjà coûteux.'],
-          ['16-control-dial', 'Borner le rôle', 'Définissez ce que l’agent peut lire, préparer ou déclencher.'],
-          ['01-approval-gate', 'Placer la validation', 'Gardez une personne aux décisions sensibles et aux sorties externes.'],
-          ['18-data-intake-slot', 'Limiter les données', 'Ne transmettez que les informations nécessaires au cas d’usage.'],
-          ['17-trace-ledger', 'Conserver la preuve', 'Reliez sources, sorties, corrections et validations.'],
-          ['15-ownership-token', 'Prévoir la sortie', 'Comptes, code et documentation doivent rester exploitables sans Velok.'],
-        ].map(([asset, heading, body]) => (
+          ['Partir du travail', 'Choisissez un flux répétitif, observable et déjà coûteux.'],
+          ['Borner le rôle', 'Définissez ce que l’agent peut lire, préparer ou déclencher.'],
+          ['Placer la validation', 'Gardez une personne aux décisions sensibles et aux sorties externes.'],
+          ['Limiter les données', 'Ne transmettez que les informations nécessaires au cas d’usage.'],
+          ['Conserver la preuve', 'Reliez sources, sorties, corrections et validations.'],
+          ['Prévoir la sortie', 'Comptes, code et documentation doivent rester exploitables sans Velok.'],
+        ].map(([heading, body]) => (
           <article className="content-card element-card" key={heading}>
-            <VisualElement name={asset} />
+
             <h2>{heading}</h2>
             <p>{body}</p>
           </article>
