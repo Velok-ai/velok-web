@@ -159,6 +159,17 @@ export function PrequalificationForm({ initialOffer = '' }: { initialOffer?: str
   const { state, submit } = useLeadSubmit();
   const [step, setStep] = useState(0);
   const [offerInterest, setOfferInterest] = useState(offerValues.has(initialOffer) ? initialOffer : '');
+  const formRef = useRef<HTMLFormElement>(null);
+  const previousStep = useRef(step);
+
+  useEffect(() => {
+    if (previousStep.current !== step) {
+      const heading = formRef.current?.querySelector<HTMLElement>('.form-step:not([hidden]) h2');
+      heading?.focus({ preventScroll: true });
+      heading?.scrollIntoView({ block: 'start', behavior: 'instant' });
+      previousStep.current = step;
+    }
+  }, [step]);
 
   async function onSubmit(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -187,27 +198,27 @@ export function PrequalificationForm({ initialOffer = '' }: { initialOffer?: str
   if (state === 'sent') return <div className="result-panel large-result"><span>Demande reçue</span><h2>David examine votre contexte.</h2><p>Vous recevrez une réponse pour choisir le premier usage et le format adapté à votre équipe.</p></div>;
 
   return (
-    <form className="qualification-form" onSubmit={onSubmit}>
+    <form className="qualification-form" onSubmit={onSubmit} ref={formRef}>
       <Honeypot />
       <div className="form-progress" aria-label={`Étape ${step + 1} sur ${steps.length}`}><span style={{ width: `${((step + 1) / steps.length) * 100}%` }} /></div>
       <p className="step-label">{String(step + 1).padStart(2, '0')} / {String(steps.length).padStart(2, '0')} · {steps[step]}</p>
 
       <section hidden={step !== 0} className="form-step">
-        <h2>Par quoi souhaitez-vous commencer ?</h2>
+        <h2 tabIndex={-1}>Par quoi souhaitez-vous commencer ?</h2>
         <label>Point de départ<select id="offer-interest" name="offerInterest" required value={offerInterest} onChange={(event) => setOfferInterest(event.currentTarget.value)}><option value="" disabled>Choisir</option><option value="workshop">Formation pratique / atelier équipe</option><option value="sherpa">Accompagnement AI Sherpa</option><option value="awareness">Sensibilisation / conférence</option><option value="implementation">Un usage à mettre en place</option><option value="audit">Diagnostic complémentaire de l’inbox</option><option value="partner">Partenariat agence</option><option value="unsure">Je ne sais pas encore</option></select></label>
         <label>Quelle tâche ou question vous amène ?<textarea name="priorities" rows={4} maxLength={1500} placeholder="Ex. préparer nos propositions, retrouver une information ou aider l’équipe à utiliser les outils déjà achetés" required /></label>
         <p className="field-note">Ne transmettez aucune donnée client ou confidentielle.</p>
       </section>
 
       <section hidden={step !== 1} className="form-step">
-        <h2>Votre contexte</h2>
+        <h2 tabIndex={-1}>Votre contexte</h2>
         <div className="field-grid"><label>Secteur<select name="sector" required defaultValue=""><option value="" disabled>Choisir</option><option>Services professionnels / conseil</option><option>Agence</option><option>Assurance</option><option>Expertise comptable</option><option>Services financiers</option><option>Santé</option><option>Juridique</option><option>Autre</option></select></label><label>Taille d’équipe<select name="teamSize" required defaultValue=""><option value="" disabled>Choisir</option><option>1–10</option><option>11–50</option><option>51–250</option><option>251+</option></select></label></div>
         <div className="field-grid"><label>Usage actuel de l’IA<select name="currentAiUse" required defaultValue=""><option value="" disabled>Choisir</option><option>Aucun</option><option>Tests individuels</option><option>Outils validés</option><option>Agents en production</option></select></label></div>
         <label>Outils principaux<input name="tools" placeholder="Microsoft 365, Salesforce, métier…" /></label>
       </section>
 
       <section hidden={step !== 2} className="form-step">
-        <h2>À qui David peut-il répondre ?</h2>
+        <h2 tabIndex={-1}>À qui David peut-il répondre ?</h2>
         <div className="field-grid"><label>Prénom<input name="firstName" required /></label><label>Nom<input name="lastName" required /></label></div>
         <div className="field-grid"><label>Email professionnel<input name="email" type="email" autoComplete="email" required /></label><label>Téléphone<input name="phone" type="tel" autoComplete="tel" /></label></div>
         <div className="field-grid"><label>Entreprise<input name="company" autoComplete="organization" required /></label><label>Fonction<input name="role" autoComplete="organization-title" /></label></div>

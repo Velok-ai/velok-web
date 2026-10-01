@@ -1,5 +1,5 @@
 import { LeadLink } from '@/components/lead-link';
-import Image from 'next/image';
+import { PaintedObject, type PaintedObjectName } from '@/components/painted-object';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
@@ -17,23 +17,25 @@ export function VelokMark() {
 }
 
 export function VisualElement({ name }: { name: string }) {
+  const asset: PaintedObjectName = /market|bespoke/.test(name) ? 'ai-assisted-work' : /human|ownership|client/.test(name) ? 'practice-together' : /process|connector|cycle|baseline/.test(name) ? 'reuse-a-practice' : /audit|control|approval|trace|exception|rules/.test(name) ? 'review-a-document' : 'bring-real-work';
   return (
     <span className="visual-element" aria-hidden="true">
-      <Image src={`/brand/elements/${name}.svg`} alt="" width={112} height={112} />
+      <PaintedObject name={asset} decorative />
     </span>
   );
 }
 
 const links = [
-  { href: '/#offres', label: 'Offres' },
+  { href: '/atelier-agents', label: 'Ateliers' },
+  { href: '/ai-sherpa', label: 'AI Sherpa' },
   { href: '/methode', label: 'Méthode' },
-  { href: '/#usages', label: 'Usages' },
   { href: '/partenaires/agences', label: 'Partenaires' },
 ];
 
 export function SiteHeader() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Aller au contenu</a>
       <div className="trust-bar">
         <span>IA, humain &amp; équipes · France</span>
         <span>Formation · Ateliers · AI Sherpa</span>
@@ -57,7 +59,7 @@ export function SiteHeader() {
           <summary aria-label="Ouvrir le menu"><span>Menu</span><b aria-hidden="true">☰</b></summary>
           <nav aria-label="Navigation mobile">
             {links.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
-            <LeadLink href="/commencer">Échanger avec David</LeadLink>
+            <LeadLink className="button button-primary" href="/commencer">Échanger avec David</LeadLink>
           </nav>
         </details>
       </header>
@@ -93,7 +95,7 @@ export function PageFrame({ children }: { children: ReactNode }) {
   return (
     <>
       <SiteHeader />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <SiteFooter />
     </>
   );
@@ -103,17 +105,24 @@ export function PageIntro({
   kicker,
   title,
   lede,
+  visual,
+  compact = false,
 }: {
   kicker: string;
   title: string;
   lede: string;
+  visual?: PaintedObjectName;
+  compact?: boolean;
 }) {
   return (
-    <section className="page-intro">
+    <section className={`page-intro painted-page-intro ${visual ? 'has-art' : ''} ${compact ? 'compact-intro' : ''}`}>
+      <div className="intro-copy">
       <p className="eyebrow"><span /> {kicker}</p>
       <h1>{title}</h1>
       <p>{lede}</p>
       <div className="page-trust"><span>Votre équipe</span><span>Votre travail réel</span><span>Un premier usage</span></div>
+      </div>
+      {visual && <PaintedObject name={visual} className="intro-cutout" priority />}
     </section>
   );
 }
@@ -133,7 +142,7 @@ export function SectorPage({
 }) {
   return (
     <PageFrame>
-      <PageIntro kicker={`Secteur · ${kicker}`} title={title} lede={lede} />
+      <PageIntro kicker={`Secteur · ${kicker}`} title={title} lede={lede} visual="bring-real-work" />
       <section className="content-band alt">
         <h2>Les usages à explorer ensemble</h2>
         <div className="content-grid">

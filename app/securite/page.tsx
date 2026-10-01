@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function SecurityPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Sécurité & données" title="Un usage utile. Un cadre clair." lede="Les accès, les données et les validations se conviennent pour chaque mise en œuvre. Ce cadre accompagne l’usage choisi par votre équipe." />
+      <PageIntro kicker="Sécurité & données" title="Un usage utile. Un cadre clair." lede="Les accès, les données et les validations se conviennent pour chaque mise en œuvre. Ce cadre accompagne l’usage choisi par votre équipe." visual="review-a-document" />
       <section className="content-band dark concise-band">
         <div className="content-grid">
           <article className="content-card element-card"><VisualElement name="16-control-dial" /><h2>Choisir</h2><p>Outil, offre, région et paramètres adaptés.</p></article>

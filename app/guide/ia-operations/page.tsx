@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function OperationsGuidePage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Guide · Sans formulaire" title="L’IA dans les opérations, sans boîte noire." lede="Six repères pour passer d’un test individuel à un système utile, contrôlé et transmissible." />
+      <PageIntro kicker="Guide · Sans formulaire" title="L’IA dans les opérations, sans boîte noire." lede="Six repères pour passer d’un test individuel à un système utile, contrôlé et transmissible." visual="reuse-a-practice" />
       <section className="content-band alt guide-grid">
         {[
           ['03-intake-tray', 'Partir du travail', 'Choisissez un flux répétitif, observable et déjà coûteux.'],

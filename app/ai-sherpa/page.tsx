@@ -1,7 +1,8 @@
+import { GalleryArt, GalleryIntro } from '@/components/gallery-art';
 import { LeadLink } from '@/components/lead-link';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PageFrame, PageIntro, VisualElement } from '@/components/site-shell';
+import { PageFrame, VisualElement } from '@/components/site-shell';
 
 export const metadata: Metadata = {
   title: 'AI Sherpa — Accompagner votre équipe | Velok',
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 export default function SherpaPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="AI Sherpa · Accompagnement" title="Un guide pour faire avancer votre équipe." lede="Vous avez des questions, des outils ou des premiers essais. Nous vous aidons à choisir la prochaine action utile et à la mettre en pratique." />
+      <div className="museum-offer">
+      <GalleryIntro kicker="AI Sherpa · Accompagnement" title="Un guide pour faire avancer votre équipe." lede="Vous avez des questions, des outils ou des premiers essais. Nous vous aidons à choisir la prochaine action utile et à la mettre en pratique."><GalleryArt className="gallery-offer-art" src="/brand/paintings/sherpa-working-session.webp" alt="Illustration peinte de deux personnes qui pratiquent ensemble sur une tâche de travail." number="01" title="Faire avec vous." note="Une tâche réelle. Un usage à reprendre." priority /></GalleryIntro>
       <section className="content-band alt">
         <h2>Du conseil qui rejoint le travail.</h2>
         <div className="content-grid">
@@ -25,6 +27,7 @@ export default function SherpaPage() {
       <section className="audit-disclosure"><h2>Accompagner et construire : deux périmètres.</h2><p>Le conseil et la formation peuvent suffire à votre équipe. Si une intégration ou une automatisation devient utile, nous la cadrons séparément : livrable, responsable, accès nécessaires et critères de réussite. Les outils existants passent avant le sur mesure.</p><Link href="/methode">Voir comment nous avançons →</Link></section>
       <section className="content-band alt"><h2>Vous avez déjà essayé l’IA. Et maintenant ?</h2><p>Le point de départ peut être un outil peu utilisé, une tâche qui se répète ou un relais difficile entre deux personnes. Nous choisissons un premier essai avec l’équipe, puis décidons de la suite à partir de son usage réel.</p></section>
       <section className="page-cta"><h2>Trouver la prochaine action utile.</h2><LeadLink className="button button-cta" href="/commencer?offre=sherpa">Parler d’AI Sherpa avec David <span aria-hidden="true">→</span></LeadLink></section>
+    </div>
     </PageFrame>
   );
 }
