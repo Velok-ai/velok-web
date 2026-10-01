@@ -1,5 +1,7 @@
 import { LeadLink } from '@/components/lead-link';
 import { PaintedObject, type PaintedObjectName } from '@/components/painted-object';
+import { SiteNavigation } from '@/components/site-navigation';
+import { FooterIdentity } from '@/components/footer-identity';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
@@ -16,13 +18,6 @@ export function VelokMark() {
   );
 }
 
-const links = [
-  { href: '/atelier-agents', label: 'Ateliers' },
-  { href: '/ai-sherpa', label: 'AI Sherpa' },
-  { href: '/methode', label: 'Méthode' },
-  { href: '/partenaires/agences', label: 'Partenaires' },
-];
-
 export function SiteHeader() {
   return (
     <>
@@ -32,50 +27,36 @@ export function SiteHeader() {
         <span>Formation · Ateliers · AI Sherpa</span>
         <span>La puissance de l’IA au service de vos équipes.</span>
       </div>
-      <header className="site-header">
+      <SiteNavigation brand={
         <Link className="brand" href="/" aria-label="Velok — accueil">
           <VelokMark />
           <span>Velok</span>
         </Link>
-
-        <nav className="primary-nav" aria-label="Navigation principale">
-          {links.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
-        </nav>
-
-        <LeadLink className="button button-small header-cta" href="/commencer">
-          Échanger avec David <span aria-hidden="true">→</span>
-        </LeadLink>
-
-        <details className="mobile-menu">
-          <summary aria-label="Ouvrir le menu"><span>Menu</span><b aria-hidden="true">☰</b></summary>
-          <nav aria-label="Navigation mobile">
-            {links.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
-            <LeadLink className="button button-primary" href="/commencer">Échanger avec David</LeadLink>
-          </nav>
-        </details>
-      </header>
+      } />
     </>
   );
 }
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer painted-footer">
       <div className="footer-lead">
-        <Link className="brand brand-light" href="/" aria-label="Velok — accueil">
+        <Link className="brand" href="/" aria-label="Velok — accueil">
           <VelokMark />
           <span>Velok</span>
         </Link>
-        <p>L’IA utile.<br />Sans complexité.</p>
+        <FooterIdentity />
       </div>
       <nav aria-label="Navigation de pied de page">
-        <div><strong>Commencer</strong><Link href="/atelier-agents">Formation &amp; ateliers</Link><Link href="/ai-sherpa">Accompagnement AI Sherpa</Link><Link href="/audit">Audit de l’inbox</Link></div>
-        <div><strong>Équipes &amp; partenaires</strong><Link href="/secteurs/services-professionnels">Services professionnels</Link><Link href="/secteurs/expertise-comptable">Expertise comptable</Link><Link href="/partenaires/agences">Agences partenaires</Link></div>
-        <div><strong>Entreprise</strong><a href="mailto:david@velok.ai">Contacter David</a><Link href="/securite">Sécurité &amp; données</Link><Link href="/confidentialite">Confidentialité</Link><Link href="/mentions-legales">Mentions légales</Link></div>
+        <div><strong>Commencer</strong><Link href="/atelier-agents">Formation &amp; ateliers</Link><Link href="/ai-sherpa">Accompagnement AI Sherpa</Link><Link href="/methode">Notre méthode</Link><Link href="/partenaires/agences">Agences partenaires</Link></div>
+        <div><strong>Votre métier</strong><Link href="/secteurs/services-professionnels">Services professionnels</Link><Link href="/secteurs/expertise-comptable">Expertise comptable</Link><Link href="/secteurs/juridique">Juridique</Link><Link href="/secteurs/services-financiers">Services financiers</Link><Link href="/secteurs/assurance">Assurance</Link><Link href="/secteurs/industries-reglementees">Industries réglementées</Link></div>
+        <div><strong>Pour aller plus loin</strong><Link href="/guide/ia-operations">Guide des usages IA</Link><Link href="/securite">Sécurité &amp; données</Link><Link href="/diagnostic">Diagnostic de sécurité</Link><Link href="/audit">Audit complémentaire de l’inbox</Link></div>
       </nav>
       <div className="footer-meta">
         <span>France · Europe</span>
-        <a href="mailto:david@velok.ai">david@velok.ai</a>
+        <a href="mailto:david@velok.ai">david@velok.ai <span aria-hidden="true">↗</span></a>
+        <Link href="/confidentialite">Confidentialité</Link>
+        <Link href="/mentions-legales">Mentions légales</Link>
         <span>© {new Date().getFullYear()} Velok</span>
       </div>
     </footer>
