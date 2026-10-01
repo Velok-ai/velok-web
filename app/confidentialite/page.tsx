@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Données personnelles" title="Politique de confidentialité" lede="Cette page sépare les traitements du site de ceux d’une mission. Pour toute question ou demande, écrivez directement à David." visual="review-a-document" compact />
+      <PageIntro kicker="Données personnelles" title="Politique de confidentialité" lede="Cette page sépare les traitements du site de ceux d’une mission. Pour toute question ou demande, écrivez directement à David." visual="protected-folder" compact />
       <section className="content-band alt">
         <div className="notice"><strong>Responsable pendant la transition</strong><p>Velok est actuellement exploité par 9512624 Canada Ltd. L’entité européenne appelée à reprendre le service sera indiquée ici dès sa constitution.</p></div>
         <h2>Visite et formulaires</h2><p>Le site n’utilise pas de traceur publicitaire. Les formulaires recueillent les coordonnées, le contexte professionnel et les réponses que vous choisissez de transmettre. Les paramètres de campagne présents dans l’adresse peuvent aussi être enregistrés pour relier votre demande au message reçu.</p>

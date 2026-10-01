@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function DiagnosticPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Auto-diagnostic · 3 min" title="Vos premiers garde-fous sont-ils en place ?" lede="Un repère rapide, pas une certification. Vos réponses servent uniquement à orienter la prochaine étape." visual="review-a-document" compact />
+      <PageIntro kicker="Auto-diagnostic · 3 min" title="Vos premiers garde-fous sont-ils en place ?" lede="Un repère rapide, pas une certification. Vos réponses servent uniquement à orienter la prochaine étape." compact />
       <section className="form-page"><SafetyDiagnostic /></section>
     </PageFrame>
   );

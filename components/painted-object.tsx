@@ -1,7 +1,11 @@
 import Image from 'next/image';
 
-export type PaintedObjectName = 'bring-real-work' | 'practice-together' | 'reuse-a-practice' | 'review-a-document' | 'ai-assisted-work';
+export type PaintedObjectName = 'bring-real-work' | 'practice-together' | 'reuse-a-practice' | 'review-a-document' | 'ai-assisted-work' | 'agency-collaboration' | 'document-flow' | 'protected-folder' | 'choose-first-step';
 const descriptions: Record<PaintedObjectName, string> = {
+  'agency-collaboration': 'Trois collègues alignent des documents de projet autour d’une table.',
+  'document-flow': 'Une main classe un document entre deux bacs pour organiser les demandes.',
+  'protected-folder': 'Une main protège un dossier fermé, avec une petite clé à côté.',
+  'choose-first-step': 'Une main choisit une tâche parmi trois cartes de travail.',
   'ai-assisted-work': 'Une personne utilise un assistant conversationnel sur son ordinateur, avec une main qui la guide et un exemple de travail à côté.',
   'bring-real-work': 'Une main choisit un exemple de travail dans un dossier.',
   'practice-together': 'Une personne pratique sur un ordinateur avec un guide à ses côtés.',

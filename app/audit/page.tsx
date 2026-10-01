@@ -1,7 +1,7 @@
 import { LeadLink } from '@/components/lead-link';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PageFrame, PageIntro, VisualElement } from '@/components/site-shell';
+import { PageFrame, PageIntro } from '@/components/site-shell';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/audit' },
@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 export default function AuditPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Diagnostic complémentaire" title="Voir le travail avant de l’automatiser." lede="Nous cartographions demandes, décisions, relances, transferts et exceptions à partir d’un périmètre d’inbox convenu." visual="review-a-document" />
+      <PageIntro kicker="Diagnostic complémentaire" title="Comprendre ce qui bloque votre inbox." lede="Nous cartographions demandes, décisions, relances, transferts et exceptions à partir d’un périmètre d’inbox convenu." visual="document-flow" />
       <section className="content-band dark concise-band">
         <div className="content-grid">
-          <article className="content-card element-card"><VisualElement name="13-process-map" /><h2>Flux</h2><p>Étapes, outils, attentes et ruptures.</p></article>
-          <article className="content-card element-card"><VisualElement name="17-trace-ledger" /><h2>Risques</h2><p>Données, accès, exceptions et contrôles.</p></article>
-          <article className="content-card element-card"><VisualElement name="19-priority-marker" /><h2>Priorités</h2><p>Gains utiles, faisables et réversibles.</p></article>
-          <article className="content-card element-card"><VisualElement name="12-document-pack" /><h2>Plan</h2><p>Solutions du marché, code sur mesure et responsabilités.</p></article>
+          <article className="content-card element-card"><h2>Flux</h2><p>Étapes, outils, attentes et ruptures.</p></article>
+          <article className="content-card element-card"><h2>Risques</h2><p>Données, accès, exceptions et contrôles.</p></article>
+          <article className="content-card element-card"><h2>Priorités</h2><p>Gains utiles, faisables et réversibles.</p></article>
+          <article className="content-card element-card"><h2>Plan</h2><p>Solutions du marché, code sur mesure et responsabilités.</p></article>
         </div>
       </section>
       <section className="audit-disclosure">

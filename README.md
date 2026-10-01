@@ -21,7 +21,7 @@ Node 22. Copy `.env.example` to `.env.local` for the lead form; the pages render
 | Shared header, footer, page frame | `components/site-shell.tsx` |
 | The three forms (nurture, safety, prequalification) | `components/lead-forms.tsx` |
 | Form submissions | `app/api/leads/route.ts` |
-| All styling | `app/globals.css` (design tokens at the top) |
+| All styling | `app/globals.css`, `app/museum.css`, `app/cohesion.css` (current painted direction) |
 | Fonts | Manrope + Source Serif 4, bundled from `@fontsource-variable` |
 | Brand SVG elements, hero images, OG image | `public/brand/`, `public/og.png` |
 | Sitemap, robots | `app/sitemap.ts`, `app/robots.ts` (add a route to the list when you add a page) |
@@ -45,8 +45,8 @@ Pull requests get a preview URL in the PR checks. Environment variables live in 
 
 ## Brand
 
-The charte de marque (PDF, September 2026) is the reference for colours, type, elements and tone:
-https://drive.google.com/file/d/1sjeBJmxqat1A9_ZPTNnRHwZardulKO_E/view. Brand rules and positioning
+The V2 charte de marque (PDF, September 2026) records the painted scenes, distinct cutouts, serif headings, teal actions and motion rules. The linked file replaces the earlier security-led guide:
+https://drive.google.com/file/d/1sjeBJmxqat1A9_ZPTNnRHwZardulKO_E/view. Website composition decisions are in `docs/painted-direction.md`. Shared brand rules and positioning
 live in `github.com/Velok-ai/shared`, folder `06-brand`.
 
 ## Adding a page

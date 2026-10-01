@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AgenciesPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="Agences · Partenariats" title="Un premier usage utile, pour vous ou vos clients." lede="Votre équipe veut pratiquer l’IA ou un client vous demande de l’aider. Partons de son travail pour définir un premier atelier et la suite éventuelle." visual="practice-together" />
+      <PageIntro kicker="Agences · Partenariats" title="Un premier usage utile, pour vous ou vos clients." lede="Votre équipe veut pratiquer l’IA ou un client vous demande de l’aider. Partons de son travail pour définir un premier atelier et la suite éventuelle." visual="agency-collaboration" />
       <section className="content-band alt"><div className="content-grid">
         <article className="content-card"><h3>Pour votre équipe</h3><p>Préparer un brief, synthétiser des retours ou réutiliser des propositions : choisir une tâche, apprendre une méthode et observer son usage.</p><Link className="text-link" href="/atelier-agents">Voir les ateliers →</Link></article>
         <article className="content-card"><h3>Avec vos clients</h3><p>Cadrer le besoin ensemble. Convenons de qui porte la relation, anime l’atelier, réalise une éventuelle intégration et suit l’adoption.</p><Link className="text-link" href="/ai-sherpa">Voir l’accompagnement →</Link></article>
