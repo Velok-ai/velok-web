@@ -55,14 +55,16 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.04em;
   width: max-content;
 }
-.brand-mark { height: 34px; width: 34px; }
-.brand-mark path {
-  stroke: var(--signal-blue);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3.1;
+.velok-wordmark {
+  color: var(--midnight);
+  font-family: 'Manrope Variable', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.048em;
+  line-height: 1;
+  white-space: nowrap;
 }
-.brand-mark circle { fill: var(--ember); }
+.velok-wordmark-domain { color: var(--signal-blue); font-weight: 500; }
+.brand-light .velok-wordmark { color: #fff; }
 .primary-nav {
   align-items: center;
   display: flex;
@@ -556,7 +558,6 @@ h1 em {
 .final-cta small { color: rgb(255 255 255 / 66%); display: block; font-size: 0.76rem; margin-top: 18px; }
 .site-footer { background: var(--graphite); color: white; padding: 68px max(32px, calc((100vw - min(1320px, calc(100vw - 64px))) / 2)) 30px; }
 .footer-lead { align-items: start; display: flex; justify-content: space-between; }
-.brand-light .brand-mark path { stroke: #9fb7ff; }
 .footer-lead p { color: rgb(255 255 255 / 60%); font-family: 'Source Serif 4 Variable', Georgia, serif; font-size: 1.35rem; margin: 0; }
 .site-footer nav { border-bottom: 1px solid rgb(255 255 255 / 14%); border-top: 1px solid rgb(255 255 255 / 14%); display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); margin-top: 58px; padding: 30px 0; }
 .site-footer nav a { color: rgb(255 255 255 / 72%); font-size: 0.78rem; }

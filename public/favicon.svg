@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#172126"/>
-  <path d="M12 13v17L32 51l20-21V13M12 13h10v12l10 10 10-10V13h10" fill="none" stroke="#8FAAFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="32" cy="36" r="3.5" fill="#C44A35"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><title>velok.ai</title><rect width="64" height="64" rx="12" fill="#fff"/><g transform="translate(16.800 7)"><path fill="#10294d" transform="translate(0.000 40) scale(0.020000 -0.020000)" d="M432 0 40 1080H250.67041015625L538.0018310546875 262.0042724609375L824.6666259765625 1080H1036.003662109375L644.003662109375 0Z"/><path fill="#315ee8" transform="translate(19.600 40) scale(0.020000 -0.020000)" d="M172 0V196H368V0Z"/></g></svg>

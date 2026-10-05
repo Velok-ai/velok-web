@@ -1,3 +1,4 @@
+import { VelokWordmark } from '@/components/velok-wordmark';
 import { LanguageSwitch } from '@/components/language-switch';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,20 +7,6 @@ import type { ReactNode } from 'react';
 export const auditMailto =
   'mailto:david@velok.ai?subject=Operations%20audit%20%E2%80%94%20Velok';
 
-export function VelokMark() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="brand-mark"
-      viewBox="0 0 48 48"
-      fill="none"
-    >
-      <path d="M8 9v12.5L24 38l16-16.5V9" />
-      <path d="M8 9h8v9l8 8 8-8V9h8" />
-      <circle cx="24" cy="27" r="2.4" />
-    </svg>
-  );
-}
 
 export function VisualElement({ name }: { name: string }) {
   return (
@@ -276,8 +263,7 @@ export function SiteHeader() {
       </div>
       <header className="site-header">
         <Link className="brand" href="/en" aria-label="Velok — home">
-          <VelokMark />
-          <span>Velok</span>
+          <VelokWordmark />
         </Link>
 
         <nav className="primary-nav" aria-label="Main navigation">
@@ -329,8 +315,7 @@ export function SiteFooter() {
           href="/en"
           aria-label="Velok — home"
         >
-          <VelokMark />
-          <span>Velok</span>
+          <VelokWordmark />
         </Link>
         <p>
           Useful AI.

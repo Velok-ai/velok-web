@@ -48,6 +48,9 @@ Pull requests get a preview URL in the PR checks. Environment variables live in 
 The website V2 approved on 5 October 2026 uses ivory/navy/blue styling in app/globals.css
 and the 3D workplace illustrations in public/brand/v2/. Shared brand rules and positioning
 remain in github.com/Velok-ai/shared, folder 06-brand.
+The approved lowercase velok.ai wordmark is shared by both languages through
+components/velok-wordmark.tsx. Outlined SVG and transparent PNG assets are in public/brand/logo;
+the favicon and social cards use the same approved typography and colours.
 
 ## Languages
 
