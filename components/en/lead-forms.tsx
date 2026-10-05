@@ -22,7 +22,7 @@ function useLeadSubmit() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           ...payload,
-          language: 'fr',
+          language: 'en',
           elapsedMs: Date.now() - (startedAt.current ?? Date.now()),
           sourcePath: window.location.pathname,
           utmSource: params.get('utm_source'),
@@ -63,16 +63,16 @@ function Consent({ marketing = false }: { marketing?: boolean }) {
         <label className="check-row">
           <input name="marketingConsent" type="checkbox" />{' '}
           <span>
-            Je souhaite recevoir les prochaines ressources Velok. Désinscription
-            à tout moment.
+            I would like to receive future Velok resources. I can unsubscribe at
+            any time.
           </span>
         </label>
       )}
       <label className="check-row">
         <input name="privacyAccepted" type="checkbox" required />{' '}
         <span>
-          J’accepte que Velok utilise ces informations pour traiter ma demande.{' '}
-          <Link href="/confidentialite">Confidentialité</Link>.
+          I agree to Velok using this information to handle my request.{' '}
+          <Link href="/en/confidentialite">Privacy</Link>.
         </span>
       </label>
     </div>
@@ -96,13 +96,13 @@ export function NurtureForm() {
 
   if (state === 'sent')
     return (
-      <output className="form-success">Votre demande est enregistrée.</output>
+      <output className="form-success">Your request has been recorded.</output>
     );
 
   return (
     <form className="nurture-form" onSubmit={onSubmit}>
       <Honeypot />
-      <label htmlFor="nurture-email">Email professionnel</label>
+      <label htmlFor="nurture-email">Work email</label>
       <div className="inline-field">
         <input
           id="nurture-email"
@@ -110,16 +110,16 @@ export function NurtureForm() {
           type="email"
           autoComplete="email"
           required
-          placeholder="vous@entreprise.fr"
+          placeholder="you@company.com"
         />
         <button type="submit" disabled={state === 'sending'}>
-          {state === 'sending' ? 'Envoi…' : 'Demander les ressources'}
+          {state === 'sending' ? 'Sending…' : 'Request the resources'}
         </button>
       </div>
       <Consent marketing />
       {state === 'error' && (
         <p className="form-error" role="alert">
-          L’envoi a échoué. Réessayez ou écrivez à david@velok.ai.
+          Submission failed. Please try again or email david@velok.ai.
         </p>
       )}
     </form>
@@ -127,17 +127,11 @@ export function NurtureForm() {
 }
 
 const safetyQuestions = [
-  ['owner', 'Un responsable interne valide-t-il chaque usage ?'],
-  [
-    'accounts',
-    'Les comptes professionnels sont-ils séparés des comptes personnels ?',
-  ],
-  [
-    'data',
-    'Savez-vous quelles données ne doivent jamais entrer dans un outil IA ?',
-  ],
-  ['access', 'Les accès et permissions des agents sont-ils documentés ?'],
-  ['trace', 'Pouvez-vous retracer les actions et validations importantes ?'],
+  ['owner', 'Does an internal owner approve each use case?'],
+  ['accounts', 'Are work accounts separate from personal accounts?'],
+  ['data', 'Do you know which data must never be entered into an AI tool?'],
+  ['access', 'Are agent access and permissions documented?'],
+  ['trace', 'Can you trace important actions and approvals?'],
 ] as const;
 
 export function SafetyDiagnostic() {
@@ -167,9 +161,9 @@ export function SafetyDiagnostic() {
   if (state === 'sent')
     return (
       <div className="result-panel">
-        <span>Reçu</span>
-        <h2>David vous répond avec le prochain contrôle utile.</h2>
-        <Link href="/commencer">Décrire un processus →</Link>
+        <span>Received</span>
+        <h2>David will reply with the next useful check.</h2>
+        <Link href="/en/commencer">Describe a process →</Link>
       </div>
     );
 
@@ -184,9 +178,9 @@ export function SafetyDiagnostic() {
             </legend>
             <div className="choice-row">
               {[
-                ['yes', 'Oui'],
-                ['partial', 'Partiellement'],
-                ['no', 'Non'],
+                ['yes', 'Yes'],
+                ['partial', 'Partly'],
+                ['no', 'No'],
               ].map(([value, text]) => (
                 <label
                   key={value}
@@ -209,19 +203,19 @@ export function SafetyDiagnostic() {
       </div>
       {complete && !showContact && (
         <div className="result-panel">
-          <span>{score}/5 contrôles en place</span>
+          <span>{score}/5 controls in place</span>
           <h2>
             {score >= 4
-              ? 'Bonne base. Vérifions le cas d’usage.'
+              ? 'A good foundation. Let’s check the use case.'
               : score >= 2
-                ? 'Base partielle. Priorisons les écarts.'
-                : 'Commencez par les garde-fous.'}
+                ? 'A partial foundation. Let’s prioritise the gaps.'
+                : 'Start with the safeguards.'}
           </h2>
           <button
             className="button button-primary"
             onClick={() => setShowContact(true)}
           >
-            Recevoir la prochaine étape
+            Get the next step
           </button>
         </div>
       )}
@@ -230,11 +224,11 @@ export function SafetyDiagnostic() {
           <Honeypot />
           <div className="field-grid">
             <label>
-              Email professionnel
+              Work email
               <input name="email" type="email" required />
             </label>
             <label>
-              Entreprise
+              Company
               <input name="company" />
             </label>
           </div>
@@ -244,11 +238,11 @@ export function SafetyDiagnostic() {
             type="submit"
             disabled={state === 'sending'}
           >
-            {state === 'sending' ? 'Envoi…' : 'Recevoir la recommandation'}
+            {state === 'sending' ? 'Sending…' : 'Get the recommendation'}
           </button>
           {state === 'error' && (
             <p className="form-error" role="alert">
-              L’envoi a échoué. Réessayez.
+              Submission failed. Please try again.
             </p>
           )}
         </form>
@@ -293,18 +287,18 @@ export function PrequalificationForm({
   if (state === 'sent')
     return (
       <div className="result-panel large-result">
-        <output>Demande reçue</output>
-        <h2>Merci, votre demande est bien arrivée.</h2>
-        <p>Nous vous répondons par email pour convenir d’un premier échange.</p>
+        <output>Request received</output>
+        <h2>Thank you, your request has arrived.</h2>
+        <p>We will reply by email to arrange a first conversation.</p>
       </div>
     );
   return (
     <form className="qualification-form" onSubmit={onSubmit}>
       <Honeypot />
       <div className="form-step">
-        <h2>Par quoi souhaitez-vous commencer ?</h2>
+        <h2>Where would you like to start?</h2>
         <label>
-          Votre besoin
+          Your need
           <select
             name="offerInterest"
             required
@@ -312,35 +306,31 @@ export function PrequalificationForm({
             onChange={(event) => setOfferInterest(event.currentTarget.value)}
           >
             <option value="" disabled>
-              Choisir
+              Choose
             </option>
-            <option value="awareness">Conférence ou sensibilisation</option>
-            <option value="training">Formation pratique</option>
-            <option value="workshop">
-              Atelier et découverte de cas d’usage
-            </option>
-            <option value="integration">Mise en place ou intégration</option>
-            <option value="adoption">
-              Adoption et accompagnement de l’équipe
-            </option>
-            <option value="audit">Audit d’une opération</option>
-            <option value="unsure">Je ne sais pas encore</option>
+            <option value="awareness">Talk or awareness session</option>
+            <option value="training">Practical training</option>
+            <option value="workshop">Workshop and use-case discovery</option>
+            <option value="integration">Implementation or integration</option>
+            <option value="adoption">Adoption and team support</option>
+            <option value="audit">Audit an operation</option>
+            <option value="unsure">I’m not sure yet</option>
           </select>
         </label>
         <label>
-          Ce que vous aimeriez faire avancer (facultatif)
+          What you would like to move forward (optional)
           <textarea
             name="priorities"
             rows={4}
             maxLength={1500}
-            placeholder="Une tâche, un irritant, une équipe à former…"
+            placeholder="A task, a recurring frustration, a team to train…"
           />
         </label>
         <p className="field-note">
-          Ne transmettez aucune donnée client ou confidentielle.
+          Do not share any client or confidential data.
         </p>
         <label>
-          Nom complet
+          Full name
           <input
             name="fullName"
             type="text"
@@ -351,7 +341,7 @@ export function PrequalificationForm({
         </label>
         <div className="field-grid">
           <label>
-            Email professionnel
+            Work email
             <input
               name="email"
               type="email"
@@ -361,7 +351,7 @@ export function PrequalificationForm({
             />
           </label>
           <label>
-            Entreprise
+            Company
             <input
               name="company"
               autoComplete="organization"
@@ -371,15 +361,15 @@ export function PrequalificationForm({
           </label>
         </div>
         <label>
-          Secteur (facultatif)
+          Sector (optional)
           <select name="sector" defaultValue="">
-            <option value="">Non précisé</option>
-            <option>Expertise comptable</option>
-            <option>Conseil</option>
-            <option>Agence</option>
-            <option>Juridique</option>
-            <option>Autre service professionnel</option>
-            <option>Autre</option>
+            <option value="">Not specified</option>
+            <option>Accounting</option>
+            <option>Consulting</option>
+            <option>Agency</option>
+            <option>Legal</option>
+            <option>Other professional service</option>
+            <option>Other</option>
           </select>
         </label>
         <Consent />
@@ -390,12 +380,12 @@ export function PrequalificationForm({
           className="button button-primary"
           disabled={state === 'sending'}
         >
-          {state === 'sending' ? 'Envoi…' : 'Envoyer à David'}
+          {state === 'sending' ? 'Sending…' : 'Send to David'}
         </button>
       </div>
       {state === 'error' && (
         <p className="form-error" role="alert">
-          L’envoi a échoué. Réessayez ou écrivez à{' '}
+          Submission failed. Please try again or email{' '}
           <a href="mailto:david@velok.ai">david@velok.ai</a>.
         </p>
       )}

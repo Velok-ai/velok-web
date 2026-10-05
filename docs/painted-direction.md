@@ -1,3 +1,5 @@
+> Historical direction. The approved website V2 from 5 October 2026 uses the styling and assets described in README.md. This document records the earlier painted proposal.
+
 # VELOK painted direction
 
 The visual sequence is intended for French professional-services leaders and teams who need to see practical work and human guidance quickly. Illustrated people and scenes are illustrative, not customer testimonials.

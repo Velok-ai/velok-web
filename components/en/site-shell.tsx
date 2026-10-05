@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 export const auditMailto =
-  'mailto:david@velok.ai?subject=Audit%20des%20op%C3%A9rations%20%E2%80%94%20Velok';
+  'mailto:david@velok.ai?subject=Operations%20audit%20%E2%80%94%20Velok';
 
 export function VelokMark() {
   return (
@@ -81,31 +81,31 @@ export function MockupVisual({
             <div className="screen-line short" />
             <div className="screen-task">
               <i />
-              Collecte
+              Collection
             </div>
             <div className="screen-task">
               <i />
-              Traitement
+              Processing
             </div>
             <div className="screen-task">
               <i />
-              Suivi
+              Follow-up
             </div>
           </div>
         </div>
         <div className="mockup-flow">
-          <strong>Processus en cours</strong>
+          <strong>Workflow in progress</strong>
           <div>
             <span />
-            Collecte
+            Collection
           </div>
           <div>
             <span />
-            Traitement
+            Processing
           </div>
           <div>
             <span />
-            Suivi
+            Follow-up
           </div>
         </div>
         <div className="mockup-paperstack">
@@ -116,9 +116,9 @@ export function MockupVisual({
           <div />
         </div>
         <div className="mockup-note">
-          Moins d’administratif,
+          Less administration,
           <br />
-          plus d’impact.
+          more impact.
         </div>
       </div>
     );
@@ -259,28 +259,28 @@ export function MockupVisual({
 }
 
 const links = [
-  { href: '/#parcours', label: 'Parcours' },
-  { href: '/methode', label: 'Méthode' },
-  { href: '/situations', label: 'Situations' },
-  { href: '/learn', label: 'Contenus' },
-  { href: '/#secteurs', label: 'Secteurs' },
-  { href: '/securite', label: 'Sécurité' },
+  { href: '/en#parcours', label: 'Your path' },
+  { href: '/en/methode', label: 'Method' },
+  { href: '/en/situations', label: 'Scenarios' },
+  { href: '/en/learn', label: 'Content' },
+  { href: '/en#secteurs', label: 'Sectors' },
+  { href: '/en/securite', label: 'Security' },
 ];
 
 export function SiteHeader() {
   return (
     <>
       <div className="trust-bar">
-        <span>IA, humain &amp; équipes · France</span>
-        <span>Apprendre · Mettre en place · Adopter</span>
+        <span>AI, people &amp; teams · France</span>
+        <span>Learn · Implement · Adopt</span>
       </div>
       <header className="site-header">
-        <Link className="brand" href="/" aria-label="Velok — accueil">
+        <Link className="brand" href="/en" aria-label="Velok — home">
           <VelokMark />
           <span>Velok</span>
         </Link>
 
-        <nav className="primary-nav" aria-label="Navigation principale">
+        <nav className="primary-nav" aria-label="Main navigation">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
               {link.label}
@@ -292,25 +292,25 @@ export function SiteHeader() {
           <LanguageSwitch />
           <Link
             className="button button-small header-cta"
-            href="/commencer?source=navigation"
+            href="/en/commencer?source=navigation"
           >
-            Parler de votre premier usage <span aria-hidden="true">→</span>
+            Discuss your first use case <span aria-hidden="true">→</span>
           </Link>
 
           <details className="mobile-menu">
-            <summary aria-label="Ouvrir le menu">
+            <summary aria-label="Open menu">
               <span>Menu</span>
               <b aria-hidden="true">☰</b>
             </summary>
-            <nav aria-label="Navigation mobile">
+            <nav aria-label="Mobile navigation">
               {links.map((link) => (
                 <Link key={link.href} href={link.href}>
                   {link.label}
                 </Link>
               ))}
-              <Link href="/diagnostic">Diagnostic sécurité</Link>
-              <Link href="/commencer?source=navigation">
-                Parler de votre premier usage
+              <Link href="/en/diagnostic">Security self-assessment</Link>
+              <Link href="/en/commencer?source=navigation">
+                Discuss your first use case
               </Link>
             </nav>
           </details>
@@ -326,43 +326,43 @@ export function SiteFooter() {
       <div className="footer-lead">
         <Link
           className="brand brand-light"
-          href="/"
-          aria-label="Velok — accueil"
+          href="/en"
+          aria-label="Velok — home"
         >
           <VelokMark />
           <span>Velok</span>
         </Link>
         <p>
-          L’IA utile.
+          Useful AI.
           <br />
-          Sans complexité.
+          Without the complexity.
         </p>
       </div>
-      <nav aria-label="Navigation de pied de page">
+      <nav aria-label="Footer navigation">
         <div>
-          <strong>Commencer</strong>
-          <Link href="/commencer?source=navigation">
-            Trouver un premier usage
+          <strong>Get started</strong>
+          <Link href="/en/commencer?source=navigation">
+            Find a first use case
           </Link>
-          <Link href="/methode">Formation, intégration &amp; adoption</Link>
-          <Link href="/audit">Audit des opérations</Link>
-          <Link href="/atelier-agents">Atelier agents</Link>
-          <Link href="/diagnostic">Diagnostic sécurité</Link>
+          <Link href="/en/methode">Training, integration &amp; adoption</Link>
+          <Link href="/en/audit">Operations audit</Link>
+          <Link href="/en/atelier-agents">AI agents workshop</Link>
+          <Link href="/en/diagnostic">Security self-assessment</Link>
         </div>
         <div>
-          <strong>Secteurs</strong>
-          <Link href="/secteurs/assurance">Assurance</Link>
-          <Link href="/secteurs/expertise-comptable">Expertise comptable</Link>
-          <Link href="/secteurs/industries-reglementees">
-            Industries réglementées
+          <strong>Sectors</strong>
+          <Link href="/en/secteurs/assurance">Insurance</Link>
+          <Link href="/en/secteurs/expertise-comptable">Accounting</Link>
+          <Link href="/en/secteurs/industries-reglementees">
+            Regulated industries
           </Link>
         </div>
         <div>
-          <strong>Entreprise</strong>
-          <Link href="/learn">Contenus</Link>
-          <a href="mailto:david@velok.ai">Contacter David</a>
-          <Link href="/confidentialite">Confidentialité</Link>
-          <Link href="/mentions-legales">Mentions légales</Link>
+          <strong>Company</strong>
+          <Link href="/en/learn">Content</Link>
+          <a href="mailto:david@velok.ai">Contact David</a>
+          <Link href="/en/confidentialite">Privacy</Link>
+          <Link href="/en/mentions-legales">Legal notice</Link>
         </div>
       </nav>
       <div className="footer-meta">
@@ -405,8 +405,8 @@ export function PageIntro({
       {showTrust && (
         <div className="page-trust">
           <span>France</span>
-          <span>Cadre documenté</span>
-          <span>Vos outils et vos comptes</span>
+          <span>Documented framework</span>
+          <span>Your tools and accounts</span>
         </div>
       )}
     </section>
@@ -430,14 +430,14 @@ export function SectorPage({
 }) {
   return (
     <PageFrame>
-      <PageIntro kicker={`Secteur · ${kicker}`} title={title} lede={lede} />
+      <PageIntro kicker={`Sector · ${kicker}`} title={title} lede={lede} />
       {illustration && (
         <section className="page-illustration-band">
           <WideIllustration src={illustration.src} alt={illustration.alt} />
         </section>
       )}
       <section className="content-band alt">
-        <h2>Les flux à regarder en premier</h2>
+        <h2>Workflows to examine first</h2>
         <div className="content-grid">
           {flows.map(([heading, body]) => (
             <article className="content-card" key={heading}>
@@ -448,13 +448,16 @@ export function SectorPage({
         </div>
       </section>
       <section className="content-band dark">
-        <h2>Ce qui ne change pas</h2>
+        <h2>What stays the same</h2>
         <p>{principle}</p>
       </section>
       <section className="page-cta">
-        <h2>Partir d’une opération réelle.</h2>
-        <Link className="button button-cta" href="/commencer?source=navigation">
-          Décrire le processus <span aria-hidden="true">→</span>
+        <h2>Start with a real operation.</h2>
+        <Link
+          className="button button-cta"
+          href="/en/commencer?source=navigation"
+        >
+          Describe the process <span aria-hidden="true">→</span>
         </Link>
       </section>
     </PageFrame>
