@@ -1,6 +1,6 @@
 # velok.ai
 
-The Velok marketing site. Next.js 14 (App Router), Tailwind 4, French, static pages plus one API route.
+The Velok marketing site. Next.js 14 (App Router), Tailwind 4, French and English, static pages plus one API route.
 
 ## Run it
 
@@ -17,11 +17,11 @@ Node 22. Copy `.env.example` to `.env.local` for the lead form; the pages render
 
 | What | Where |
 |---|---|
-| Pages | `app/<route>/page.tsx` (one file per URL, plain JSX + CSS classes) |
+| Pages | `app/(fr)/<route>/page.tsx and app/en/<route>/page.tsx` (one file per URL, plain JSX + CSS classes) |
 | Shared header, footer, page frame | `components/site-shell.tsx` |
 | The three forms (nurture, safety, prequalification) | `components/lead-forms.tsx` |
 | Form submissions | `app/api/leads/route.ts` |
-| All styling | `app/globals.css`, `app/museum.css`, `app/cohesion.css` (current painted direction) |
+| All styling | `app/globals.css`, `app/museum.css`, `app/cohesion.css` (historical painted styles; current V2 uses app/globals.css) |
 | Fonts | Manrope + Source Serif 4, bundled from `@fontsource-variable` |
 | Brand SVG elements, hero images, OG image | `public/brand/`, `public/og.png` |
 | Sitemap, robots | `app/sitemap.ts`, `app/robots.ts` (add a route to the list when you add a page) |
@@ -45,12 +45,30 @@ Pull requests get a preview URL in the PR checks. Environment variables live in 
 
 ## Brand
 
-The V2 charte de marque (PDF, September 2026) records the painted scenes, distinct cutouts, serif headings, teal actions and motion rules. The linked file replaces the earlier security-led guide:
-https://drive.google.com/file/d/1sjeBJmxqat1A9_ZPTNnRHwZardulKO_E/view. Website composition decisions are in `docs/painted-direction.md`. Shared brand rules and positioning
-live in `github.com/Velok-ai/shared`, folder `06-brand`.
+The website V2 approved on 5 October 2026 uses ivory/navy/blue styling in app/globals.css
+and the 3D workplace illustrations in public/brand/v2/. Shared brand rules and positioning
+remain in github.com/Velok-ai/shared, folder 06-brand.
+The approved lowercase velok.ai wordmark is shared by both languages through
+components/velok-wordmark.tsx. Outlined SVG and transparent PNG assets are in public/brand/logo;
+the favicon and social cards use the same approved typography and colours.
+
+## Languages
+
+French URLs are preserved. English pages use matching routes under /en.
+The FR/EN control opens the matching page and preserves query parameters and the anchor.
+Separate root layouts render the correct HTML language. Pages provide canonical URLs and
+French/English alternates; both versions are in the sitemap. The English social card is
+public/og-v2-en.png.
+
+Forms in both languages use the existing /api/leads route. Their payload includes language
+so the notification identifies the visitor’s language. Form success still depends on a successful
+notification; an error never appears as a successful submission.
+
+Additional upstream routes /ai-sherpa, /partenaires/agences and /secteurs/services-professionnels
+are retained and have English counterparts.
 
 ## Adding a page
 
-1. Create `app/<route>/page.tsx`, wrap it in `SiteShell` like the others, export `metadata`.
+1. Create `app/(fr)/<route>/page.tsx and app/en/<route>/page.tsx`, wrap it in `SiteShell` like the others, export `metadata`.
 2. Add the route to `app/sitemap.ts`.
 3. Link it from `components/site-shell.tsx` if it belongs in the nav or footer.

@@ -22,14 +22,14 @@ function useLeadSubmit() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           ...payload,
+          language: 'fr',
           elapsedMs: Date.now() - (startedAt.current ?? Date.now()),
           sourcePath: window.location.pathname,
           utmSource: params.get('utm_source'),
           utmMedium: params.get('utm_medium'),
           utmCampaign: params.get('utm_campaign'),
-          utmContent: params.get('utm_content'),
-          utmTerm: params.get('utm_term'),
-          landingPath: params.get('landing'),
+          source: params.get('source'),
+          besoin: params.get('besoin'),
         }),
       });
       if (!response.ok) throw new Error('submit');
@@ -45,14 +45,36 @@ function useLeadSubmit() {
 }
 
 function Honeypot() {
-  return <input className="form-trap" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />;
+  return (
+    <input
+      className="form-trap"
+      name="website"
+      tabIndex={-1}
+      autoComplete="off"
+      aria-hidden="true"
+    />
+  );
 }
 
 function Consent({ marketing = false }: { marketing?: boolean }) {
   return (
     <div className="consent-stack">
-      {marketing && <label className="check-row"><input name="marketingConsent" type="checkbox" /> <span>Je souhaite recevoir le parcours email Velok. Désinscription à tout moment.</span></label>}
-      <label className="check-row"><input name="privacyAccepted" type="checkbox" required /> <span>J’accepte que Velok utilise ces informations pour traiter ma demande. <Link href="/confidentialite">Confidentialité</Link>.</span></label>
+      {marketing && (
+        <label className="check-row">
+          <input name="marketingConsent" type="checkbox" />{' '}
+          <span>
+            Je souhaite recevoir les prochaines ressources Velok. Désinscription
+            à tout moment.
+          </span>
+        </label>
+      )}
+      <label className="check-row">
+        <input name="privacyAccepted" type="checkbox" required />{' '}
+        <span>
+          J’accepte que Velok utilise ces informations pour traiter ma demande.{' '}
+          <Link href="/confidentialite">Confidentialité</Link>.
+        </span>
+      </label>
     </div>
   );
 }
@@ -72,23 +94,48 @@ export function NurtureForm() {
     });
   }
 
-  if (state === 'sent') return <output className="form-success">C’est noté. Le premier email arrive bientôt.</output>;
+  if (state === 'sent')
+    return (
+      <output className="form-success">Votre demande est enregistrée.</output>
+    );
 
   return (
     <form className="nurture-form" onSubmit={onSubmit}>
       <Honeypot />
       <label htmlFor="nurture-email">Email professionnel</label>
-      <div className="inline-field"><input id="nurture-email" name="email" type="email" autoComplete="email" required placeholder="vous@entreprise.fr" /><button type="submit" disabled={state === 'sending'}>{state === 'sending' ? 'Envoi…' : 'Recevoir les 5 emails'}</button></div>
+      <div className="inline-field">
+        <input
+          id="nurture-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          placeholder="vous@entreprise.fr"
+        />
+        <button type="submit" disabled={state === 'sending'}>
+          {state === 'sending' ? 'Envoi…' : 'Demander les ressources'}
+        </button>
+      </div>
       <Consent marketing />
-      {state === 'error' && <p className="form-error" role="alert">L’envoi a échoué. Réessayez ou écrivez à david@velok.ai.</p>}
+      {state === 'error' && (
+        <p className="form-error" role="alert">
+          L’envoi a échoué. Réessayez ou écrivez à david@velok.ai.
+        </p>
+      )}
     </form>
   );
 }
 
 const safetyQuestions = [
   ['owner', 'Un responsable interne valide-t-il chaque usage ?'],
-  ['accounts', 'Les comptes professionnels sont-ils séparés des comptes personnels ?'],
-  ['data', 'Savez-vous quelles données ne doivent jamais entrer dans un outil IA ?'],
+  [
+    'accounts',
+    'Les comptes professionnels sont-ils séparés des comptes personnels ?',
+  ],
+  [
+    'data',
+    'Savez-vous quelles données ne doivent jamais entrer dans un outil IA ?',
+  ],
   ['access', 'Les accès et permissions des agents sont-ils documentés ?'],
   ['trace', 'Pouvez-vous retracer les actions et validations importantes ?'],
 ] as const;
@@ -97,7 +144,10 @@ export function SafetyDiagnostic() {
   const { state, submit } = useLeadSubmit();
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showContact, setShowContact] = useState(false);
-  const score = useMemo(() => Object.values(answers).filter((value) => value === 'yes').length, [answers]);
+  const score = useMemo(
+    () => Object.values(answers).filter((value) => value === 'yes').length,
+    [answers],
+  );
   const complete = Object.keys(answers).length === safetyQuestions.length;
 
   async function onSubmit(event: SyntheticEvent<HTMLFormElement>) {
@@ -114,18 +164,43 @@ export function SafetyDiagnostic() {
     });
   }
 
-  if (state === 'sent') return <div className="result-panel"><span>Reçu</span><h2>David vous répond avec le prochain contrôle utile.</h2><Link href="/commencer">Qualifier le projet →</Link></div>;
+  if (state === 'sent')
+    return (
+      <div className="result-panel">
+        <span>Reçu</span>
+        <h2>David vous répond avec le prochain contrôle utile.</h2>
+        <Link href="/commencer">Décrire un processus →</Link>
+      </div>
+    );
 
   return (
     <div className="diagnostic-shell">
       <div className="question-list">
         {safetyQuestions.map(([key, label], index) => (
           <fieldset key={key} className="question-card">
-            <legend><span>{String(index + 1).padStart(2, '0')}</span>{label}</legend>
+            <legend>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              {label}
+            </legend>
             <div className="choice-row">
-              {[['yes', 'Oui'], ['partial', 'Partiellement'], ['no', 'Non']].map(([value, text]) => (
-                <label key={value} className={answers[key] === value ? 'selected' : ''}>
-                  <input type="radio" name={key} value={value} onChange={() => setAnswers((current) => ({ ...current, [key]: value }))} />{text}
+              {[
+                ['yes', 'Oui'],
+                ['partial', 'Partiellement'],
+                ['no', 'Non'],
+              ].map(([value, text]) => (
+                <label
+                  key={value}
+                  className={answers[key] === value ? 'selected' : ''}
+                >
+                  <input
+                    type="radio"
+                    name={key}
+                    value={value}
+                    onChange={() =>
+                      setAnswers((current) => ({ ...current, [key]: value }))
+                    }
+                  />
+                  {text}
                 </label>
               ))}
             </div>
@@ -135,103 +210,195 @@ export function SafetyDiagnostic() {
       {complete && !showContact && (
         <div className="result-panel">
           <span>{score}/5 contrôles en place</span>
-          <h2>{score >= 4 ? 'Bonne base. Vérifions le cas d’usage.' : score >= 2 ? 'Base partielle. Priorisons les écarts.' : 'Commencez par les garde-fous.'}</h2>
-          <button className="button button-primary" onClick={() => setShowContact(true)}>Recevoir la prochaine étape</button>
+          <h2>
+            {score >= 4
+              ? 'Bonne base. Vérifions le cas d’usage.'
+              : score >= 2
+                ? 'Base partielle. Priorisons les écarts.'
+                : 'Commencez par les garde-fous.'}
+          </h2>
+          <button
+            className="button button-primary"
+            onClick={() => setShowContact(true)}
+          >
+            Recevoir la prochaine étape
+          </button>
         </div>
       )}
       {showContact && (
         <form className="contact-form compact-form" onSubmit={onSubmit}>
           <Honeypot />
-          <div className="field-grid"><label>Email professionnel<input name="email" type="email" required /></label><label>Entreprise<input name="company" /></label></div>
+          <div className="field-grid">
+            <label>
+              Email professionnel
+              <input name="email" type="email" required />
+            </label>
+            <label>
+              Entreprise
+              <input name="company" />
+            </label>
+          </div>
           <Consent marketing />
-          <button className="button button-primary" type="submit" disabled={state === 'sending'}>{state === 'sending' ? 'Envoi…' : 'Recevoir la recommandation'}</button>
-          {state === 'error' && <p className="form-error" role="alert">L’envoi a échoué. Réessayez.</p>}
+          <button
+            className="button button-primary"
+            type="submit"
+            disabled={state === 'sending'}
+          >
+            {state === 'sending' ? 'Envoi…' : 'Recevoir la recommandation'}
+          </button>
+          {state === 'error' && (
+            <p className="form-error" role="alert">
+              L’envoi a échoué. Réessayez.
+            </p>
+          )}
         </form>
       )}
     </div>
   );
 }
 
-const steps = ['Votre besoin', 'Votre équipe', 'Échange avec David'];
-const offerValues = new Set(['workshop', 'sherpa', 'awareness', 'implementation', 'audit', 'partner', 'unsure']);
-
-export function PrequalificationForm({ initialOffer = '' }: { initialOffer?: string }) {
+export function PrequalificationForm({
+  initialOfferInterest = '',
+}: {
+  initialOfferInterest?: string;
+}) {
   const { state, submit } = useLeadSubmit();
-  const [step, setStep] = useState(0);
-  const [offerInterest, setOfferInterest] = useState(offerValues.has(initialOffer) ? initialOffer : '');
-  const formRef = useRef<HTMLFormElement>(null);
-  const previousStep = useRef(step);
-
-  useEffect(() => {
-    if (previousStep.current !== step) {
-      const heading = formRef.current?.querySelector<HTMLElement>('.form-step:not([hidden]) h2');
-      heading?.focus({ preventScroll: true });
-      heading?.scrollIntoView({ block: 'start', behavior: 'instant' });
-      previousStep.current = step;
-    }
-  }, [step]);
-
+  const acceptedNeeds = [
+    'awareness',
+    'training',
+    'workshop',
+    'integration',
+    'adoption',
+    'audit',
+    'unsure',
+  ];
+  const [offerInterest, setOfferInterest] = useState(
+    acceptedNeeds.includes(initialOfferInterest) ? initialOfferInterest : '',
+  );
   async function onSubmit(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = event.currentTarget;
-    if (step < steps.length - 1) {
-      const invalid = form.querySelector<HTMLElement>('.form-step:not([hidden]) :invalid');
-      if (invalid) {
-        (invalid as HTMLInputElement).reportValidity();
-      } else {
-        setStep((value) => value + 1);
-      }
-      return;
-    }
-    const data = new FormData(form);
+    const data = new FormData(event.currentTarget);
     await submit({
       formKind: 'prequalification',
-      firstName: data.get('firstName'), lastName: data.get('lastName'), email: data.get('email'), phone: data.get('phone'),
-      company: data.get('company'), role: data.get('role'), sector: data.get('sector'), country: data.get('country'), teamSize: data.get('teamSize'),
-      currentAiUse: data.get('currentAiUse'), tools: data.get('tools'), offerInterest: data.get('offerInterest'),
+      fullName: data.get('fullName'),
+      email: data.get('email'),
+      company: data.get('company'),
+      offerInterest: data.get('offerInterest'),
       priorities: data.get('priorities'),
-      timeline: data.get('timeline'), decisionRole: data.get('decisionRole'), budgetReadiness: data.get('budgetReadiness'),
-      marketingConsent: data.get('marketingConsent') === 'on', privacyAccepted: data.get('privacyAccepted') === 'on', website: data.get('website'),
+      sector: data.get('sector'),
+      privacyAccepted: data.get('privacyAccepted') === 'on',
+      website: data.get('website'),
     });
   }
-
-  if (state === 'sent') return <div className="result-panel large-result"><span>Demande reçue</span><h2>David examine votre contexte.</h2><p>Vous recevrez une réponse pour choisir le premier usage et le format adapté à votre équipe.</p></div>;
-
-  return (
-    <form className="qualification-form" onSubmit={onSubmit} ref={formRef}>
-      <Honeypot />
-      <div className="form-progress" aria-label={`Étape ${step + 1} sur ${steps.length}`}><span style={{ width: `${((step + 1) / steps.length) * 100}%` }} /></div>
-      <p className="step-label">{String(step + 1).padStart(2, '0')} / {String(steps.length).padStart(2, '0')} · {steps[step]}</p>
-
-      <section hidden={step !== 0} className="form-step">
-        <h2 tabIndex={-1}>Par quoi souhaitez-vous commencer ?</h2>
-        <label>Point de départ<select id="offer-interest" name="offerInterest" required value={offerInterest} onChange={(event) => setOfferInterest(event.currentTarget.value)}><option value="" disabled>Choisir</option><option value="workshop">Formation pratique / atelier équipe</option><option value="sherpa">Accompagnement AI Sherpa</option><option value="awareness">Sensibilisation / conférence</option><option value="implementation">Un usage à mettre en place</option><option value="audit">Diagnostic complémentaire de l’inbox</option><option value="partner">Partenariat agence</option><option value="unsure">Je ne sais pas encore</option></select></label>
-        <label>Quelle tâche ou question vous amène ?<textarea name="priorities" rows={4} maxLength={1500} placeholder="Ex. préparer nos propositions, retrouver une information ou aider l’équipe à utiliser les outils déjà achetés" required /></label>
-        <p className="field-note">Ne transmettez aucune donnée client ou confidentielle.</p>
-      </section>
-
-      <section hidden={step !== 1} className="form-step">
-        <h2 tabIndex={-1}>Votre contexte</h2>
-        <div className="field-grid"><label>Secteur<select name="sector" required defaultValue=""><option value="" disabled>Choisir</option><option>Services professionnels / conseil</option><option>Agence</option><option>Assurance</option><option>Expertise comptable</option><option>Services financiers</option><option>Santé</option><option>Juridique</option><option>Autre</option></select></label><label>Taille d’équipe<select name="teamSize" required defaultValue=""><option value="" disabled>Choisir</option><option>1–10</option><option>11–50</option><option>51–250</option><option>251+</option></select></label></div>
-        <div className="field-grid"><label>Usage actuel de l’IA<select name="currentAiUse" required defaultValue=""><option value="" disabled>Choisir</option><option>Aucun</option><option>Tests individuels</option><option>Outils validés</option><option>Agents en production</option></select></label></div>
-        <label>Outils principaux<input name="tools" placeholder="Microsoft 365, Salesforce, métier…" /></label>
-      </section>
-
-      <section hidden={step !== 2} className="form-step">
-        <h2 tabIndex={-1}>À qui David peut-il répondre ?</h2>
-        <div className="field-grid"><label>Prénom<input name="firstName" required /></label><label>Nom<input name="lastName" required /></label></div>
-        <div className="field-grid"><label>Email professionnel<input name="email" type="email" autoComplete="email" required /></label><label>Téléphone<input name="phone" type="tel" autoComplete="tel" /></label></div>
-        <div className="field-grid"><label>Entreprise<input name="company" autoComplete="organization" required /></label><label>Fonction<input name="role" autoComplete="organization-title" /></label></div>
-        <div className="field-grid"><label>Pays<input name="country" defaultValue="France" required /></label><label>Calendrier<select name="timeline" required defaultValue=""><option value="" disabled>Choisir</option><option>Maintenant</option><option>Dans 1–3 mois</option><option>Dans 3–6 mois</option><option>Exploration</option></select></label></div>
-        <div className="field-grid"><label>Rôle dans la décision<select name="decisionRole" defaultValue=""><option value="" disabled>Choisir</option><option>Décideur</option><option>Co-décideur</option><option>Porteur du projet</option><option>Exploration</option></select></label><label>Budget à cadrer<select name="budgetReadiness" defaultValue=""><option value="" disabled>Choisir</option><option>Budget disponible</option><option>Budget à cadrer</option><option>Pas encore défini</option></select></label></div>
-        <Consent marketing />
-      </section>
-
-      <div className="form-actions">
-        {step > 0 && <button type="button" className="button button-secondary" onClick={() => setStep((value) => value - 1)}>Retour</button>}
-        <button type="submit" formNoValidate={step < steps.length - 1} className="button button-primary" disabled={state === 'sending'}>{step < steps.length - 1 ? 'Continuer' : state === 'sending' ? 'Envoi…' : 'Envoyer à David'}</button>
+  if (state === 'sent')
+    return (
+      <div className="result-panel large-result">
+        <output>Demande reçue</output>
+        <h2>Merci, votre demande est bien arrivée.</h2>
+        <p>Nous vous répondons par email pour convenir d’un premier échange.</p>
       </div>
-      {state === 'error' && <p className="form-error" role="alert">L’envoi a échoué. Réessayez ou écrivez à david@velok.ai.</p>}
+    );
+  return (
+    <form className="qualification-form" onSubmit={onSubmit}>
+      <Honeypot />
+      <div className="form-step">
+        <h2>Par quoi souhaitez-vous commencer ?</h2>
+        <label>
+          Votre besoin
+          <select
+            name="offerInterest"
+            required
+            value={offerInterest}
+            onChange={(event) => setOfferInterest(event.currentTarget.value)}
+          >
+            <option value="" disabled>
+              Choisir
+            </option>
+            <option value="awareness">Conférence ou sensibilisation</option>
+            <option value="training">Formation pratique</option>
+            <option value="workshop">
+              Atelier et découverte de cas d’usage
+            </option>
+            <option value="integration">Mise en place ou intégration</option>
+            <option value="adoption">
+              Adoption et accompagnement de l’équipe
+            </option>
+            <option value="audit">Audit d’une opération</option>
+            <option value="unsure">Je ne sais pas encore</option>
+          </select>
+        </label>
+        <label>
+          Ce que vous aimeriez faire avancer (facultatif)
+          <textarea
+            name="priorities"
+            rows={4}
+            maxLength={1500}
+            placeholder="Une tâche, un irritant, une équipe à former…"
+          />
+        </label>
+        <p className="field-note">
+          Ne transmettez aucune donnée client ou confidentielle.
+        </p>
+        <label>
+          Nom complet
+          <input
+            name="fullName"
+            type="text"
+            autoComplete="name"
+            required
+            maxLength={200}
+          />
+        </label>
+        <div className="field-grid">
+          <label>
+            Email professionnel
+            <input
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              maxLength={254}
+            />
+          </label>
+          <label>
+            Entreprise
+            <input
+              name="company"
+              autoComplete="organization"
+              required
+              maxLength={200}
+            />
+          </label>
+        </div>
+        <label>
+          Secteur (facultatif)
+          <select name="sector" defaultValue="">
+            <option value="">Non précisé</option>
+            <option>Expertise comptable</option>
+            <option>Conseil</option>
+            <option>Agence</option>
+            <option>Juridique</option>
+            <option>Autre service professionnel</option>
+            <option>Autre</option>
+          </select>
+        </label>
+        <Consent />
+      </div>
+      <div className="form-actions">
+        <button
+          type="submit"
+          className="button button-primary"
+          disabled={state === 'sending'}
+        >
+          {state === 'sending' ? 'Envoi…' : 'Envoyer à David'}
+        </button>
+      </div>
+      {state === 'error' && (
+        <p className="form-error" role="alert">
+          L’envoi a échoué. Réessayez ou écrivez à{' '}
+          <a href="mailto:david@velok.ai">david@velok.ai</a>.
+        </p>
+      )}
     </form>
   );
 }
