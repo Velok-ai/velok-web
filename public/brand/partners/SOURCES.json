@@ -1,0 +1,36 @@
+{
+  "updated": "2026-10-07",
+  "status_basis": "David clarified that the status was inferred from a common CTO with Lemonbrand. VELOK entity eligibility remains unverified.",
+  "display": "Official provider product logos labelled AI technologies. No partner-status claim displayed.",
+  "openai": {
+    "asset": "openai.svg",
+    "source": "https://openai.com/favicon.svg",
+    "sha256": "ed615b8fd9703863918daae6106396a42926fd167abc1bcad4aca860ff0f7ba6"
+  },
+  "claude": {
+    "asset": "claude.png",
+    "source": "https://claude.ai/favicon.ico",
+    "sha256": "3ec0f93ea36e4a43e2f311822fb5ceab1a7cbd2b965aa7f33267de30ea8877ae"
+  },
+  "programme_badges": {
+    "openai_select_reference": "https://lemonbrand.io/brand/partners/OpenAI_Select_Partner_Badge.svg",
+    "displayed": false,
+    "reason": "No company-specific eligibility confirmation for VELOK or explicit OpenAI permission extending Lemonbrand status has been read."
+  },
+  "illustration": {
+    "asset": "../v2/partenariat-agence.webp",
+    "original_archive": "Presentation source: brand/campaigns/2026-10-07/originaux/17-partenariat-agence.png",
+    "approval": "David approved the image and requested adding it to the website on 7 October 2026."
+  },
+  "openai_badge": {
+    "source": "https://lemonbrand.io/brand/partners/OpenAI_Select_Partner_Badge.svg",
+    "sha256": "312a3c4767dcf6a51eab6b73f49143a54dee60a88899f4b0b2ca448547efac86",
+    "status_basis": "Lemonbrand reference asset; VELOK use not yet verified."
+  },
+  "mistral": {
+    "asset": "mistral.svg",
+    "source": "https://mistral.ai/favicon.svg",
+    "sha256": "66ceaf186f2075da38e5a3c2e46fc0015936e0cb57692d1f8ae0ba565354874d",
+    "display": "Official provider product mark, not certification or programme badge."
+  }
+}

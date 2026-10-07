@@ -562,6 +562,11 @@ h1 em {
 .site-footer nav { border-bottom: 1px solid rgb(255 255 255 / 14%); border-top: 1px solid rgb(255 255 255 / 14%); display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); margin-top: 58px; padding: 30px 0; }
 .site-footer nav a { color: rgb(255 255 255 / 72%); font-size: 0.78rem; }
 .site-footer nav a:hover { color: white; }
+.technology-partners { align-items: center; display: flex; flex-wrap: wrap; gap: 16px 24px; margin-top: 28px; }
+.technology-partners > p { color: rgb(255 255 255 / 78%); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; margin: 0; text-transform: uppercase; }
+.technology-partner-marks { display: flex; flex-wrap: wrap; gap: 12px; }
+.technology-partner-marks > span { align-items: center; background: var(--paper); border-radius: 8px; color: var(--midnight); display: inline-flex; font-size: 0.78rem; gap: 9px; padding: 9px 14px; }
+.technology-partner-marks img { display: block; height: 28px; object-fit: contain; width: 28px; }
 .footer-meta { color: rgb(255 255 255 / 48%); display: flex; font-size: 0.72rem; gap: 28px; margin-top: 28px; }
 .footer-meta a { margin-left: auto; }
 
@@ -1349,6 +1354,7 @@ body { background-image: linear-gradient(rgb(16 27 43 / 2.5%) 1px, transparent 1
   padding: 0 max(20px, calc((100vw - min(1320px, calc(100vw - 64px))) / 2)) 18px;
 }
 .page-illustration-band .wide-illustration { margin-top: 0; }
+.wide-illustration.agency-partnership-illustration { aspect-ratio: 3 / 2; }
 
 /* V2 mockup visual system — restored from previous approved concepts */
 .mockup-scene{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#f7fafc,#eef3f8)}
