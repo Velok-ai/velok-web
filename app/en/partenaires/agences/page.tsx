@@ -2,7 +2,7 @@ import { pageMetadata } from '@/lib/en/site-metadata';
 import { LeadLink } from '@/components/lead-link';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PageFrame, PageIntro } from '@/components/en/site-shell';
+import { PageFrame, PageIntro, WideIllustration } from '@/components/en/site-shell';
 
 export const metadata: Metadata = pageMetadata(
   'Agencies — Explore an AI partnership | Velok',
@@ -18,6 +18,13 @@ export default function AgenciesPage() {
         title="A useful first use case, for you or your clients."
         lede="Your team wants to practise with AI, or a client asks for your help. Start with their work to define a first workshop and possible next steps."
       />
+      <section className="page-illustration-band">
+        <WideIllustration
+          className="agency-partnership-illustration"
+          src="/brand/v2/partenariat-agence.webp"
+          alt="The two VELOK characters help an agency professional work through an AI workflow in a bright office."
+        />
+      </section>
       <section className="content-band alt">
         <div className="content-grid">
           <article className="content-card">

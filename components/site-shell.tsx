@@ -1,4 +1,5 @@
 import { VelokWordmark } from '@/components/velok-wordmark';
+import { TechnologyPartners } from '@/components/technology-partners';
 import { LanguageSwitch } from '@/components/language-switch';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -350,6 +351,7 @@ export function SiteFooter() {
           <Link href="/mentions-legales">Mentions légales</Link>
         </div>
       </nav>
+      <TechnologyPartners />
       <div className="footer-meta">
         <span>France · Europe</span>
         <a href="mailto:david@velok.ai">david@velok.ai</a>
