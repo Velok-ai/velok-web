@@ -1,0 +1,103 @@
+{
+  "scope": "Editorial research for /situations and /en/situations; use cases are proposed and illustrative. This is not a list of certified partnerships or deployed integrations.",
+  "software": [
+    {
+      "name": "Pennylane",
+      "source": "https://help.pennylane.com/fr/articles/18770-utiliser-les-api-publiques-pennylane",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Company, Firm and FirmGroup APIs differ. Company API requires Essential or above; cabinet API scope and client authorisation must be checked. Mass integration/OAuth and FirmGroup access can require publisher approval."
+    },
+    {
+      "name": "Cegid Loop",
+      "source": "https://developers.cegid.com/docreference/BusinessUnits/Loop-Api-Management-Docs/index.html",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Publisher partner/cabinet APIs include documents, client files, accounting data and import status. API key, subscription key and Loop Hub configuration are required."
+    },
+    {
+      "name": "Sage Active",
+      "source": "https://developer.sage.com/active/docs/latest/g/quickstart?tab=FR",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Sage Active Public API V2 is GraphQL with OAuth 2.0 and API key. This is specifically Sage Active, not a claim about Sage 100 or all Sage products."
+    },
+    {
+      "name": "Kleos",
+      "source": "https://www.wolterskluwer.com/fr-fr/solutions/kleos/integrations",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Wolters Kluwer confirms an API platform on the French product offer. API is an add-on on the displayed applicable plans; detailed endpoint access must be obtained from publisher. API availability alone does not prove access to every document or matter resource."
+    },
+    {
+      "name": "Clio Manage",
+      "source": "https://docs.developers.clio.com/api-docs/clio-manage/",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "OAuth application, user consent, resource scopes, user roles, regional endpoints and rate limits apply."
+    },
+    {
+      "name": "Microsoft 365",
+      "source": "https://learn.microsoft.com/en-us/graph/overview",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Microsoft Graph covers Outlook, calendar, SharePoint, Teams and other services. Each chosen operation needs the corresponding permission; tenant admin approval can apply."
+    },
+    {
+      "name": "Salesforce",
+      "source": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart.html",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "REST API documented. API access depends on the Salesforce edition, permissions and quotas; no customer account verified."
+    },
+    {
+      "name": "HubSpot",
+      "source": "https://developers.hubspot.com/docs/api-reference/crm-contacts-v3/guide",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "CRM objects API documented. Scopes, plan-specific features and publisher limits must be checked; the example does not claim a native VELOK connector."
+    },
+    {
+      "name": "Notion",
+      "source": "https://developers.notion.com/guides/get-started/overview",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "REST API has connection/token permission boundaries and content must be made accessible to the selected connection."
+    },
+    {
+      "name": "Bullhorn",
+      "source": "https://bullhorn.github.io/rest-api-docs/",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "REST API supports entities and OAuth/session authentication. Customer API enablement and entity permissions must be checked. The limited public jobs API is not used as evidence of unrestricted CRM access."
+    },
+    {
+      "name": "Teamtailor",
+      "source": "https://docs.teamtailor.com/",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Public API documents jobs, candidates and applications; keys, scopes, stack/region and customer permissions must be confirmed."
+    },
+    {
+      "name": "Brevo",
+      "source": "https://developers.brevo.com/docs/getting-started",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Public APIs cover contacts, campaigns, messages and events. Sending or publication still requires the workflow owner’s approval and applicable account capacity."
+    },
+    {
+      "name": "Lucca",
+      "source": "https://developers.luccasoftware.com/home",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Versioned OAuth public API is recommended for new integrations but has incomplete resource coverage and some beta endpoints. Existing v3/v4 APIs remain documented; choose per endpoint."
+    },
+    {
+      "name": "Personio",
+      "source": "https://developer.personio.de/docs/getting-started-with-the-personio-api",
+      "checked_on": "2026-10-19",
+      "verification": "Publisher API documentation or official API offer inspected; no authenticated API call or deployed VELOK integration tested.",
+      "conditions": "Public APIs and customer credentials are documented. Check enabled API access and per-resource readable/writable fields; no automatic candidate assessment proposed."
+    }
+  ]
+}
