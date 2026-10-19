@@ -1,4 +1,5 @@
 import { softwareCatalog, type SoftwareId } from '@/lib/software-ecosystems';
+import Image from 'next/image';
 
 export function SoftwareEcosystem({
   software,
@@ -25,10 +26,15 @@ export function SoftwareEcosystem({
                 rel="noopener noreferrer"
                 aria-label={english ? `${product.name} — publisher API resources (new tab)` : `${product.name} — ressources API éditeur (nouvel onglet)`}
               >
-                {product.name}
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                  <path d="M5 19 19 5M5 5h14v14" />
-                </svg>
+                <span className="software-logo">
+                  <Image src={product.logoSrc} alt="" width={140} height={40} />
+                </span>
+                <span className="software-brand-caption">
+                  {product.name}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                    <path d="M5 19 19 5M5 5h14v14" />
+                  </svg>
+                </span>
               </a>
             </li>
           );
