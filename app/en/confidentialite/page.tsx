@@ -40,11 +40,21 @@ export default function PrivacyPage() {
         </p>
         <h2>Audit engagements</h2>
         <p>
-          Each engagement has a specific framework before any access. An audit
-          may process message metadata and bodies in a temporary working copy.
-          Only the summaries needed are retained after analysis, for the agreed
-          period. Summaries are still treated as potentially personal or
-          confidential.
+          Each engagement has a written framework before any access. The audit
+          reads message metadata and bodies, not attachment contents. Our code
+          only reads: it never sends, moves, changes or deletes a message. The
+          permission Microsoft displays is broader today, until our own
+          read-only application replaces it. AI models are called with zero
+          retention at their hosts.
+        </p>
+        <p>
+          Message content is deleted no later than 30 days after the report is
+          delivered. The report and its figures stay available while you use
+          the service, then everything is deleted within 30 days, except
+          records the law requires. A mailbox connection is removed within 24
+          hours of disconnecting. A deletion request is handled within 7 days,
+          and every deletion is confirmed in writing. The report is still
+          treated as potentially personal or confidential.
         </p>
         <h2>Your rights</h2>
         <p>

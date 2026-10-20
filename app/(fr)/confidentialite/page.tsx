@@ -41,12 +41,23 @@ export default function PrivacyPage() {
         </p>
         <h2>Missions d’audit</h2>
         <p>
-          Une mission fait l’objet d’un cadre spécifique avant tout accès.
-          L’audit peut traiter les métadonnées et le corps des messages dans une
-          copie de travail temporaire. Seules les synthèses nécessaires sont
-          conservées après l’analyse, pour la durée convenue. Les synthèses
-          restent considérées comme potentiellement personnelles ou
-          confidentielles.
+          Une mission fait l’objet d’un cadre écrit avant tout accès. L’audit
+          lit les métadonnées et le corps des messages, sans le contenu des
+          pièces jointes. Notre code ne fait que lire : il n’envoie, ne déplace,
+          ne modifie ni ne supprime aucun message. L’autorisation affichée par
+          Microsoft est aujourd’hui plus large, en attendant notre propre
+          application limitée à la lecture. Les modèles d’IA sont appelés sans
+          conservation chez leurs hébergeurs.
+        </p>
+        <p>
+          Le contenu des messages est supprimé au plus tard 30 jours après la
+          remise du rapport. Le rapport et ses chiffres restent disponibles tant
+          que vous utilisez le service, puis tout est supprimé sous 30 jours,
+          sauf obligation légale. Une connexion à la boîte est retirée sous 24
+          heures après sa déconnexion. Une demande de suppression est traitée
+          sous 7 jours, et chaque suppression est confirmée par écrit. Le
+          rapport reste considéré comme potentiellement personnel ou
+          confidentiel.
         </p>
         <h2>Vos droits</h2>
         <p>
