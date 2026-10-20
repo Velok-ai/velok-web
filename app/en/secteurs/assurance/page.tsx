@@ -18,7 +18,7 @@ export default function InsurancePage() {
     <PageFrame>
       <PageIntro
         kicker="Sector · Insurance"
-        title="A faster file must still be verifiable."
+        title="A claim handled faster must still be verifiable."
         lede="A claim arrives, a document is missing, a status changes, a partner is waiting. Velok makes these steps visible and only automates what can be automated without shifting responsibility."
       />
       <section className="page-illustration-band">
@@ -57,13 +57,13 @@ export default function InsurancePage() {
       <section className="content-band dark">
         <h2>What to check before automating</h2>
         <p>
-          Where the file is waiting, which document is missing, who needs to
+          Where the claim is stuck, which document is missing, who needs to
           decide and which action must remain assigned to a person. Automation
           follows these answers.
         </p>
       </section>
       <section className="page-cta">
-        <h2>Map a real operation.</h2>
+        <h2>Map a real workflow.</h2>
         <a className="button button-cta" href={auditMailto}>
           Talk to David <span aria-hidden="true">↗</span>
         </a>

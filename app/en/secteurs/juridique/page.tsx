@@ -15,8 +15,11 @@ export default function LegalServicesPage() {
       title="Prepare the file without losing the source."
       lede="Research, timelines, summaries, first drafts: AI can help when sources, the authoritative version and the person approving remain explicit."
       flows={[
-        ['Opening a file', 'Collection, classification and missing items.'],
-        ['Research', 'Bounded questions, visible sources and limitations.'],
+        ['Opening a matter', 'Collection, classification and missing items.'],
+        [
+          'Research',
+          'Narrowly defined questions, visible sources and limitations.',
+        ],
         ['Preparation', 'Timelines, summaries and first drafts.'],
         [
           'Review',

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 export const auditMailto =
-  'mailto:david@velok.ai?subject=Operations%20audit%20%E2%80%94%20Velok';
+  'mailto:david@velok.ai?subject=Velok%20operations%20audit';
 
 
 export function VisualElement({ name }: { name: string }) {
@@ -263,7 +263,7 @@ export function SiteHeader() {
         <span>Learn · Implement · Adopt</span>
       </div>
       <header className="site-header">
-        <Link className="brand" href="/en" aria-label="Velok — home">
+        <Link className="brand" href="/en" aria-label="Velok home">
           <VelokWordmark />
         </Link>
 
@@ -314,7 +314,7 @@ export function SiteFooter() {
         <Link
           className="brand brand-light"
           href="/en"
-          aria-label="Velok — home"
+          aria-label="Velok home"
         >
           <VelokWordmark />
         </Link>
@@ -439,7 +439,7 @@ export function SectorPage({
         <p>{principle}</p>
       </section>
       <section className="page-cta">
-        <h2>Start with a real operation.</h2>
+        <h2>Start with a real workflow.</h2>
         <Link
           className="button button-cta"
           href="/en/commencer?source=navigation"

@@ -32,9 +32,9 @@ export default function LearnPage() {
             ))}
           </div>
           <p>
-            Each article draws on identified sources. Trials and observations
-            explain their context and limitations. Illustrative examples are
-            labelled as such.
+            Each article draws on named sources. Trials and observations explain
+            their context and limitations. Illustrative examples are labelled as
+            such.
           </p>
         </section>
         <section className="v2-section v2-soft">
@@ -53,10 +53,10 @@ export default function LearnPage() {
           </div>
         </section>
         <section className="v2-section v2-wrap">
-          <h2>Introduce these uses to your team.</h2>
+          <h2>Bring these ideas to your team.</h2>
           <p>
-            A session provides a way to examine specific tasks, understand what
-            is changing and discuss possible first use cases.
+            A session lets your team look at specific tasks, understand what is
+            changing and discuss possible first use cases.
           </p>
           <Link
             className="button button-primary"

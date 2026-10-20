@@ -6,7 +6,7 @@ import { PageFrame } from '@/components/en/site-shell';
 import { parcours, editorialStages } from '@/lib/en/v2-parcours';
 
 export const metadata: Metadata = pageMetadata(
-  'Velok — Useful AI. Without the complexity.',
+  'Velok: Useful AI. Without the complexity.',
   'Talks, training, workshops and implementation: Velok helps your team find a useful first AI use case and adopt it in their work.',
   '/en',
 );
@@ -26,7 +26,7 @@ const situations = [
   [
     'Prepare a summary',
     'Agencies and consulting',
-    'Bring together the information in a brief for an initial review, then apply professional judgement.',
+    'Pull the information together into a brief for a first review, then apply professional judgement.',
     '/en/situations',
   ],
 ];
@@ -222,8 +222,8 @@ export default function Home() {
             </h2>
             <p>
               A specific task, an expected result, a first trial. The team
-              learns to take back what needs their judgement and adjust what
-              they delegate to AI.
+              learns to keep what needs their judgement and to adjust what they
+              hand over to AI.
             </p>
             <Link className="text-link" href="/en/atelier-agents">
               Explore the AI agents workshop →
@@ -248,13 +248,13 @@ export default function Home() {
               <p className="section-kicker">Implementation &amp; adoption</p>
               <h2>A solution becomes useful when the team uses it.</h2>
               <p>
-                We implement the first use case in suitable tools, test it on
+                We implement the first use case in the right tools, test it on
                 real work and explain how to use it. Feedback from the team
                 helps refine it before extending it.
               </p>
               <p>
-                You retain the accounts, operating rules and documentation
-                needed to take it over.
+                You keep the accounts, operating rules and documentation needed
+                to run it yourselves.
               </p>
               <Link className="text-link" href="/en/methode#adopter">
                 Explore the implementation path →
@@ -325,12 +325,11 @@ export default function Home() {
               <article>
                 <h3>Human judgement</h3>
                 <p>
-                  A person takes over sensitive, ambiguous or unusual
-                  situations.
+                  A person handles sensitive, ambiguous or unusual situations.
                 </p>
               </article>
               <article>
-                <h3>A process you can take over</h3>
+                <h3>A process you can run yourselves</h3>
                 <p>
                   Rules and documentation the team can review and use
                   independently.
@@ -346,8 +345,8 @@ export default function Home() {
           <p className="section-kicker">Your contact in France</p>
           <h2>What would be a useful first use case for your team?</h2>
           <p>
-            David Desbons Lauvaux, who co-leads Velok, responds directly. You do
-            not need to have chosen a tool: start with a task, a recurring
+            David Desbons Lauvaux, who co-leads Velok, replies personally. You
+            do not need to have chosen a tool: start with a task, a recurring
             frustration or a team you want to help.
           </p>
           <div className="v2-actions">

@@ -9,7 +9,7 @@ import {
 } from '@/components/en/site-shell';
 
 export const metadata: Metadata = pageMetadata(
-  'Accounting | Velok',
+  'AI for accounting firms | Velok',
   'Follow a document from collection to review, without confusing received with usable.',
   '/en/secteurs/expertise-comptable',
 );
@@ -19,7 +19,7 @@ export default function AccountingPage() {
     <PageFrame>
       <PageIntro
         kicker="Accounting · partners & operations leaders"
-        title="The document is received. The file is not moving."
+        title="The document has arrived. The file is still stuck."
         lede="A document may be received, misfiled, incomplete or unusable for the period concerned. We follow the file through to review to see where follow-ups and rework begin."
       />
       <section className="page-illustration-band">
@@ -100,7 +100,10 @@ export default function AccountingPage() {
         </div>
       </section>
       <section className="page-cta">
-        <h2>Let’s take a collection process. Follow a document to review.</h2>
+        <h2>
+          Pick a document collection process. We will follow a document through
+          to review.
+        </h2>
         <Link className="button button-cta" href="/en/commencer">
           Examine document collection with David{' '}
           <span aria-hidden="true">→</span>

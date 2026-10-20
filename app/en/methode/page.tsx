@@ -6,7 +6,7 @@ import { PageFrame, PageIntro } from '@/components/en/site-shell';
 
 export const metadata: Metadata = pageMetadata(
   'Understand the workflow before choosing the tool | Velok',
-  'Understand your team’s steps, tools and handovers, then choose a first AI use case to try and take over.',
+  'Understand your team’s steps, tools and handovers, then choose a first AI use case to try and run yourselves.',
   '/en/methode',
 );
 const steps = [
@@ -16,7 +16,7 @@ const steps = [
   ],
   [
     'Learn',
-    'Practise with tools on a task from your profession. Learn to review and check the result.',
+    'Practise with tools on a task from your own line of work. Learn to review and check the output.',
   ],
   ['Identify', 'Choose a first use case, its owner and a baseline measure.'],
   [
@@ -51,8 +51,8 @@ export default function MethodPage() {
               team can already do.
             </p>
             <p>
-              Understand → Learn → Identify → Implement → Adopt → Expand: these
-              six steps are not six compulsory purchases.
+              Understand → Learn → Identify → Implement → Adopt → Expand: you do
+              not have to buy all six steps.
             </p>
           </div>
           <figure className="v2-team-scene">
@@ -99,8 +99,8 @@ export default function MethodPage() {
               <h3>What the next person needs to receive.</h3>
               <p>
                 Authorised notes, a follow-up template and someone who knows the
-                file. We observe the current preparation process and the rework
-                it requires.
+                client. We observe the current preparation process and the
+                rework it requires.
               </p>
             </article>
             <article>
@@ -114,7 +114,7 @@ export default function MethodPage() {
             </article>
             <article>
               <span className="v2-number">03 · Use the method again</span>
-              <h3>The next file, with the team.</h3>
+              <h3>The next meeting, with the team.</h3>
               <p>
                 A colleague uses the instructions and checklist on another
                 meeting. We examine the corrections needed and decide what
@@ -124,8 +124,8 @@ export default function MethodPage() {
           </div>
           <p>
             You keep the instructions, a template and the professional checks.
-            We agree on an owner, an observation criterion and the next
-            decision: continue, adjust, stop or scope a separate integration.
+            We agree on an owner, a measure to watch and the next decision:
+            continue, adjust, stop or scope a separate integration.
           </p>
           <p className="v2-note">
             This example explains the method. It does not describe a client
@@ -144,15 +144,15 @@ export default function MethodPage() {
             </div>
             <div>
               <p>
-                A workshop produces a practice to try and can be useful on its
-                own. Before implementation, we agree on a deliverable, the
-                people responsible and how to observe its value. Results
-                determine what happens next; they are not assumed.
+                A workshop gives the team a practice to try, and it can be
+                useful on its own. Before implementation, we agree on a
+                deliverable, the people responsible and how to judge its value.
+                Results determine what happens next; they are not assumed.
               </p>
               <p>
-                We favour an existing professional tool. An integration connects
+                We favour existing professional tools. An integration connects
                 steps when needed. An agent or custom code is only included when
-                it adds useful value.
+                it adds real value.
               </p>
               <Link className="text-link" href="/en/securite">
                 Read the implementation principles →
@@ -171,9 +171,9 @@ export default function MethodPage() {
           </div>
           <div>
             <p>
-              We examine how the team uses the approach on subsequent files:
-              quality, preparation time or corrections needed. The criterion is
-              chosen together before the trial.
+              We examine how the team uses the approach on later work: quality,
+              preparation time or corrections needed. The criterion is chosen
+              together before the trial.
             </p>
             <p>
               Access, approvals and handover materials are documented for each

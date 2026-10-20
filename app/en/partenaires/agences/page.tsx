@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { PageFrame, PageIntro, WideIllustration } from '@/components/en/site-shell';
 
 export const metadata: Metadata = pageMetadata(
-  'Agencies — Explore an AI partnership | Velok',
+  'Agencies: explore an AI partnership | Velok',
   'Train your team and scope a useful first use case for your clients with Velok.',
   '/en/partenaires/agences',
 );
@@ -22,7 +22,7 @@ export default function AgenciesPage() {
         <WideIllustration
           className="agency-partnership-illustration"
           src="/brand/v2/partenariat-agence.webp"
-          alt="The two VELOK characters help an agency professional work through an AI workflow in a bright office."
+          alt="The two Velok characters help an agency professional work through an AI workflow in a bright office."
         />
       </section>
       <section className="content-band alt">
@@ -31,7 +31,7 @@ export default function AgenciesPage() {
             <h3>For your team</h3>
             <p>
               Prepare a brief, summarise feedback or reuse proposals: choose a
-              task, learn a method and observe its use.
+              task, learn a method and see how it is used.
             </p>
             <Link className="text-link" href="/en/atelier-agents">
               Explore the workshops →
@@ -44,7 +44,7 @@ export default function AgenciesPage() {
               the workshop, handles any integration and supports adoption.
             </p>
             <Link className="text-link" href="/en/ai-sherpa">
-              Explore team support →
+              Explore AI Sherpa team support →
             </Link>
           </article>
         </div>

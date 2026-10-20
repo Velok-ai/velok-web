@@ -2,12 +2,12 @@ export const parcours = [
   [
     'Understand',
     'Talks and awareness sessions',
-    'Give the team reference points to distinguish useful uses from promises.',
+    'Give the team clear reference points to tell genuinely useful applications from empty promises.',
   ],
   [
     'Learn',
     'Practical training',
-    'Practise with their tasks, understand limitations and learn to review a result.',
+    'Practise on their own tasks, understand the limitations and learn to review the output.',
   ],
   [
     'Identify',
@@ -17,14 +17,18 @@ export const parcours = [
   [
     'Implement',
     'Tools and integrations',
-    'Configure an appropriate response: an existing tool, workflow, agent or development when needed.',
+    'Set up the right solution: an existing tool, a workflow, an agent or custom development when needed.',
   ],
   [
     'Adopt',
     'Team support',
-    'Test on real work, explain how it works and adjust with users.',
+    'Test it on real work, explain how it works and adjust it with the people using it.',
   ],
-  ['Expand', 'New use cases', 'Build on what works to expand uses gradually.'],
+  [
+    'Expand',
+    'New use cases',
+    'Build on what works and extend it step by step.',
+  ],
 ] as const;
 export const editorialStages = [
   ['What is changing', 'A fact or development, explained with its sources.'],
@@ -33,8 +37,8 @@ export const editorialStages = [
     'Concrete implications for a professional services team.',
   ],
   [
-    'What we have tested / observed',
+    'What we have tested or observed',
     'Documented trials and observations, with their limitations.',
   ],
-  ['What your team can try', 'A method to form your own judgement.'],
+  ['What your team can try', 'A method for forming your own judgement.'],
 ] as const;

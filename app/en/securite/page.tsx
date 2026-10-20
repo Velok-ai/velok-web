@@ -20,7 +20,7 @@ export default function SecurityPage() {
       <PageIntro
         kicker="Security & data"
         title="Limited access. Traceable decisions."
-        lede="Before connecting an AI tool, we define accessible data, permissions and authorised actions. Human approvals, activity records and retention rules are part of the scope."
+        lede="Before connecting an AI tool, we define which data it can access, its permissions and the actions it is allowed to take. Human approvals, activity records and retention rules are part of the scope."
       />
       <section className="page-illustration-band">
         <WideIllustration
