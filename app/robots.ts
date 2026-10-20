@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/3-etage', '/confidentialite', '/mentions-legales'],
+      disallow: ['/LVS', '/3-etage', '/confidentialite', '/mentions-legales'],
     },
     sitemap: 'https://velok.ai/sitemap.xml',
   };
