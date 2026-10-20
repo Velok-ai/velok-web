@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { SectorPage } from '@/components/en/site-shell';
 
 export const metadata: Metadata = pageMetadata(
-  'AI and teams — Professional services | Velok',
+  'AI for professional services teams | Velok',
   'AI workshops and support for your team’s proposals, summaries and handovers.',
   '/en/secteurs/services-professionnels',
 );
@@ -12,8 +12,8 @@ export default function ProfessionalServicesPage() {
   return (
     <SectorPage
       kicker="Professional services"
-      title="AI working for your client work."
-      lede="Consulting, engineering firms and services: try AI on a specific task before choosing an integration."
+      title="Put AI to work on your client work."
+      lede="Consultancies, engineering firms and other service firms: try AI on a specific task before choosing an integration."
       flows={[
         [
           'Proposals',
@@ -21,7 +21,7 @@ export default function ProfessionalServicesPage() {
         ],
         [
           'Summaries',
-          'Prepare meeting notes and points to confirm using an example suited to the workshop.',
+          'Prepare meeting notes and the points to confirm, working on an example chosen for the workshop.',
         ],
         [
           'Handovers',

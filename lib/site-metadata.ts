@@ -12,7 +12,7 @@ export function pageMetadata(
     width: 1200,
     height: 630,
     alt: english
-      ? 'Velok — Useful AI. Without the complexity.'
+      ? 'Velok: Useful AI. Without the complexity.'
       : 'Velok — L’IA utile. Sans complexité.',
   };
   return {

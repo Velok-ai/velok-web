@@ -71,8 +71,8 @@ function Consent({ marketing = false }: { marketing?: boolean }) {
       <label className="check-row">
         <input name="privacyAccepted" type="checkbox" required />{' '}
         <span>
-          I agree to Velok using this information to handle my request.{' '}
-          <Link href="/en/confidentialite">Privacy</Link>.
+          I agree to Velok using this information to handle my request. See our{' '}
+          <Link href="/en/confidentialite">privacy policy</Link>.
         </span>
       </label>
     </div>
@@ -130,7 +130,7 @@ const safetyQuestions = [
   ['owner', 'Does an internal owner approve each use case?'],
   ['accounts', 'Are work accounts separate from personal accounts?'],
   ['data', 'Do you know which data must never be entered into an AI tool?'],
-  ['access', 'Are agent access and permissions documented?'],
+  ['access', 'Are your agents’ access rights and permissions documented?'],
   ['trace', 'Can you trace important actions and approvals?'],
 ] as const;
 
@@ -288,7 +288,7 @@ export function PrequalificationForm({
     return (
       <div className="result-panel large-result">
         <output>Request received</output>
-        <h2>Thank you, your request has arrived.</h2>
+        <h2>Thank you, we have received your request.</h2>
         <p>We will reply by email to arrange a first conversation.</p>
       </div>
     );
@@ -313,12 +313,12 @@ export function PrequalificationForm({
             <option value="workshop">Workshop and use-case discovery</option>
             <option value="integration">Implementation or integration</option>
             <option value="adoption">Adoption and team support</option>
-            <option value="audit">Audit an operation</option>
+            <option value="audit">Audit a workflow</option>
             <option value="unsure">I’m not sure yet</option>
           </select>
         </label>
         <label>
-          What you would like to move forward (optional)
+          What you would like to make progress on (optional)
           <textarea
             name="priorities"
             rows={4}

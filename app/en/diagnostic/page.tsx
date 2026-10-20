@@ -5,7 +5,7 @@ import { SafetyDiagnostic } from '@/components/en/lead-forms';
 
 export const metadata: Metadata = pageMetadata(
   'AI security self-assessment | Velok',
-  'Five questions to assess your initial AI safeguards.',
+  'Five questions to check your basic AI safeguards.',
   '/en/diagnostic',
 );
 

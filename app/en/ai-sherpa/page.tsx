@@ -9,7 +9,7 @@ import {
 } from '@/components/en/site-shell';
 
 export const metadata: Metadata = pageMetadata(
-  'AI Sherpa — Support your team | Velok',
+  'AI Sherpa: support for your team | Velok',
   'Practical support to choose AI uses, train your team and establish a first repeatable use case.',
   '/en/ai-sherpa',
 );
@@ -21,7 +21,7 @@ export default function SherpaPage() {
         <PageIntro
           kicker="AI Sherpa · Team support"
           title="A guide to help your team move forward."
-          lede="You have questions, tools or initial trials. We help you choose the next useful action and put it into practice."
+          lede="You have questions, a few tools or early experiments. We help you choose the next useful action and put it into practice."
         />
         <section className="page-illustration-band">
           <WideIllustration
@@ -30,7 +30,7 @@ export default function SherpaPage() {
           />
         </section>
         <section className="content-band alt">
-          <h2>Advice that connects with the work.</h2>
+          <h2>Advice grounded in the work.</h2>
           <div className="content-grid">
             <article className="content-card element-card">
               <h3>Choose</h3>
@@ -43,7 +43,7 @@ export default function SherpaPage() {
               <h3>Practise</h3>
               <p>
                 Working sessions with the people involved. A method they can
-                reuse in their profession.
+                reuse in their own work.
               </p>
             </article>
             <article className="content-card element-card">
@@ -57,7 +57,7 @@ export default function SherpaPage() {
               <h3>Make it last</h3>
               <p>
                 Adjust what gets in the way, hand over the practice and decide
-                what follows with the team’s owner.
+                what comes next with the person responsible in the team.
               </p>
             </article>
           </div>

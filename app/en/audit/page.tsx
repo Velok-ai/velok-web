@@ -43,8 +43,8 @@ export default function AuditPage() {
             <VisualElement name="13-process-map" />
             <h3>Where work stalls</h3>
             <p>
-              One step waits for another, information arrives elsewhere, an
-              approval has no owner.
+              One step waits for another, information arrives in the wrong
+              place, an approval has no owner.
             </p>
           </article>
           <article className="content-card element-card">
@@ -59,7 +59,7 @@ export default function AuditPage() {
             <VisualElement name="19-priority-marker" />
             <h3>What to change first</h3>
             <p>
-              A rule, an owner and an expected result before choosing an
+              A rule, an owner and an expected result before choosing any
               automation.
             </p>
           </article>
@@ -83,7 +83,7 @@ export default function AuditPage() {
         </p>
       </section>
       <section className="page-cta">
-        <h2>Let’s take a real workflow. Follow it to the bottleneck.</h2>
+        <h2>Pick a real workflow. We will follow it to the bottleneck.</h2>
         <Link className="button button-cta" href="/en/commencer">
           Examine a process with David <span aria-hidden="true">→</span>
         </Link>

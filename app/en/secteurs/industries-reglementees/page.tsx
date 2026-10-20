@@ -19,7 +19,7 @@ export default function RegulatedIndustriesPage() {
       <PageIntro
         kicker="Regulated industries"
         title="Speed does not remove the need for evidence."
-        lede="We adapt tools, access and approval to the real workflow and your obligations, rather than a generic recipe."
+        lede="We adapt tools, access and approval to the real workflow and your obligations, rather than applying a generic recipe."
       />
       <section className="page-illustration-band">
         <WideIllustration
@@ -32,7 +32,9 @@ export default function RegulatedIndustriesPage() {
         <div className="content-grid">
           <article className="content-card">
             <h3>Which data?</h3>
-            <p>Origin, sensitivity, destination and useful retention period.</p>
+            <p>
+              Origin, sensitivity, destination and necessary retention period.
+            </p>
           </article>
           <article className="content-card">
             <h3>Which action?</h3>
@@ -44,7 +46,7 @@ export default function RegulatedIndustriesPage() {
           </article>
           <article className="content-card">
             <h3>Which evidence?</h3>
-            <p>Sources, version, decision and event to record.</p>
+            <p>Sources, version, decision and what to log.</p>
           </article>
         </div>
       </section>

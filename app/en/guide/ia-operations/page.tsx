@@ -30,12 +30,12 @@ export default function OperationsGuidePage() {
           ],
           [
             '16-control-dial',
-            'Set the role’s boundaries',
+            'Define the agent’s role',
             'Define what the agent can read, prepare or trigger.',
           ],
           [
             '01-approval-gate',
-            'Place the approval step',
+            'Decide where approval sits',
             'Keep a person responsible for sensitive decisions and external outputs.',
           ],
           [
@@ -46,7 +46,7 @@ export default function OperationsGuidePage() {
           [
             '17-trace-ledger',
             'Keep the evidence',
-            'Connect sources, outputs, corrections and approvals.',
+            'Link sources, outputs, corrections and approvals.',
           ],
           [
             '15-ownership-token',
@@ -64,7 +64,7 @@ export default function OperationsGuidePage() {
       <section className="audit-disclosure">
         <h2>OpenAI, Anthropic or another provider?</h2>
         <p>
-          The provider follows the need. We favour professional plans and
+          The need decides the provider. We favour professional plans and
           settings suited to the European context, then document choices, access
           and limitations with your team.
         </p>
