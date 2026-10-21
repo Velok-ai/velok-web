@@ -9,8 +9,8 @@ import {
 } from '@/components/en/site-shell';
 
 export const metadata: Metadata = pageMetadata(
-  'Operations audit | Velok',
-  'Follow a real workflow before deciding what to automate, integrate or leave with the team.',
+  'Optimise — Inbox audit | Velok',
+  'A free audit of one inbox to identify a useful first workflow, then tailor the next steps to your needs.',
   '/en/audit',
 );
 
@@ -18,9 +18,9 @@ export default function AuditPage() {
   return (
     <PageFrame>
       <PageIntro
-        kicker="Audit · operations"
-        title="Before automating, let’s follow a real workflow."
-        lede="A request arrives, someone responds, a document is missing, an approval is waiting. We follow the workflow to the point where it stalls, then the team confirms what needs to change."
+        kicker="Optimise · Inbox audit"
+        title="One inbox. A first workflow to improve."
+        lede="The free audit covers one inbox. We identify recurring requests, follow-ups and approvals, then choose the first workflow to improve with you. Not sure where to start? This is our recommended starting point."
       />
       <section className="page-illustration-band">
         <WideIllustration
@@ -29,7 +29,7 @@ export default function AuditPage() {
         />
       </section>
       <section className="content-band alt">
-        <h2>What a real workflow reveals.</h2>
+        <h2>What an inbox reveals about real work.</h2>
         <div className="content-grid">
           <article className="content-card element-card">
             <VisualElement name="17-trace-ledger" />
@@ -59,8 +59,9 @@ export default function AuditPage() {
             <VisualElement name="19-priority-marker" />
             <h3>What to change first</h3>
             <p>
-              A rule, an owner and an expected result before choosing an
-              automation.
+              A first workflow identified by the audit, such as following up on
+              missing documents. A rule, an owner and an expected result before
+              choosing an automation.
             </p>
           </article>
         </div>
@@ -68,26 +69,36 @@ export default function AuditPage() {
       <section className="audit-disclosure">
         <h2>A written scope before any access.</h2>
         <p>
-          Data to be read, exclusions, permissions, retention, providers and
-          hosting are specified before any connection. The scope is documented
-          before access is granted.
+          Analysis is read-only within the agreed scope. Data to be read,
+          exclusions, permissions actually requested by the provider, retention,
+          providers and hosting are specified in writing before any connection.
+          The audit does not include sending or modifying emails.
         </p>
         <Link href="/en/securite">See the security framework →</Link>
       </section>
       <section className="content-band dark concise-band">
-        <h2>The intended outcome: an operational decision.</h2>
+        <h2>A concrete deliverable, then tailored next steps.</h2>
         <p>
-          The goal of scoping is not an abstract score. It is to choose a
-          workflow, clarify its exceptions, assign responsibilities and decide
-          what should be automated, if anything.
+          The audit deliverable describes the observed process, its bottlenecks
+          and the first recommended workflow. We agree on the timeline before
+          starting. If you continue, the scope and history depth are tailored to
+          your situation, then implementation of that first workflow is scoped
+          separately. A custom agent only follows an audit or AI Sherpa support,
+          when the need warrants it.
         </p>
       </section>
       <section className="page-cta">
-        <h2>Let’s take a real workflow. Follow it to the bottleneck.</h2>
-        <Link className="button button-cta" href="/en/commencer">
-          Examine a process with David <span aria-hidden="true">→</span>
+        <h2>Let’s start with one inbox.</h2>
+        <p>
+          To organise your team’s use of AI, you can also start directly with
+          AI Sherpa. An audit is not a mandatory prerequisite for workshops.
+        </p>
+        <Link href="/en/ai-sherpa">Discover AI Sherpa →</Link>
+        <Link className="button button-cta" href="/en/commencer?offre=audit">
+          Discuss the free audit with David <span aria-hidden="true">→</span>
         </Link>
       </section>
     </PageFrame>
   );
 }
+

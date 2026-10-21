@@ -9,8 +9,8 @@ import {
 } from '@/components/en/site-shell';
 
 export const metadata: Metadata = pageMetadata(
-  'AI Sherpa — Support your team | Velok',
-  'Practical support to choose AI uses, train your team and establish a first repeatable use case.',
+  'Organise — Monthly AI Sherpa | Velok',
+  'Monthly support grounded in your team’s real work, with a concrete first project and adoption tracking.',
   '/en/ai-sherpa',
 );
 
@@ -19,9 +19,9 @@ export default function SherpaPage() {
     <PageFrame>
       <div className="v2-home">
         <PageIntro
-          kicker="AI Sherpa · Team support"
-          title="A guide to help your team move forward."
-          lede="You have questions, tools or initial trials. We help you choose the next useful action and put it into practice."
+          kicker="Organise · Monthly AI Sherpa"
+          title="Move your team’s use of AI forward, every month."
+          lede="AI Sherpa provides monthly support: we start with real work, choose a first project with the team and track adoption. Not just advice about tools, but a practice the team can reuse."
         />
         <section className="page-illustration-band">
           <WideIllustration
@@ -42,15 +42,16 @@ export default function SherpaPage() {
             <article className="content-card element-card">
               <h3>Practise</h3>
               <p>
-                Working sessions with the people involved. A method they can
-                reuse in their profession.
+                Working sessions on the first project with the people involved.
+                A method they can reuse in their profession.
               </p>
             </article>
             <article className="content-card element-card">
               <h3>Observe</h3>
               <p>
-                Compare work before and after the trial: time, quality, rework
-                and actual use. Choose the measure together.
+                Track adoption each month and compare work before and after the
+                trial: time, quality, rework and actual use. Choose the measures
+                together.
               </p>
             </article>
             <article className="content-card element-card">
@@ -68,20 +69,30 @@ export default function SherpaPage() {
             Advice and training may be enough for your team. If an integration
             or automation becomes useful, we scope it separately: deliverable,
             owner, access needed and success criteria. Existing tools come
-            before custom development.
+            before custom development. A custom agent only follows AI Sherpa or
+            an audit, when the need warrants it. Any data access is scoped in
+            writing before a connection is made.
           </p>
           <Link href="/en/methode">See how we work →</Link>
         </section>
         <section className="content-band alt">
-          <h2>You have already tried AI. What next?</h2>
+          <h2>A first project, a deliverable, a rhythm.</h2>
           <p>
-            The starting point may be an underused tool, a recurring task or a
-            difficult handover between two people. We choose a first trial with
-            the team, then decide what follows based on actual use.
+            For example: help the team prepare a meeting summary from its notes.
+            The deliverable is a reusable method, tested on a real case, with
+            verification guidelines and usage tracking. We choose the project
+            and agree on its timeline together, then review adoption, blockers
+            and the next improvement each month.
           </p>
         </section>
         <section className="page-cta">
-          <h2>Find the next useful action.</h2>
+          <h2>Organise a first useful practice.</h2>
+          <p>
+            You can start directly with AI Sherpa or a workshop, without a prior
+            audit. If you are unsure which workflow to improve,
+            <Link href="/en/audit"> the free audit of one inbox</Link> is our
+            recommended starting point.
+          </p>
           <LeadLink
             className="button button-cta"
             href="/en/commencer?offre=sherpa"
@@ -93,3 +104,4 @@ export default function SherpaPage() {
     </PageFrame>
   );
 }
+

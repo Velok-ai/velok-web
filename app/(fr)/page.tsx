@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PageFrame } from '@/components/site-shell';
-import { parcours, editorialStages } from '@/lib/v2-parcours';
+import { editorialStages } from '@/lib/v2-parcours';
 
 export const metadata: Metadata = pageMetadata(
-  'Velok — L’IA utile. Sans complexité.',
-  'Conférences, formations, ateliers et mise en place : Velok aide vos équipes à trouver un premier usage utile de l’IA et à l’adopter dans leur travail.',
+  'Velok — Votre département IA.',
+  'Développer votre activité, organiser le travail et optimiser vos opérations, avec un socle commun pour encadrer les usages IA.',
   '/',
 );
 const situations = [
@@ -39,17 +39,14 @@ export default function Home() {
           <div>
             <p className="section-kicker">IA, humain &amp; équipes</p>
             <h1>
-              L’IA utile.
-              <br />
-              <em>Sans complexité.</em>
+              Votre<br />
+              <em>département IA.</em>
             </h1>
             <p className="v2-mission">
               La puissance de l’IA au service de vos équipes.
             </p>
             <p>
-              Nous formons vos équipes, choisissons avec elles un premier usage,
-              puis le mettons en place dans leurs outils et les accompagnons
-              pendant qu’il s’installe.
+              Développer votre activité, organiser le travail de vos équipes ou optimiser un flux récurrent. Nous partons d’un premier chantier concret et accompagnons son adoption dans votre quotidien.
             </p>
             <div className="v2-actions">
               <Link
@@ -74,6 +71,28 @@ export default function Home() {
             />
             <figcaption>Apprendre ensemble. Partir du travail réel.</figcaption>
           </figure>
+        </section>
+        <section className="v2-section v2-navy" id="parcours">
+          <div className="v2-wrap">
+            <p className="section-kicker">Trois portes d’entrée</p>
+            <h2>Une priorité.<br /><em>Un premier chantier concret.</em></h2>
+            <p className="v2-lede">Choisissez le besoin qui compte aujourd’hui. Trois portes d’entrée, pas six étapes obligatoires.</p>
+            <ol className="v2-parcours">
+              <li><span className="v2-number">01</span><h3>Développer</h3><strong>Une première campagne de prospection</strong><p>Cibler les bons comptes, préparer les séquences, organiser le traitement des réponses et préparer les rendez-vous.</p><p>Livrable : une campagne prête à valider et des règles de traitement des réponses.</p><p className="v2-note">Calendrier défini ensemble.</p><Link className="text-link" href="/developper">Voir le premier chantier →</Link></li>
+              <li><span className="v2-number">02</span><h3>Organiser</h3><strong>AI Sherpa, chaque mois</strong><p>Installer l’IA dans le travail réel de l’équipe, pratiquer ensemble et suivre l’adoption.</p><p>Livrable : un premier usage métier et un suivi de son adoption.</p><p className="v2-note">Accompagnement mensuel, périmètre défini ensemble.</p><Link className="text-link" href="/ai-sherpa">Découvrir AI Sherpa →</Link></li>
+              <li><span className="v2-number">03</span><h3>Optimiser</h3><strong>Un audit de boîte mail, puis un premier flux</strong><p>Repérer où le travail se bloque, puis mettre en place le premier workflow révélé par l’audit.</p><p>Livrable : un rapport d’audit et un premier workflow priorisé.</p><p className="v2-note">Calendrier défini selon la boîte et l’historique retenus.</p><Link className="text-link" href="/audit">Découvrir l’audit de boîte mail →</Link></li>
+            </ol>
+            <aside className="v2-foundation" aria-labelledby="foundation-title">
+              <div><p className="section-kicker">Le socle commun</p><h3 id="foundation-title">Sécuriser</h3><p>Une politique d’usage IA, des accès cadrés et une validation humaine soutiennent chaque chantier. Un guide, un modèle et une page de validation équipe à construire avec votre responsable IT.</p></div>
+              <Link className="text-link" href="/securite">Découvrir le socle →</Link>
+            </aside>
+          </div>
+        </section>
+        <section className="v2-section v2-soft">
+          <div className="v2-wrap v2-split">
+            <div><p className="section-kicker">Vous hésitez entre les trois ?</p><h2>Le travail réel indique la bonne porte.</h2><p>Commencez par l’audit gratuit d’une boîte mail pour identifier un premier chantier utile. Le périmètre et l’historique d’une suite éventuelle sont définis sur mesure. L’audit n’est pas un préalable obligatoire à un atelier.</p><Link className="text-link" href="/audit">Trouver mon point de départ →</Link></div>
+            <div><h3>Un besoin déjà clair ?</h3><p>Démarrez directement avec AI Sherpa ou un atelier pratique. Les agents sur mesure viennent après un audit ou un accompagnement Sherpa qui en confirme l’utilité.</p><Link className="text-link" href="/atelier-agents">Découvrir l’atelier →</Link></div>
+          </div>
         </section>
         <section className="v2-section v2-soft">
           <div className="v2-wrap">
@@ -145,71 +164,6 @@ export default function Home() {
             Ces situations illustrent des usages possibles ; elles ne
             constituent pas des résultats clients.
           </p>
-        </section>
-        <section className="v2-section v2-navy" id="parcours">
-          <div className="v2-wrap">
-            <p className="section-kicker">Votre parcours</p>
-            <h2>
-              Commencez là où
-              <br />
-              <em>en est votre équipe.</em>
-            </h2>
-            <p className="v2-lede">
-              Six étapes liées. Chacune peut servir de point d’entrée ; chacune
-              prépare la suivante.
-            </p>
-            <ol className="v2-parcours">
-              {parcours.map(([title, offer, body], i) => (
-                <li key={title}>
-                  <span className="v2-number">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <h3>{title}</h3>
-                  <strong>{offer}</strong>
-                  <p>{body}</p>
-                  <Link
-                    className="text-link"
-                    href={
-                      i < 3
-                        ? `/commencer?besoin=${['awareness', 'training', 'workshop'][i]}&source=parcours-${i + 1}`
-                        : [
-                            '/methode#mettre-en-place',
-                            '/commencer?besoin=adoption&source=parcours-5',
-                            '/methode#adopter',
-                          ][i - 3]
-                    }
-                  >
-                    {
-                      [
-                        'Organiser une session',
-                        'Former une équipe',
-                        'Choisir un premier usage',
-                        'Voir la mise en place',
-                        'Accompagner l’adoption',
-                        'Étendre les usages',
-                      ][i]
-                    }{' '}
-                    →
-                  </Link>
-                  {i === 1 && (
-                    <p>
-                      <Link className="text-link" href="/atelier-agents">
-                        Découvrir l’atelier agents →
-                      </Link>
-                    </p>
-                  )}
-                </li>
-              ))}
-            </ol>
-            <div className="v2-actions">
-              <Link className="button button-cta" href="/commencer">
-                Choisir un point de départ →
-              </Link>
-              <Link className="text-link" href="/audit">
-                Examiner une opération avec l’audit →
-              </Link>
-            </div>
-          </div>
         </section>
         <section className="v2-section v2-wrap v2-split">
           <div>
@@ -373,3 +327,4 @@ export default function Home() {
     </PageFrame>
   );
 }
+

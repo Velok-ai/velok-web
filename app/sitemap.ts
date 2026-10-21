@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 // Client presentations /LVS and /3-etage are intentionally excluded (noindex).
 const routes = [
   '',
+  '/developper',
   '/atelier-agents',
   '/audit',
   '/commencer',
@@ -43,3 +44,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 }
+

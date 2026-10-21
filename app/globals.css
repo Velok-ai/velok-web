@@ -1448,3 +1448,10 @@ body { background-image: none; }
 /* Keep language, contact and mobile menu together in the existing header grid. */
 .header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
 .language-switch { flex: none; white-space: nowrap; }
+
+
+/* Three entry points share one security foundation. */
+.v2-foundation { border-top: 1px solid rgb(255 255 255 / 28%); padding-top: 32px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+.v2-foundation p { max-width: 780px; }
+.v2-foundation h3 { font-size: 30px; }
+@media (max-width: 900px) { .v2-foundation { grid-template-columns: 1fr; gap: 12px; } }

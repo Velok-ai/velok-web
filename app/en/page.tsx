@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PageFrame } from '@/components/en/site-shell';
-import { parcours, editorialStages } from '@/lib/en/v2-parcours';
+import { editorialStages } from '@/lib/en/v2-parcours';
 
 export const metadata: Metadata = pageMetadata(
-  'Velok — Useful AI. Without the complexity.',
-  'Talks, training, workshops and implementation: Velok helps your team find a useful first AI use case and adopt it in their work.',
+  'Velok — Your AI department.',
+  'Grow your business, organise your team and optimise operations, with a shared foundation for responsible AI use.',
   '/en',
 );
 const situations = [
@@ -39,17 +39,14 @@ export default function Home() {
           <div>
             <p className="section-kicker">AI, people &amp; teams</p>
             <h1>
-              Useful AI.
-              <br />
-              <em>Without the complexity.</em>
+              Your<br />
+              <em>AI department.</em>
             </h1>
             <p className="v2-mission">
               The power of AI, working for your team.
             </p>
             <p>
-              We train your team, choose a first use case together, then
-              implement it in their tools and support them as it becomes part of
-              their work.
+              Grow your business, organise your team or improve a recurring workflow. We start with one practical project, then help your team make it part of their work.
             </p>
             <div className="v2-actions">
               <Link
@@ -74,6 +71,28 @@ export default function Home() {
             />
             <figcaption>Learn together. Start with real work.</figcaption>
           </figure>
+        </section>
+        <section className="v2-section v2-navy" id="parcours">
+          <div className="v2-wrap">
+            <p className="section-kicker">Three ways to begin</p>
+            <h2>One priority.<br /><em>One practical first project.</em></h2>
+            <p className="v2-lede">Choose the need that matters today. These are three entry points, not six compulsory steps.</p>
+            <ol className="v2-parcours">
+              <li><span className="v2-number">01</span><h3>Grow</h3><strong>A first outbound campaign</strong><p>Choose targets, prepare outreach sequences, organise reply handling and prepare meetings.</p><p>Deliverable: a campaign ready for review, with reply-handling rules.</p><p className="v2-note">Timeline agreed together.</p><Link className="text-link" href="/en/developper">Explore the first project →</Link></li>
+              <li><span className="v2-number">02</span><h3>Organise</h3><strong>Monthly AI Sherpa</strong><p>Bring AI into the team’s real work, practise together and track adoption.</p><p>Deliverable: one practical use case and an adoption tracker.</p><p className="v2-note">Monthly support; scope agreed together.</p><Link className="text-link" href="/en/ai-sherpa">Explore AI Sherpa →</Link></li>
+              <li><span className="v2-number">03</span><h3>Optimise</h3><strong>An inbox audit, then a first workflow</strong><p>Identify where work gets stuck, then implement the first useful workflow the audit reveals.</p><p>Deliverable: an audit report and a prioritised first workflow.</p><p className="v2-note">Timeline agreed after scoping the inbox and history.</p><Link className="text-link" href="/en/audit">Explore the inbox audit →</Link></li>
+            </ol>
+            <aside className="v2-foundation" aria-labelledby="foundation-title">
+              <div><p className="section-kicker">The shared foundation</p><h3 id="foundation-title">Secure</h3><p>An AI-use policy, clear access boundaries and human review support every project. A practical guide, a template and a team sign-off page to align with your IT lead.</p></div>
+              <Link className="text-link" href="/en/securite">Explore the foundation →</Link>
+            </aside>
+          </div>
+        </section>
+        <section className="v2-section v2-soft">
+          <div className="v2-wrap v2-split">
+            <div><p className="section-kicker">Not sure where to start?</p><h2>Let real work point the way.</h2><p>Start with a free audit of one inbox to identify a useful first project. Any wider scope and history are agreed separately. An audit is not a prerequisite for a workshop.</p><Link className="text-link" href="/en/audit">Find my starting point →</Link></div>
+            <div><h3>A clear need already?</h3><p>Start directly with AI Sherpa or a practical workshop. Bespoke agents are scoped only after an audit or Sherpa work has established the need.</p><Link className="text-link" href="/en/atelier-agents">Explore the workshop →</Link></div>
+          </div>
         </section>
         <section className="v2-section v2-soft">
           <div className="v2-wrap">
@@ -146,71 +165,6 @@ export default function Home() {
             These scenarios illustrate possible uses; they are not client
             results.
           </p>
-        </section>
-        <section className="v2-section v2-navy" id="parcours">
-          <div className="v2-wrap">
-            <p className="section-kicker">Your path</p>
-            <h2>
-              Start where
-              <br />
-              <em>your team is today.</em>
-            </h2>
-            <p className="v2-lede">
-              Six connected steps. Each can be an entry point; each prepares the
-              next.
-            </p>
-            <ol className="v2-parcours">
-              {parcours.map(([title, offer, body], i) => (
-                <li key={title}>
-                  <span className="v2-number">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <h3>{title}</h3>
-                  <strong>{offer}</strong>
-                  <p>{body}</p>
-                  <Link
-                    className="text-link"
-                    href={
-                      i < 3
-                        ? `/en/commencer?besoin=${['awareness', 'training', 'workshop'][i]}&source=parcours-${i + 1}`
-                        : [
-                            '/en/methode#mettre-en-place',
-                            '/en/commencer?besoin=adoption&source=parcours-5',
-                            '/en/methode#adopter',
-                          ][i - 3]
-                    }
-                  >
-                    {
-                      [
-                        'Arrange a session',
-                        'Train a team',
-                        'Choose a first use case',
-                        'Explore implementation',
-                        'Support adoption',
-                        'Expand your use cases',
-                      ][i]
-                    }{' '}
-                    →
-                  </Link>
-                  {i === 1 && (
-                    <p>
-                      <Link className="text-link" href="/en/atelier-agents">
-                        Explore the AI agents workshop →
-                      </Link>
-                    </p>
-                  )}
-                </li>
-              ))}
-            </ol>
-            <div className="v2-actions">
-              <Link className="button button-cta" href="/en/commencer">
-                Choose a starting point →
-              </Link>
-              <Link className="text-link" href="/en/audit">
-                Examine a workflow with an audit →
-              </Link>
-            </div>
-          </div>
         </section>
         <section className="v2-section v2-wrap v2-split">
           <div>
@@ -371,3 +325,4 @@ export default function Home() {
     </PageFrame>
   );
 }
+
