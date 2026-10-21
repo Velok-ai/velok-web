@@ -247,12 +247,11 @@ export function MockupVisual({
 }
 
 const links = [
-  { href: '/#parcours', label: 'Parcours' },
-  { href: '/methode', label: 'Méthode' },
-  { href: '/situations', label: 'Situations' },
+  { href: '/developper', label: 'Développer' },
+  { href: '/ai-sherpa', label: 'Organiser' },
+  { href: '/audit', label: 'Optimiser' },
+  { href: '/securite', label: 'Sécuriser' },
   { href: '/learn', label: 'Contenus' },
-  { href: '/#secteurs', label: 'Secteurs' },
-  { href: '/securite', label: 'Sécurité' },
 ];
 
 export function SiteHeader() {
@@ -260,7 +259,7 @@ export function SiteHeader() {
     <>
       <div className="trust-bar">
         <span>IA, humain &amp; équipes · France</span>
-        <span>Apprendre · Mettre en place · Adopter</span>
+        <span>Développer · Organiser · Optimiser</span>
       </div>
       <header className="site-header">
         <Link className="brand" href="/" aria-label="Velok — accueil">
@@ -319,9 +318,7 @@ export function SiteFooter() {
           <VelokWordmark />
         </Link>
         <p>
-          L’IA utile.
-          <br />
-          Sans complexité.
+          Votre département IA.
         </p>
       </div>
       <nav aria-label="Navigation de pied de page">
@@ -447,3 +444,4 @@ export function SectorPage({
     </PageFrame>
   );
 }
+

@@ -247,12 +247,11 @@ export function MockupVisual({
 }
 
 const links = [
-  { href: '/en#parcours', label: 'Your path' },
-  { href: '/en/methode', label: 'Method' },
-  { href: '/en/situations', label: 'Scenarios' },
-  { href: '/en/learn', label: 'Content' },
-  { href: '/en#secteurs', label: 'Sectors' },
-  { href: '/en/securite', label: 'Security' },
+  { href: '/en/developper', label: 'Grow' },
+  { href: '/en/ai-sherpa', label: 'Organise' },
+  { href: '/en/audit', label: 'Optimise' },
+  { href: '/en/securite', label: 'Secure' },
+  { href: '/en/learn', label: 'Resources' },
 ];
 
 export function SiteHeader() {
@@ -260,7 +259,7 @@ export function SiteHeader() {
     <>
       <div className="trust-bar">
         <span>AI, people &amp; teams · France</span>
-        <span>Learn · Implement · Adopt</span>
+        <span>Grow · Organise · Optimise</span>
       </div>
       <header className="site-header">
         <Link className="brand" href="/en" aria-label="Velok — home">
@@ -319,9 +318,7 @@ export function SiteFooter() {
           <VelokWordmark />
         </Link>
         <p>
-          Useful AI.
-          <br />
-          Without the complexity.
+          Your AI department.
         </p>
       </div>
       <nav aria-label="Footer navigation">
@@ -450,3 +447,4 @@ export function SectorPage({
     </PageFrame>
   );
 }
+
