@@ -1,0 +1,163 @@
+{
+  "purpose": "Official marks identify illustrative software ecosystems. No endorsement, customer relationship or certified integration is implied.",
+  "assets": [
+    {
+      "software_id": "pennylane",
+      "file": "/brand/software/pennylane.svg",
+      "publisher_page": "https://www.pennylane.com/fr",
+      "asset_url": "https://www.pennylane.com/_nuxt/logo.BkRDgVYD.svg",
+      "retrieved_on": "2026-10-19",
+      "bytes": 8170,
+      "sha256": "1c3e082edf5269f5904392ab740a292be00e16df3d7b92cfd88fc28268d3d7e1",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "cegid-loop",
+      "file": "/brand/software/cegid-loop.svg",
+      "publisher_page": "https://www.cegid.com/fr/",
+      "asset_url": "https://www.cegid.com/fr/wp-content/uploads/sites/7/2026/08/cegid-logo-blue-rgb.svg",
+      "retrieved_on": "2026-10-19",
+      "bytes": 2388,
+      "sha256": "1b7360d2eb61dff901dd4b963423f74050aa5243d56047aef311ed823613a47a",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved.",
+      "identification": "Official publisher logo; visible caption identifies the exact product. Not a partner badge."
+    },
+    {
+      "software_id": "kleos",
+      "file": "/brand/software/kleos.svg",
+      "publisher_page": "https://www.wolterskluwer.com/fr-fr/solutions/kleos",
+      "asset_url": "https://cdn.wolterskluwer.io/wk/jumpstart-v3-assets/0.x.x/logo/wk-logo-primary-pos-large.svg",
+      "retrieved_on": "2026-10-19",
+      "bytes": 8108,
+      "sha256": "1790dafeab8ecb192a024378937e2f398cea0ddb6aecfd8f14fbb97d8b7440bd",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved.",
+      "identification": "Official publisher logo; visible caption identifies the exact product. Not a partner badge."
+    },
+    {
+      "software_id": "clio",
+      "file": "/brand/software/clio.svg",
+      "publisher_page": "https://www.clio.com/",
+      "asset_url": "https://www.clio.com/wp-content/uploads/2025/09/clio-logo.svg",
+      "retrieved_on": "2026-10-19",
+      "bytes": 2707,
+      "sha256": "65a601bdbbacf13285505c0e76a97d91b955dad8b6171e212731015cbaba1656",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "microsoft-365",
+      "file": "/brand/software/microsoft-365.png",
+      "publisher_page": "https://www.microsoft.com/fr-fr/microsoft-365",
+      "asset_url": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png",
+      "retrieved_on": "2026-10-19",
+      "bytes": 4054,
+      "sha256": "112fec798b78aa02e102a724b5cb1990c0f909bc1d8b7b1fa256eab41bbc0960",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved.",
+      "identification": "Official publisher logo; visible caption identifies the exact product. Not a partner badge."
+    },
+    {
+      "software_id": "salesforce",
+      "file": "/brand/software/salesforce.svg",
+      "publisher_page": "https://www.salesforce.com/fr/",
+      "asset_url": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/logo-salesforce.svg?w=1024",
+      "retrieved_on": "2026-10-19",
+      "bytes": 6663,
+      "sha256": "29bc87240df68c546f04cb1bf3398b524b7d5e37a2d56f3b102b62f349244703",
+      "extraction": "Original Salesforce header logo, downloaded unchanged.",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "notion",
+      "file": "/brand/software/notion.png",
+      "publisher_page": "https://www.notion.com/",
+      "asset_url": "https://www.notion.com/front-static/logo-ios.png",
+      "retrieved_on": "2026-10-19",
+      "bytes": 8078,
+      "sha256": "483846a85e43e22879445047b83b22033e70fcc25ab34809ebadb7f856507ee0",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "teamtailor",
+      "file": "/brand/software/teamtailor.svg",
+      "publisher_page": "https://www.teamtailor.com/fr/",
+      "asset_url": "https://www.teamtailor.com/logos/teamtailor-logotype.svg",
+      "retrieved_on": "2026-10-19",
+      "bytes": 10929,
+      "sha256": "768457aeb9b35014e99d68c25d213e95d24ad4b6022e334531c474cb79384cd3",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "brevo",
+      "file": "/brand/software/brevo.svg",
+      "publisher_page": "https://www.brevo.com/",
+      "asset_url": "https://corp-backend.brevo.com/wp-content/uploads/2025/07/Brevo_logo.svg",
+      "retrieved_on": "2026-10-19",
+      "bytes": 882,
+      "sha256": "b6a8f454586580a1d79f86cb10b694f316c6bcc0af6e8b88d813d23d85f81f67",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "lucca",
+      "file": "/brand/software/lucca.svg",
+      "publisher_page": "https://www.lucca-software.com/",
+      "asset_url": "https://www.lucca-software.com/assets/img/logo-lucca.svg",
+      "retrieved_on": "2026-10-19",
+      "bytes": 4081,
+      "sha256": "d77e8d32161e94aa4308d8042330cd4e054ca63da088c832ac787a4c960a9693",
+      "extraction": "Downloaded from publisher-linked asset",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "hubspot",
+      "file": "/brand/software/hubspot.svg",
+      "publisher_page": "https://www.hubspot.com/",
+      "asset_url": "data URI from global-nav-logo img",
+      "retrieved_on": "2026-10-19",
+      "bytes": 2836,
+      "sha256": "883ba903494b9eb6ae8886f05362eb3914ce1c97a9d347aa50d1fd3464f35893",
+      "extraction": "Base64 decoded; original SVG bytes unchanged.",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "personio",
+      "file": "/brand/software/personio.svg",
+      "publisher_page": "https://www.personio.com/",
+      "asset_url": "Inline header SVG at #link-homepage",
+      "retrieved_on": "2026-10-19",
+      "bytes": 5198,
+      "sha256": "7ee594697279412e5ae141a67b2a6295a7033bc9ad481f0129c9b6d50296572e",
+      "extraction": "Original header SVG extracted without graphic edits.",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "bullhorn",
+      "file": "/brand/software/bullhorn.svg",
+      "publisher_page": "https://www.bullhorn.com/",
+      "asset_url": "Inline SVG at .site-header__logo",
+      "retrieved_on": "2026-10-19",
+      "bytes": 9737,
+      "sha256": "3fdf326abf13e2532338498f9236e41a53170b302754a7bec81435f07e38a128",
+      "extraction": "Header SVG extracted; viewbox attribute case normalised for standalone SVG.",
+      "graphic_changes": "None; colour and geometry preserved."
+    },
+    {
+      "software_id": "sage-active",
+      "file": "/brand/software/sage-active.svg",
+      "publisher_page": "https://github.com/Sage/carbon/blob/master/.storybook/welcome-page/footer/sage_logo.svg",
+      "asset_url": "https://raw.githubusercontent.com/Sage/carbon/master/.storybook/welcome-page/footer/sage_logo.svg",
+      "retrieved_on": "2026-10-19",
+      "bytes": 3033,
+      "sha256": "8f9f22828f32f0e158602a83c83c87b89365369b802054424168c97429fc2f75",
+      "extraction": "Official Sage open-source repository logo asset.",
+      "graphic_changes": "None; colour and geometry preserved.",
+      "identification": "Official publisher logo; visible caption identifies the exact product. Not a partner badge."
+    }
+  ]
+}
