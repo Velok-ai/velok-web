@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-// Client presentations /LVS and /3-etage are intentionally excluded (noindex).
+// Client presentations /LVS and /3-etage, and the /voix film, are intentionally excluded (noindex).
 const routes = [
   '',
   '/developper',
