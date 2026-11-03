@@ -19,6 +19,12 @@ export default function LearnPage() {
       />
       <div className="v2-home">
         <section className="v2-section v2-wrap">
+          <p className="section-kicker">Case studies</p>
+          <h2>See the system at work.</h2>
+          <p>Our first internal demonstration shows how source material becomes a brief, then a text to review. The process, its controls and its limits are presented separately from client outcomes.</p>
+          <Link className="button button-primary" href="/en/cas-pratiques">Explore the demonstration →</Link>
+        </section>
+        <section className="v2-section v2-wrap">
           <p className="section-kicker">
             The thread running through our analysis
           </p>

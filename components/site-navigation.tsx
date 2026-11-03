@@ -12,6 +12,7 @@ const offers = [
 ];
 const explore = [
   { href: '/methode', label: 'Notre méthode' },
+  { href: '/cas-pratiques', label: 'Cas pratiques' },
   { href: '/partenaires/agences', label: 'Partenaires' },
 ];
 

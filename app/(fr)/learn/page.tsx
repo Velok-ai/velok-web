@@ -19,6 +19,12 @@ export default function LearnPage() {
       />
       <div className="v2-home">
         <section className="v2-section v2-wrap">
+          <p className="section-kicker">Cas pratiques</p>
+          <h2>Voir le système au travail.</h2>
+          <p>Notre première démonstration interne montre comment des sources deviennent un brief, puis un texte à relire. Le processus, ses contrôles et ses limites sont présentés séparément des résultats clients.</p>
+          <Link className="button button-primary" href="/cas-pratiques">Découvrir la démonstration →</Link>
+        </section>
+        <section className="v2-section v2-wrap">
           <p className="section-kicker">Le fil de nos analyses</p>
           <div className="v2-editorial">
             {editorialStages.map(([title, body], i) => (
