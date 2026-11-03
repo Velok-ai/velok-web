@@ -1477,3 +1477,17 @@ body { background-image: none; }
 @media(max-width:1000px) { .case-steps { grid-template-columns: repeat(2,minmax(0,1fr)); } .case-review { gap: 28px; } }
 @media(max-width:760px) { .case-review,.case-comparison { grid-template-columns: 1fr; } .case-review figure { order: -1; } }
 @media(max-width:620px) { .case-steps { grid-template-columns: 1fr; } .case-film video { border-radius: 12px; } }
+
+/* Scenario directory and full cases: scoped additions, existing site palette. */
+.case-index { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:32px; }
+.case-index a { display:flex; flex-direction:column; gap:12px; border:1px solid var(--line); border-radius:18px; padding:24px; color:var(--midnight); text-decoration:none; }
+.case-index a:hover { border-color:var(--signal-blue); }
+.case-index a:focus-visible { outline:3px solid var(--signal-blue); outline-offset:3px; }
+.case-index span { font-size:.9rem; line-height:1.5; color:var(--body-ink); }
+.case-scenario { border-top:1px solid var(--line); scroll-margin-top:110px; }
+.case-scenario-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin:30px 0; }
+.case-scenario h2 { max-width:1050px; }
+.case-output { border-top:1px solid var(--line); padding-top:24px; }
+#film-voix { scroll-margin-top:110px; }
+@media(max-width:900px) { .case-index { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:620px) { .case-index,.case-scenario-grid { grid-template-columns:1fr; } .case-scenario-grid { gap:12px; } }

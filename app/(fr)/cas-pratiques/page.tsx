@@ -5,7 +5,7 @@ import { pageMetadata } from '@/lib/site-metadata';
 
 export const metadata: Metadata = pageMetadata(
   'Cas pratiques : voir le système au travail | Velok',
-  'Une première démonstration interne du système éditorial Velok : sources, brief, rédaction et validation humaine. Processus et limites documentés, sans résultat client revendiqué.',
+  'Des scénarios illustratifs pour les équipes : reporting, dossiers, suivi client, commandes et clubs. Avec le film éditorial VELOK. Sans résultat client revendiqué.',
   '/cas-pratiques',
 );
 
@@ -14,9 +14,9 @@ export default function CaseStudiesPage() {
     <PageFrame>
       <PageIntro
         showTrust={false}
-        kicker="Cas pratiques · Démonstration interne"
+        kicker="Cas pratiques · Scénarios illustratifs & film"
         title="Voir le travail. Comprendre les choix."
-        lede="Un film montre une mécanique. Un cas documenté explique ce qui a été fait, contrôlé et observé. Nous commençons par notre propre système éditorial."
+        lede="Family office, cabinet d’avocats, agence, producteur alimentaire, réseau de salles de sport : des scénarios illustratifs pour comprendre ce que l’on peut confier à un agent, et ce que l’on garde en main. Avec le film de notre système éditorial."
       />
       <CaseStudiesContent language="fr" />
     </PageFrame>

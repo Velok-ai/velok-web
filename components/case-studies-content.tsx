@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { IllustrativeCases } from './illustrative-cases';
 import Link from 'next/link';
 
 const copy = {
@@ -93,7 +94,8 @@ export function CaseStudiesContent({ language }: { language: 'fr' | 'en' }) {
   const contact = `${language === 'en' ? '/en' : ''}/commencer?source=cas-pratiques`;
   return (
     <div className="v2-home case-studies">
-      <section className="v2-section v2-wrap case-feature" aria-labelledby="voice-case-title">
+      <IllustrativeCases language={language} />
+      <section id="film-voix" className="v2-section v2-wrap case-feature" aria-labelledby="voice-case-title">
         <p className="case-label">{c.badge}</p>
         <h2 id="voice-case-title">{c.title}</h2>
         <p className="case-lede">{c.intro}</p>

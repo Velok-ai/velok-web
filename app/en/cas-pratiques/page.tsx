@@ -5,7 +5,7 @@ import { pageMetadata } from '@/lib/en/site-metadata';
 
 export const metadata: Metadata = pageMetadata(
   'Case studies: see the system at work | Velok',
-  'An internal demonstration of Velok’s editorial system: source material, briefing, drafting and human approval. Documented process and limits, with no client outcome claimed.',
+  'Illustrative workflows for reporting, legal matters, client work, orders and clubs. Plus the VELOK editorial film. No client outcomes claimed.',
   '/en/cas-pratiques',
 );
 
@@ -14,9 +14,9 @@ export default function CaseStudiesPage() {
     <PageFrame>
       <PageIntro
         showTrust={false}
-        kicker="Case studies · Internal demonstration"
+        kicker="Case studies · Illustrative scenarios & film"
         title="See the work. Understand the decisions."
-        lede="A film explains a process. A documented case establishes what was done, checked and observed. We are starting with our own editorial system."
+        lede="Family office, law firm, agency, food producer and fitness chain: illustrative scenarios showing what an agent could prepare and which decisions stay with people. Plus a film of our editorial system."
       />
       <CaseStudiesContent language="en" />
     </PageFrame>
