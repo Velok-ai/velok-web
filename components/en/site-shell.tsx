@@ -252,6 +252,7 @@ const links = [
   { href: '/en/audit', label: 'Optimise' },
   { href: '/en/securite', label: 'Secure' },
   { href: '/en/learn', label: 'Resources' },
+  { href: '/en/cas-pratiques', label: 'Case studies' },
 ];
 
 export function SiteHeader() {
@@ -343,6 +344,7 @@ export function SiteFooter() {
         <div>
           <strong>Company</strong>
           <Link href="/en/learn">Content</Link>
+          <Link href="/en/cas-pratiques">Case studies</Link>
           <a href="mailto:david@velok.ai">Contact David</a>
           <Link href="/en/confidentialite">Privacy</Link>
           <Link href="/en/mentions-legales">Legal notice</Link>

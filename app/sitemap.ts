@@ -9,6 +9,7 @@ const routes = [
   '/confidentialite',
   '/diagnostic',
   '/learn',
+  '/cas-pratiques',
   '/mentions-legales',
   '/methode',
   '/securite',
