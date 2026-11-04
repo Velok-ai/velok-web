@@ -115,6 +115,19 @@ export function IllustrativeCases({ language }: { language: 'fr' | 'en' }) {
           <p className="section-kicker">{sector}</p>
           <h2 id={`${id}-title`}>{title}</h2>
           <p className="case-lede">{need}</p>
+          <figure className="case-film">
+            <video
+              controls
+              playsInline
+              preload="none"
+              poster={`/cas-pratiques/films/${id}.webp`}
+              aria-label={fr ? `Film du scénario ${sector}, en français` : `French-language film for the ${sector} scenario`}
+            >
+              <source src={`/cas-pratiques/films/${id}.mp4`} type="video/mp4" />
+              <a href={`/cas-pratiques/films/${id}.mp4`}>{fr ? 'Ouvrir le film MP4' : 'Open the MP4 film'}</a>
+            </video>
+            <figcaption>{fr ? 'Scénario illustratif · 42 secondes · Film muet en français' : 'Illustrative scenario · 42 seconds · Silent film with French text'}</figcaption>
+          </figure>
           <div className="case-scenario-grid">
             <div><h3>{fr ? 'Le fonctionnement envisagé' : 'The proposed workflow'}</h3><p>{workflow}</p></div>
             <div><h3>{fr ? 'Les décisions qui restent humaines' : 'Decisions that stay with people'}</h3><p>{control}</p></div>
